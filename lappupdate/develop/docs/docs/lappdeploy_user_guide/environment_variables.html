@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Environment Variables &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="lAppDeploy User Guide" href="index.html" />
+    <link rel="next" title="lAppTrack Developer Guide" href="../lapptrack_dev_guide/index.html" />
+    <link rel="prev" title="_log2mail" href="log2mail.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">lAppDeploy User Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usages.html">Usages</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Environment Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../contents.html">Table Of Contents</a><ul>
+  <li><a href="index.html">lAppDeploy User Guide</a><ul>
+      <li>Previous: <a href="log2mail.html" title="previous chapter">_log2mail</a></li>
+      <li>Next: <a href="../lapptrack_dev_guide/index.html" title="next chapter">lAppTrack Developer Guide</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="environment-variables">
+<span id="lappdeploy-userguide-envvars"></span><h1>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h1>
+<p>The following topics details environment variables used by lAppDeploy scripts.</p>
+<dl class="envvar">
+<dt id="envvar-APP_STORE_DIR">
+<code class="descname">APP_STORE_DIR</code><a class="headerlink" href="#envvar-APP_STORE_DIR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the path for installation package and the <a class="reference internal" href="../glossary.html#term-applist"><span class="xref std std-term">applist</span></a> files.</p>
+<p>Since <a class="reference internal" href="lappdeploy.html"><span class="doc">lappdeploy</span></a> script may be use from removable media (e.g. DVD, USB
+Stick). It is recommended to use a relative path (e.g. <code class="file docutils literal"><span class="pre">..appstore</span></code>)
+rather than an absolute one.</p>
+<p>Default value: <code class="docutils literal"><span class="pre">..\appstore</span></code></p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-APPLIST">
+<code class="descname">APPLIST</code><a class="headerlink" href="#envvar-APPLIST" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the full pathname of the <a class="reference internal" href="../glossary.html#term-applist"><code class="xref any std std-term docutils literal"><span class="pre">applist</span></code></a> file.</p>
+<p>Default value: none</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-APPLIST_TO_INSTALL">
+<code class="descname">APPLIST_TO_INSTALL</code><a class="headerlink" href="#envvar-APPLIST_TO_INSTALL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the full pathname of the <a class="reference internal" href="appfilter.html"><span class="doc">_appfilter</span></a> output file. This file
+matches a subset of <a class="reference internal" href="../glossary.html#term-applist"><code class="xref any std std-term docutils literal"><span class="pre">applist</span></code></a> syntax by containing only <em class="dfn">appName</em>,
+<em class="dfn">appVersion</em>, <em class="dfn">appPackage</em>, and <em class="dfn">appArgs</em> columns.</p>
+<p>Default value: none</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-ARCHIVE_LOGFILE">
+<code class="descname">ARCHIVE_LOGFILE</code><a class="headerlink" href="#envvar-ARCHIVE_LOGFILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the full path name of the persistent log file. All messages for the
+current update transaction are write in this file.</p>
+<p>Default value: <code class="docutils literal"><span class="pre">%SystemRoot%\lappdeploy.log</span></code></p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-FROM_MAIL_ADDR">
+<code class="descname">FROM_MAIL_ADDR</code><a class="headerlink" href="#envvar-FROM_MAIL_ADDR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the mail address of the mail sender (typically machine mail address)</p>
+<p>Default value: none</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-LOGLEVEL">
+<code class="descname">LOGLEVEL</code><a class="headerlink" href="#envvar-LOGLEVEL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the maximum level of log entries written in log files (see
+<a class="reference internal" href="#envvar-UPDATE_LOGFILE"><code class="xref any std std-envvar docutils literal"><span class="pre">UPDATE_LOGFILE</span></code></a> and <a class="reference internal" href="#envvar-WARNING_LOGFILE"><code class="xref any std std-envvar docutils literal"><span class="pre">WARNING_LOGFILE</span></code></a>).</p>
+<p>The value is one of:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">ERROR</span></code></td>
+<td>only the Error entries are logged</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">WARNING</span></code></td>
+<td>only the Error or Warning entries are logged</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">INFO</span></code></td>
+<td>only the Error, Warning or Informational entries are logged</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">DEBUG</span></code></td>
+<td>all entries are logged</td>
+</tr>
+</tbody>
+</table>
+<p>Default value: <code class="docutils literal"><span class="pre">INFO</span></code></p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-LOGMAIL">
+<code class="descname">LOGMAIL</code><a class="headerlink" href="#envvar-LOGMAIL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify if a mail containing the current lappdeploy log messages will be
+sent (see <a class="reference internal" href="log2mail.html"><span class="doc">_log2mail</span></a> script).</p>
+<p>The value is one of:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">0</span></code></td>
+<td>No mail is sent</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">1</span></code></td>
+<td>A mail with the content of the log files is sent to <a class="reference internal" href="#envvar-TO_MAIL_ADDR"><code class="xref any std std-envvar docutils literal"><span class="pre">TO_MAIL_ADDR</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<p>Default value: <code class="docutils literal"><span class="pre">0</span></code></p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-SILENT">
+<code class="descname">SILENT</code><a class="headerlink" href="#envvar-SILENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the scripts logging mode.</p>
+<p>The value is one of:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">0</span></code></td>
+<td>Messages are written in a log file and on the standard output</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">1</span></code></td>
+<td>Messages are only written in the log file specified by
+<a class="reference internal" href="#envvar-ARCHIVE_LOGFILE"><code class="xref any std std-envvar docutils literal"><span class="pre">ARCHIVE_LOGFILE</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<p>Default value: <code class="docutils literal"><span class="pre">1</span></code></p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-SMTP_SERVER">
+<code class="descname">SMTP_SERVER</code><a class="headerlink" href="#envvar-SMTP_SERVER" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the fully qualified name of the SMTP server to use</p>
+<p>Default value: none</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-SMTP_SERVER_PORT">
+<code class="descname">SMTP_SERVER_PORT</code><a class="headerlink" href="#envvar-SMTP_SERVER_PORT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the SMTP server’s port number to use</p>
+<p>Default value: <code class="docutils literal"><span class="pre">25</span></code></p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-SUMMARY_LOGFILE">
+<code class="descname">SUMMARY_LOGFILE</code><a class="headerlink" href="#envvar-SUMMARY_LOGFILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the full path name of the current summary log file. All summary
+messages for the current update transaction are write in this file.</p>
+<p>Default value: <code class="docutils literal"><span class="pre">%TEMP%\appdeploy_summary_today.log</span></code></p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-TO_MAIL_ADDR">
+<code class="descname">TO_MAIL_ADDR</code><a class="headerlink" href="#envvar-TO_MAIL_ADDR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the mail address of the mail recipient (typically a system administrator)</p>
+<p>Default value: none</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-UPDATE_LOGFILE">
+<code class="descname">UPDATE_LOGFILE</code><a class="headerlink" href="#envvar-UPDATE_LOGFILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the full path name of the current log file. All log entries for the current update transaction are write in this file.</p>
+<p>Default value: <code class="docutils literal"><span class="pre">%TEMP%\appdeploy_today.log</span></code></p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-WARNING_LOGFILE">
+<code class="descname">WARNING_LOGFILE</code><a class="headerlink" href="#envvar-WARNING_LOGFILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the full path name of the current warning log file. All warning messages for the current update transaction are write in this file.</p>
+<p>Default value: <code class="docutils literal"><span class="pre">%TEMP%\appdeploy_warn_today.log</span></code></p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>support.progressbar – Progress Bar Widgets &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="support – Supporting Modules Package" href="index.html" />
+    <link rel="next" title="support.semver – Semantic Versioning Support" href="semver.html" />
+    <link rel="prev" title="support.pad – Lightweight Portable Application Description Support" href="pad.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../docs/contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../docs/about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../scripts.html">Main Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cots/index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="report.html"><code class="docutils literal"><span class="pre">support.report</span></code> &#8211; Reporting Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pad.html"><code class="docutils literal"><span class="pre">support.pad</span></code> &#8211; Lightweight Portable Application Description Support</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">support.progressbar</span></code> &#8211; Progress Bar Widgets</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#public-classes">Public Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#public-functions">Public Functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#objects-reference">Objects reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#functions-reference">Functions reference</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="semver.html"><code class="docutils literal"><span class="pre">support.semver</span></code> &#8211; Semantic Versioning Support</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../further-modules.html">Further Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../../docs/glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../docs/contents.html">Table Of Contents</a><ul>
+  <li><a href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul>
+  <li><a href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul>
+      <li>Previous: <a href="pad.html" title="previous chapter"><code class="docutils literal"><span class="pre">support.pad</span></code> &#8211; Lightweight Portable Application Description Support</a></li>
+      <li>Next: <a href="semver.html" title="next chapter"><code class="docutils literal"><span class="pre">support.semver</span></code> &#8211; Semantic Versioning Support</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-support.progressbar">
+<span id="support-progressbar-progress-bar-widgets"></span><h1><a class="reference internal" href="#module-support.progressbar" title="support.progressbar: Progress Bar Widgets (all)"><code class="xref any py py-mod docutils literal"><span class="pre">support.progressbar</span></code></a> &#8211; Progress Bar Widgets<a class="headerlink" href="#module-support.progressbar" title="Permalink to this headline">¶</a></h1>
+<p>This module defines functions and classes to offer progress bar widgets.</p>
+<p>To date, the module provides text only widgets for the console.</p>
+<div class="section" id="public-classes">
+<h2>Public Classes<a class="headerlink" href="#public-classes" title="Permalink to this headline">¶</a></h2>
+<p>This module has only one public class.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.progressbar.TextProgressBar" title="support.progressbar.TextProgressBar"><code class="xref any py py-class docutils literal"><span class="pre">TextProgressBar</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="public-functions">
+<h2>Public Functions<a class="headerlink" href="#public-functions" title="Permalink to this headline">¶</a></h2>
+<p>This module has has a number of functions listed below in alphabetical order.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.progressbar.isu_format_prefix" title="support.progressbar.isu_format_prefix"><code class="xref any py py-func docutils literal"><span class="pre">isu_format_prefix</span></code></a></td>
+<td><a class="reference internal" href="#support.progressbar.isu_format_thousand" title="support.progressbar.isu_format_thousand"><code class="xref any py py-func docutils literal"><span class="pre">isu_format_thousand</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="objects-reference">
+<h2>Objects reference<a class="headerlink" href="#objects-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the objects defined in this module.</p>
+<dl class="class">
+<dt id="support.progressbar.TextProgressBar">
+<em class="property">class </em><code class="descclassname">support.progressbar.</code><code class="descname">TextProgressBar</code><span class="sig-paren">(</span><em>max_len=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#support.progressbar.TextProgressBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Progress bar for a console output.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>max_len</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; A positive integer specifying the content length
+that the progress bar is going to represent. A negative number
+specify that the content length is unknown.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Public Methods</strong></dt>
+<dd><p class="first">This class has a number of public methods listed below in alphabetical
+order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.progressbar.TextProgressBar.finish" title="support.progressbar.TextProgressBar.finish"><code class="xref any py py-meth docutils literal"><span class="pre">finish</span></code></a></td>
+<td><a class="reference internal" href="#support.progressbar.TextProgressBar.compute" title="support.progressbar.TextProgressBar.compute"><code class="xref any py py-meth docutils literal"><span class="pre">compute</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Using TextProgressBar...</strong></dt>
+<dd><p class="first">After created a class instance, you must call the <a class="reference internal" href="#support.progressbar.TextProgressBar.compute" title="support.progressbar.TextProgressBar.compute"><code class="xref any py py-meth docutils literal"><span class="pre">compute</span></code></a> method to
+print the progress bar on the standard output (<a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.stdout" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">sys.stdout</span></code></a>) upon every
+change of the received length or the content length (typically after a
+reading of a data block from a stream) as shown in the below example.
+When the task completed, you must call the <a class="reference internal" href="#support.progressbar.TextProgressBar.finish" title="support.progressbar.TextProgressBar.finish"><code class="xref any py py-meth docutils literal"><span class="pre">finish</span></code></a> method which return
+a string summarizing the amount of computed data.</p>
+<dl class="last docutils">
+<dt>Example of fetching a file</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="kn">import</span> <span class="nn">progressbar</span>
+
+<span class="n">url</span>  <span class="o">=</span> <span class="s2">&quot;https://docs.python.org&quot;</span> \
+       <span class="s2">&quot;/3/archives/python-3.5.1-docs-text.zip&quot;</span>
+<span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+    <span class="n">content_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stream</span><span class="o">.</span><span class="n">info</span><span class="p">()[</span><span class="s2">&quot;Content-Length&quot;</span><span class="p">])</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">progress_bar</span> <span class="o">=</span> <span class="n">progressbar</span><span class="o">.</span><span class="n">TextProgressBar</span><span class="p">(</span><span class="n">content_length</span><span class="p">)</span>
+    <span class="n">progress_bar</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">content_length</span><span class="p">)</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">length</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">progress_bar</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">content_length</span><span class="p">)</span>
+    <span class="n">progress_bar</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="method">
+<dt id="support.progressbar.TextProgressBar.compute">
+<code class="descname">compute</code><span class="sig-paren">(</span><em>length</em>, <em>content_length=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#support.progressbar.TextProgressBar.compute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the progress bar and print it.</p>
+<p>The printed string have the following content:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">aaa</span><span class="o">%</span> <span class="p">[</span><span class="o">==============================</span><span class="p">]</span> <span class="n">lll</span><span class="p">,</span><span class="n">lll</span><span class="p">,</span><span class="n">lll</span><span class="p">,</span><span class="n">lll</span> <span class="o">-</span> <span class="n">rrrr</span> <span class="n">XB</span><span class="o">/</span><span class="n">s</span> <span class="o">-</span> <span class="n">eta</span> <span class="n">nn</span><span class="p">:</span><span class="n">nn</span><span class="p">:</span><span class="n">nn</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>where</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">aaa</span></code>: is the percentage of progress</li>
+<li><code class="docutils literal"><span class="pre">===</span></code>: is the bar graph of progress (step=1/30)</li>
+<li><code class="docutils literal"><span class="pre">lll,lll,lll,lll</span></code>: is the number of received bytes</li>
+<li><code class="docutils literal"><span class="pre">rrrr</span></code>: is the bytes rate where X represent a multiple of the
+unit bytes per second (G, M or k).</li>
+<li><code class="docutils literal"><span class="pre">nn:nn:nn</span></code>: is the estimated time to achieve the download.</li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">to prevent the display flicking, the refresh period is limited to
+4 times per second.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>length</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; A positive integer specifying the length of
+received data.</li>
+<li><strong>content_length</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; A positive integer specifying the content
+length that the progress bar is going to represent. A negative
+number specify that the content length is unknown.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.progressbar.TextProgressBar.finish">
+<code class="descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#support.progressbar.TextProgressBar.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the progress bar completion and return the computed string.</p>
+<p>The returned string have the following content:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">llll</span> <span class="n">XB</span> <span class="n">received</span> <span class="o">-</span> <span class="n">rrrr</span> <span class="n">XB</span><span class="o">/</span><span class="n">s</span> <span class="ow">in</span> <span class="n">nn</span><span class="p">:</span><span class="n">nn</span><span class="p">:</span><span class="n">nn</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>where</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">lll</span> <span class="pre">XB</span></code>: is the number of received bytes where X represent a
+multiple of the unit byte(G, M or k).</li>
+<li><code class="docutils literal"><span class="pre">rrrr</span></code>: is the bytes rate where X represent a multiple of the
+unit bytes per second (G, M or k).</li>
+<li><code class="docutils literal"><span class="pre">nn:nn:nn</span></code>: is the time of downloading.</li>
+</ul>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A string representing the progress information.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="functions-reference">
+<h2>Functions reference<a class="headerlink" href="#functions-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the specific functions used in this module.</p>
+<dl class="function">
+<dt id="support.progressbar.isu_format_prefix">
+<code class="descclassname">support.progressbar.</code><code class="descname">isu_format_prefix</code><span class="sig-paren">(</span><em>value</em>, <em>unit</em><span class="sig-paren">)</span><a class="headerlink" href="#support.progressbar.isu_format_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string using standard prefix for unit.</p>
+<p>The returned string represent the value in a compliant <a class="reference external" href="https://en.wikipedia.org/wiki/International_System_of_Units">International
+System of Units</a> format, which means with a prefix for unit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>int or float</em>) &#8211; The value to format.</li>
+<li><strong>unit</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The unit of the value.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a string representing the value (&#8220;5.75 MB&#8221; for example).</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)">str</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="support.progressbar.isu_format_thousand">
+<code class="descclassname">support.progressbar.</code><code class="descname">isu_format_thousand</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#support.progressbar.isu_format_thousand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string using standard ISU thousand separator.</p>
+<p>The returned string represent the value in a compliant <a class="reference external" href="https://en.wikipedia.org/wiki/International_System_of_Units">International
+System of Units</a> format, which means with a space for thousand separator.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int or float</em>) &#8211; The value to format.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a string representing value (&#8220;5 000&#8221; for example).</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)">str</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

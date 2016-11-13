@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>_appfilter &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="Usages" href="usages.html" />
+    <link rel="next" title="_log2mail" href="log2mail.html" />
+    <link rel="prev" title="__postinstall__" href="postinstall.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">lAppDeploy User Guide</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="usages.html">Usages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="lappdeploy.html">lappdeploy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exit.html">__exit__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="init.html">__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="postinstall.html">__postinstall__</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">_appfilter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#description">Description</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#command-line-options">Command line options</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#exit-code">Exit code</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#environment-variables">Environment variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="log2mail.html">_log2mail</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="environment_variables.html">Environment Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../contents.html">Table Of Contents</a><ul>
+  <li><a href="index.html">lAppDeploy User Guide</a><ul>
+  <li><a href="usages.html">Usages</a><ul>
+      <li>Previous: <a href="postinstall.html" title="previous chapter">__postinstall__</a></li>
+      <li>Next: <a href="log2mail.html" title="next chapter">_log2mail</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="appfilter">
+<span id="lappdeploy-userguide-appfilter-usage"></span><h1>_appfilter<a class="headerlink" href="#appfilter" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">_appfilter.vbs</span> <span class="pre">[{x86|x64}]</span></code></p>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This script is a <a class="reference internal" href="../glossary.html#term-non-public-script"><code class="xref any std std-term docutils literal"><span class="pre">non-public</span> <span class="pre">script</span></code></a>. It filters an
+<a class="reference internal" href="../glossary.html#term-applist"><code class="xref any std std-term docutils literal"><span class="pre">applist</span></code></a> file by verifying which applications were installed and if it needed
+to be updated. See <a class="reference internal" href="../about/conventions.html#about-usage-syntax"><span class="std std-ref">Usage description syntax</span></a> for details about used syntax.</p>
+<p>This script is a <a class="reference external" href="https://technet.microsoft.com/en-us/library/cc784547%28v=ws.10%29.aspx">Windows Script</a> one. Thus, it must be launched with
+<a class="reference external" href="https://technet.microsoft.com/en-us/library/ff920171.aspx">cscript</a> command. (e.g. <strong class="command">cscript.exe _appfilter.vbs x64</strong>)</p>
+<div class="section" id="command-line-options">
+<h3>Command line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-arg-x86">
+<code class="descname">x86</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-x86" title="Permalink to this definition">¶</a></dt>
+<dd><p>specifies that the target architecture is a 32 bits one, therefore only 32
+bits installation packages taken into account. This is the default value.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-x64">
+<code class="descname">x64</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-x64" title="Permalink to this definition">¶</a></dt>
+<dd><p>specifies that the target architecture is a 64 bits one, therefore only 64
+bits installation packages taken into account.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="exit-code">
+<h3>Exit code<a class="headerlink" href="#exit-code" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>0</td>
+<td>no error</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>an error occurred while filtering application</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>invalid argument. An argument of the command line isn&#8217;t valid (see Usage).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="environment-variables">
+<h3>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h3>
+<p>The following environment variables affect the execution:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><span class="target" id="index-0"></span><a class="reference internal" href="environment_variables.html#envvar-APPLIST"><code class="xref std std-envvar docutils literal"><span class="pre">APPLIST</span></code></a></td>
+<td><span class="target" id="index-1"></span><a class="reference internal" href="environment_variables.html#envvar-WARNING_LOGFILE"><code class="xref std std-envvar docutils literal"><span class="pre">WARNING_LOGFILE</span></code></a></td>
+</tr>
+<tr class="row-even"><td><span class="target" id="index-2"></span><a class="reference internal" href="environment_variables.html#envvar-APPLIST_TO_INSTALL"><code class="xref std std-envvar docutils literal"><span class="pre">APPLIST_TO_INSTALL</span></code></a></td>
+<td><span class="target" id="index-3"></span><a class="reference internal" href="environment_variables.html#envvar-SUMMARY_LOGFILE"><code class="xref std std-envvar docutils literal"><span class="pre">SUMMARY_LOGFILE</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

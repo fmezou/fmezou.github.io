@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to deploy applications &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="How-to" href="index.html" />
+    <link rel="next" title="How to track applications" href="howto_track_application.html" />
+    <link rel="prev" title="How-to" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">How-to</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to deploy applications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tune-your-environment">Tune your environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-the-application-list">Build the application list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-the-medium">Build the medium</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deploy-from-a-dvd">Deploy from a DVD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deploy-through-a-network">Deploy through a network</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="howto_track_application.html">How to track applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../contents.html">Table Of Contents</a><ul>
+  <li><a href="index.html">How-to</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">How-to</a></li>
+      <li>Next: <a href="howto_track_application.html" title="next chapter">How to track applications</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="how-to-deploy-applications">
+<span id="howto-deploy-apps"></span><h1>How to deploy applications<a class="headerlink" href="#how-to-deploy-applications" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Be simple</p>
+<p class="last">If you manage a unique PC connected to Internet, the easiest way is to let
+each application managing its own upgrades (automatically or manual way).</p>
+</div>
+<p>To deploy application, there are two main use cases. The first one is based on a
+share network, the second is based on a DVD distribution. These cases have their
+own constraints and answer to specific needs. The main advantage to have a
+centralised application deploying system is to allow to a system administrator
+to have a consistency application park.</p>
+<p>The use of a network share implies that the pc is connected to a local network,
+with an available file server. This use case is recommended for SOHO application
+deploying (less than 10 pc) and allows silent installation of patches or new
+applications.</p>
+<p>The use of a DVD is attractive for use in a standalone and non connected
+environment (e.g. Industrial PC or access control management console).</p>
+<p>But, these two use cases comply with the following steps:</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="#howto-deploy-tune-your-environment"><span class="std std-ref">Tune your environment</span></a></li>
+<li><a class="reference internal" href="#howto-deploy-build-applist"><span class="std std-ref">Build the application list</span></a></li>
+<li><a class="reference internal" href="#howto-deploy-build-medium"><span class="std std-ref">Build the medium</span></a></li>
+<li>Deploy applications from a <a class="reference internal" href="#howto-deploy-deploy-from-dvd"><span class="std std-ref">DVD</span></a> or
+<a class="reference internal" href="#howto-deploy-deploy-through-network"><span class="std std-ref">Network share</span></a></li>
+</ol>
+<div class="section" id="tune-your-environment">
+<span id="howto-deploy-tune-your-environment"></span><h2>Tune your environment<a class="headerlink" href="#tune-your-environment" title="Permalink to this headline">¶</a></h2>
+<p>By default, you have nothing to tune. The default values of
+<a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#lappdeploy-userguide-envvars"><span class="std std-ref">Environment Variables</span></a> allows a working with the following features:</p>
+<ul class="simple">
+<li>all action, expect debug one, are only logged in a text file named
+<code class="file docutils literal"><span class="pre">lappdeploy.log</span></code> in the <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">SystemRoot</span></code> directory (typically
+&#8220;<code class="file docutils literal"><span class="pre">C:Windowslappdeploy.log</span></code>&#8221;.</li>
+<li>the <a class="reference internal" href="../glossary.html#term-applist"><code class="xref any std std-term docutils literal"><span class="pre">applist</span></code></a> files (at least &#8220;<code class="file docutils literal"><span class="pre">applist-all.txt</span></code>&#8221;) are stored in the
+<code class="file docutils literal"><span class="pre">appstore</span></code> directory located at the same level that the directory
+containing the <strong class="command">lappdeploy</strong> script.</li>
+</ul>
+<p>If these features do not comply with your need, you must consider tuning the
+<a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#lappdeploy-userguide-envvars"><span class="std std-ref">Environment Variables</span></a>. The most efficient way to do that is to use
+<strong class="command">__init__</strong> and <strong class="command">__exit__</strong> <a class="reference internal" href="../glossary.html#term-hook-script"><code class="xref any std std-term docutils literal"><span class="pre">hook</span> <span class="pre">scripts</span></code></a>. See
+<code class="file docutils literal"><span class="pre">__init__.cmd.example</span></code> and <code class="file docutils literal"><span class="pre">__exit__.cmd.example</span></code> located in the
+directory containing the <strong class="command">lappdeploy</strong> script to have examples.</p>
+<ul class="simple">
+<li>To change the location of <em class="dfn">applist</em> files and installers packages, you
+must tune the <span class="target" id="index-1"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-APP_STORE_DIR"><code class="xref std std-envvar docutils literal"><span class="pre">APP_STORE_DIR</span></code></a> environment variable.</li>
+<li>To change the level of messages logged, you must tune the <span class="target" id="index-2"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-LOGLEVEL"><code class="xref std std-envvar docutils literal"><span class="pre">LOGLEVEL</span></code></a>
+environment variable.</li>
+<li>To receive an email with a summary and detailed information on action done
+by lAppUpdate, you must tune the <span class="target" id="index-3"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-LOGMAIL"><code class="xref std std-envvar docutils literal"><span class="pre">LOGMAIL</span></code></a> environment variable,
+and specifies your account mail configuration in <span class="target" id="index-4"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-SMTP_SERVER"><code class="xref std std-envvar docutils literal"><span class="pre">SMTP_SERVER</span></code></a>
+(eventually <span class="target" id="index-5"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-SMTP_SERVER_PORT"><code class="xref std std-envvar docutils literal"><span class="pre">SMTP_SERVER_PORT</span></code></a>), <span class="target" id="index-6"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-FROM_MAIL_ADDR"><code class="xref std std-envvar docutils literal"><span class="pre">FROM_MAIL_ADDR</span></code></a> and
+<span class="target" id="index-7"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-TO_MAIL_ADDR"><code class="xref std std-envvar docutils literal"><span class="pre">TO_MAIL_ADDR</span></code></a> environment variables.</li>
+<li>To run the script in an interactive mode (i.e. following installation
+actions in real time through the command shell), you must tune the
+<span class="target" id="index-8"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-SILENT"><code class="xref std std-envvar docutils literal"><span class="pre">SILENT</span></code></a> environment variable.</li>
+</ul>
+</div>
+<div class="section" id="build-the-application-list">
+<span id="howto-deploy-build-applist"></span><h2>Build the application list<a class="headerlink" href="#build-the-application-list" title="Permalink to this headline">¶</a></h2>
+<p>The <strong class="command">lappdeploy</strong> script uses two <a class="reference internal" href="../glossary.html#term-applist"><code class="xref any std std-term docutils literal"><span class="pre">applist</span></code></a> files to verify which
+applications were installed and if it needs to be updated: the first one is
+named <code class="file docutils literal"><span class="pre">applist-all.txt</span></code>; the second is named  <code class="file docutils literal"><span class="pre">applist-</span><em><span class="pre">set</span></em><span class="pre">.txt</span></code>
+where <code class="docutils literal"><span class="pre">{set}</span></code> is the argument passed to <strong class="command">lappdeploy</strong> on the command
+line (e.g. <strong class="command">.lappdeploy dummy</strong>).</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">applist files may be empty including <code class="file docutils literal"><span class="pre">applist-all.txt</span></code>.</p>
+</div>
+<p>These files are <a class="reference external" href="http://en.wikipedia.org/wiki/Text_file">text file</a> complying with the <a class="reference external" href="http://en.wikipedia.org/wiki/Text_file#Standard_Windows_.txt_files">Windows standard</a>. So you can
+use any text editor (e.g. notepad, notepad++, vim...) to edit them.</p>
+<p>The <a class="reference internal" href="../background_papers/applist-format.html#background-applist-format"><span class="std std-ref">Applist Format</span></a> topic details the format of these files.</p>
+<p>In fact, you can have so much file as you want according to your needs. For
+example, you can have an <em class="dfn">applist</em> file per computer or a set of computer
+(e.g. children, purchasing department...). If you use a domain controller, you
+can match <em class="dfn">applist</em> files with your Organisational Units (OU).</p>
+<div class="topic">
+<p class="topic-title first">Applications store</p>
+<p>A way of making is to store installers into the same directory that
+<em class="dfn">applist</em> files with a separate folder for each product (Mozilla Firefox
+and its extension may be considered as one product). It clarifies the
+installers organisation and allow to have a <strong class="command">__postinstall__</strong>
+<a class="reference internal" href="../glossary.html#term-hook-script"><code class="xref any std std-term docutils literal"><span class="pre">hook</span> <span class="pre">script</span></code></a> for each of them.</p>
+</div>
+<p>By default, the <em class="dfn">applist</em> files are stored in the <code class="file docutils literal"><span class="pre">appstore</span></code>
+directory located at the same level that the directory containing the
+<strong class="command">lappdeploy</strong> script. To change the location of <em class="dfn">applist</em> files and
+installers packages, you must tune the <span class="target" id="index-9"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-APP_STORE_DIR"><code class="xref std std-envvar docutils literal"><span class="pre">APP_STORE_DIR</span></code></a> environment
+variable.</p>
+<div class="topic">
+<p class="topic-title first">Example</p>
+<div class="highlight-text" id="applist-example-txt"><div class="highlight"><pre><span></span>#appArch; appName; appVersion; appPackage; appArgs
+   ; Adobe Reader XI - Français; 11.0.08; %APP_STORE_DIR%\AdobeReader\AdbeRdr11008_fr_FR.exe
+x64; Java 7 Update 67 (64-bit); 7.0.670; %APP_STORE_DIR%\Java\jre-7u67-windows-x64.exe ; /s
+x86; 7-Zip 9.20; 9.20.00.0; %APP_STORE_DIR%\7-zip\7z920.msi
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="build-the-medium">
+<span id="howto-deploy-build-medium"></span><h2>Build the medium<a class="headerlink" href="#build-the-medium" title="Permalink to this headline">¶</a></h2>
+<p>The <strong class="command">lappdeploy</strong> script is designed to be independent from the type of
+used media. This can be a network share reached from its UNC name (e.g.
+<code class="file docutils literal"><span class="pre">\myservershare</span></code>), a DVD or CD, a USB Stick or any removable media.
+Thus the media building is limited to copy files or use your favourite CD/DVD
+burner utility.</p>
+<p>The medium must contain the directory with installers (see
+<a class="reference internal" href="#howto-deploy-build-applist"><span class="std std-ref">Build the application list</span></a>) according to the <span class="target" id="index-10"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-APP_STORE_DIR"><code class="xref std std-envvar docutils literal"><span class="pre">APP_STORE_DIR</span></code></a>
+environment variable and the following files from the <code class="file docutils literal"><span class="pre">lappdeploy</span></code>
+directory:</p>
+<ul class="simple">
+<li><code class="file docutils literal"><span class="pre">lappdeploy.cmd</span></code></li>
+<li><code class="file docutils literal"><span class="pre">_appfilter.vbs</span></code></li>
+<li><code class="file docutils literal"><span class="pre">_log2mail.vbs</span></code></li>
+<li><code class="file docutils literal"><span class="pre">__exit__.cmd</span></code> (optional)</li>
+<li><code class="file docutils literal"><span class="pre">__init__.cmd</span></code> (optional)</li>
+</ul>
+<p>The below block show a typical file tree for a media of deployment:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>\
+├───lappdeploy
+│       lappdeploy.cmd
+│       _appfilter.vbs
+│       _log2mail.vbs
+│       __exit__.cmd
+│       __init__.cmd
+│
+└───appstore
+    │   applist-all.txt
+    │   applist-dummy.txt
+    │
+    ├───dummy
+    │       aninstaller.cmd
+    │       aninstaller.msi
+    │
+    └───extended dummy
+            aninstaller.cmd
+            __postinstall__.cmd
+</pre></div>
+</div>
+</div>
+<div class="section" id="deploy-from-a-dvd">
+<span id="howto-deploy-deploy-from-dvd"></span><h2>Deploy from a DVD<a class="headerlink" href="#deploy-from-a-dvd" title="Permalink to this headline">¶</a></h2>
+<p>The phase of deployment start by calling <strong class="command">lappdeploy</strong> script from a
+command shell. The only argument to pass is the set name according to your
+organisation choice (see <a class="reference internal" href="#howto-deploy-build-applist"><span class="std std-ref">Build the application list</span></a>)</p>
+<p>As any installation of program, you must launch the script with administrator
+privilege (right click on the command prompt link, and choose
+&#8220;<span class="menuselection">run as administrator</span>&#8221;) .</p>
+<div class="topic">
+<p class="topic-title first">Example</p>
+<p><code class="docutils literal"><span class="pre">C:\&gt;d:\lappdeploy\lappdeploy.cmd</span> <span class="pre">dummy</span></code></p>
+</div>
+</div>
+<div class="section" id="deploy-through-a-network">
+<span id="howto-deploy-deploy-through-network"></span><h2>Deploy through a network<a class="headerlink" href="#deploy-through-a-network" title="Permalink to this headline">¶</a></h2>
+<p>The phase of deployment start by calling <strong class="command">lappdeploy</strong> script from a
+command shell. The only argument to pass is the set name according to your
+organisation choice (see <a class="reference internal" href="#howto-deploy-build-applist"><span class="std std-ref">Build the application list</span></a>)</p>
+<p>As any installation of program, you must launch the script with administrator
+privilege (right click on the command prompt link, and choose
+&#8220;<span class="menuselection">run as administrator</span>&#8221;) .</p>
+<p>To push system integration further, you can call this script from a schedule
+task with the sending of an summary mail (see
+<a class="reference internal" href="#howto-deploy-tune-your-environment"><span class="std std-ref">Tune your environment</span></a>).</p>
+<div class="topic">
+<p class="topic-title first">Example</p>
+<p><code class="docutils literal"><span class="pre">C:&gt;\\myserver\share\lappdeploy.cmd</span> <span class="pre">dummy</span></code></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

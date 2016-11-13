@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Catalog Format &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="Data Structures" href="data-structures.html" />
+    <link rel="next" title="Applist Format" href="applist-format.html" />
+    <link rel="prev" title="Data Structures" href="data-structures.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Background Papers</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="data-structures.html">Data Structures</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Catalog Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="applist-format.html">Applist Format</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="supported-products.html">Supported Products</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../contents.html">Table Of Contents</a><ul>
+  <li><a href="index.html">Background Papers</a><ul>
+  <li><a href="data-structures.html">Data Structures</a><ul>
+      <li>Previous: <a href="data-structures.html" title="previous chapter">Data Structures</a></li>
+      <li>Next: <a href="applist-format.html" title="next chapter">Applist Format</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="catalog-format">
+<span id="background-catalog-format"></span><h1>Catalog Format<a class="headerlink" href="#catalog-format" title="Permalink to this headline">¶</a></h1>
+<p>The catalog is a file which is automatically generated, and <strong>must not be
+manually modified</strong>. It contains the applications database and specifies the
+following properties, for each application, using the JavaScript Object Notation
+(JSON), specified by <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7159.html"><strong>RFC 7159</strong></a>. The <a class="reference internal" href="../../lapptrack/lapptrack.html#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref py py-mod docutils literal"><span class="pre">lapptrack</span></code></a> script uses this
+database to build the input files used by the <code class="docutils literal"><span class="pre">lappdeploy</span></code> script.</p>
+<p>The constant <a class="reference internal" href="../../lapptrack/lapptrack.html#lapptrack.CATALOG_FNAME" title="lapptrack.CATALOG_FNAME"><code class="xref any py py-data docutils literal"><span class="pre">lapptrack.CATALOG_FNAME</span></code></a> specifies the file name of the catalog
+and it&#8217;s located in the &#8216;store&#8217; folder (see item <code class="docutils literal"><span class="pre">store</span></code> in the
+<a class="reference internal" href="../lapptrack_user_guide/lapptrack_ini.html#lapptrack-userguide-lapptrack-ini-core-section"><span class="std std-ref">Core Section</span></a> of the <strong class="command">lapptrack</strong>
+configuration file).</p>
+<p>The catalog contains several level of nested objects. The root level contains
+the metadata of the database and the main object.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>__version__</td>
+<td>is the version number of the catalog scheme.</td>
+</tr>
+<tr class="row-even"><td>__warning__</td>
+<td>is a warning message reminding that the content must not be
+modified.</td>
+</tr>
+<tr class="row-odd"><td>modified</td>
+<td>is the date of the latest modification expressed in the
+<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3339.html"><strong>RFC 3339</strong></a> format.</td>
+</tr>
+<tr class="row-even"><td>products</td>
+<td>is an object specifying the list of handled application as
+described in the configuration file (see <code class="docutils literal"><span class="pre">--configfile</span></code>).</td>
+</tr>
+</tbody>
+</table>
+<p>Each item of the products list is a 3-tuple specifying the deployment state of
+the application.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>pulled</td>
+<td>indicate that the editor of the application has published an
+update or a new major version.</td>
+</tr>
+<tr class="row-even"><td>fetched</td>
+<td>indicate that an update or a new major version of the
+application has been fetched. At this step, the system
+administrator must approved the version before its
+deployment (see <code class="docutils literal"><span class="pre">--approve</span></code>)</td>
+</tr>
+<tr class="row-odd"><td>approved</td>
+<td>indicate that the system administrator approved the
+deployment of the update or the new version. This version
+will be added in the <a class="reference internal" href="../glossary.html#term-applist"><code class="xref any std std-term docutils literal"><span class="pre">applist</span></code></a> file (see <code class="docutils literal"><span class="pre">--make</span></code>) to be
+deployed.</td>
+</tr>
+</tbody>
+</table>
+<p>Each item of the 3-tuple is an object containing the attributes of the
+application as described in <a class="reference internal" href="../../lapptrack/cots/core.html#cots.core.BaseProduct" title="cots.core.BaseProduct"><code class="xref py py-class docutils literal"><span class="pre">BaseProduct</span></code></a>.</p>
+<div class="topic">
+<p class="topic-title first">Example</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;__version__&quot;</span><span class="p">:</span> <span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;__warning__&quot;</span><span class="p">:</span> <span class="s2">&quot;This file is automatically generated, and must not be</span>
+<span class="s2">        manually modified. It contains the applications database and</span>
+<span class="s2">        specifies for each application its properties. Appdownload script</span>
+<span class="s2">        uses this database to build the applist files used by lappdeploy</span>
+<span class="s2">        script.&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-02-28T19:30:00&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;products&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;dummy&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;approved&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;announce_location&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.example.com/news.txt&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;change_summary&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;ul&gt;&lt;li&gt;version 1.0.0 published on</span>
+<span class="s2">                    2016-02-02&lt;/li&gt;&lt;ul&gt;&lt;li&gt;a dummy feature&lt;/li&gt;&lt;li&gt;Small</span>
+<span class="s2">                    miscellaneous improvements and bugfixes&lt;/li&gt;&lt;/ul&gt;</span>
+<span class="s2">                    &lt;li&gt;version 0.1.0 published on 2015-02-02&lt;/li&gt;&lt;ul&gt;</span>
+<span class="s2">                    &lt;li&gt;initial commit&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;This dummy module is a trivial example</span>
+<span class="s2">                    of a Product class implementation. &quot;</span><span class="p">,</span>
+                <span class="nt">&quot;display_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dummy Product v1.0.1&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;editor&quot;</span><span class="p">:</span> <span class="s2">&quot;Example. inc&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;feed_location&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.example.com/feed.rss&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;file_size&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
+                <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;installer&quot;</span><span class="p">:</span> <span class="s2">&quot;..\\~store\\app\\dummy\\Dummy Product_1.0.1.html&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.example.com/dist.zip&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dummy Product&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;published&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-10-27T17:01:30&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;release_note_location&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.example.com/release_note.txt&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;secure_hash&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;silent_inst_args&quot;</span><span class="p">:</span> <span class="s2">&quot;/silent&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;std_inst_args&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;unified&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.1&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;web_site_location&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.example.com/&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;fetched&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;pulled&quot;</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

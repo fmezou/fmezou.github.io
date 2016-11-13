@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Applist Format &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="Data Structures" href="data-structures.html" />
+    <link rel="next" title="Supported Products" href="supported-products.html" />
+    <link rel="prev" title="Catalog Format" href="catalog-format.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Background Papers</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="data-structures.html">Data Structures</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="catalog-format.html">Catalog Format</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Applist Format</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="supported-products.html">Supported Products</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../contents.html">Table Of Contents</a><ul>
+  <li><a href="index.html">Background Papers</a><ul>
+  <li><a href="data-structures.html">Data Structures</a><ul>
+      <li>Previous: <a href="catalog-format.html" title="previous chapter">Catalog Format</a></li>
+      <li>Next: <a href="supported-products.html" title="next chapter">Supported Products</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="applist-format">
+<span id="background-applist-format"></span><h1>Applist Format<a class="headerlink" href="#applist-format" title="Permalink to this headline">¶</a></h1>
+<p>applist file describes a list of application packages which will be deployed on
+a workstation or a server.</p>
+<p>These files are <a class="reference external" href="http://en.wikipedia.org/wiki/Text_file">text file</a> complying with the <a class="reference external" href="http://en.wikipedia.org/wiki/Text_file#Standard_Windows_.txt_files">Windows standard</a>. Since these
+files are used by scripts written in <a class="reference external" href="https://technet.microsoft.com/en-us/library/cc754340.aspx#BKMK_OVR">Command shell</a> or <a class="reference external" href="https://msdn.microsoft.com/library/d1wf56tt.aspx">Windows Script Host</a>,
+so it must use <a class="reference external" href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII printable characters</a> (i.e. no national or accented
+characters).</p>
+<p>This list matches the following format:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">appArch</span><span class="p">;</span> <span class="n">appName</span><span class="p">;</span> <span class="n">appVersion</span><span class="p">;</span> <span class="n">appPackage</span><span class="p">;</span> <span class="n">appArgs</span>
+</pre></div>
+</div>
+<p>Blank lines and comments introduced by a &#8216;#&#8217; sign are ignored.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">appArch</span></code></td>
+<td><p class="first">is the target architecture type (the Windows’ one) for the
+application. This argument may be empty or contain one of the
+following values: <code class="docutils literal"><span class="pre">x86</span></code> or <code class="docutils literal"><span class="pre">x64</span></code>.</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">x86</span></code>: the application works only on 32 bits architecture</li>
+<li><code class="docutils literal"><span class="pre">x64</span></code>: the application works only on 64 bits architecture</li>
+<li><code class="docutils literal"><span class="pre">&quot;&quot;</span></code>: the application or the installation program work on
+both architectures</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">appName</span></code></td>
+<td>is the name of the application as it appears in the
+Program Control Panel.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">appVersion</span></code></td>
+<td>is the version number of the application as it appears in the
+Program Control Panel.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">appPackage</span></code></td>
+<td>is the path name (full or relative) of executable file, command
+or MSI package, without argument, to launch for installing or
+upgrading the application. The <code class="docutils literal"><span class="pre">appPackage</span></code> may be prefixed
+with the <span class="target" id="index-0"></span><a class="reference internal" href="../lappdeploy_user_guide/environment_variables.html#envvar-APP_STORE_DIR"><code class="xref std std-envvar docutils literal"><span class="pre">APP_STORE_DIR</span></code></a> environment variable
+(e.g. <code class="docutils literal"><span class="pre">%APP_STORE_DIR%\dummy.exe</span></code>)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">appArgs</span></code></td>
+<td>are arguments to use when launching <code class="docutils literal"><span class="pre">appPackage</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="topic">
+<p class="topic-title first">Example</p>
+<div class="highlight-text" id="applist-example-txt"><div class="highlight"><pre><span></span>#appArch; appName; appVersion; appPackage; appArgs
+   ; Adobe Reader XI - Français; 11.0.08; %APP_STORE_DIR%\AdobeReader\AdbeRdr11008_fr_FR.exe
+x64; Java 7 Update 67 (64-bit); 7.0.670; %APP_STORE_DIR%\Java\jre-7u67-windows-x64.exe ; /s
+x86; 7-Zip 9.20; 9.20.00.0; %APP_STORE_DIR%\7-zip\7z920.msi
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

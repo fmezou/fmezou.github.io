@@ -1,0 +1,1346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>support.report – Reporting Manager &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="support – Supporting Modules Package" href="index.html" />
+    <link rel="next" title="support.pad – Lightweight Portable Application Description Support" href="pad.html" />
+    <link rel="prev" title="support – Supporting Modules Package" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../docs/contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../docs/about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../scripts.html">Main Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cots/index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">support.report</span></code> &#8211; Reporting Manager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#public-classes">Public Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#using-the-module">Using the module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#using-the-module-with-its-api">Using the module with its API</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#using-the-module-with-a-configuration-file">Using the module with a configuration file</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#objects-reference">Objects reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#configuration-file">Configuration file</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#report-templates">Report Templates</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="pad.html"><code class="docutils literal"><span class="pre">support.pad</span></code> &#8211; Lightweight Portable Application Description Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="progressbar.html"><code class="docutils literal"><span class="pre">support.progressbar</span></code> &#8211; Progress Bar Widgets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="semver.html"><code class="docutils literal"><span class="pre">support.semver</span></code> &#8211; Semantic Versioning Support</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../further-modules.html">Further Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../../docs/glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../docs/contents.html">Table Of Contents</a><ul>
+  <li><a href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul>
+  <li><a href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a></li>
+      <li>Next: <a href="pad.html" title="next chapter"><code class="docutils literal"><span class="pre">support.pad</span></code> &#8211; Lightweight Portable Application Description Support</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-support.report">
+<span id="support-report-reporting-manager"></span><h1><a class="reference internal" href="#module-support.report" title="support.report: Reporting Manager (all)"><code class="xref py py-mod docutils literal"><span class="pre">support.report</span></code></a> &#8211; Reporting Manager<a class="headerlink" href="#module-support.report" title="Permalink to this headline">¶</a></h1>
+<p>This module defines functions and classes which implement a flexible reporting
+manager for applications and libraries.</p>
+<div class="section" id="public-classes">
+<h2>Public Classes<a class="headerlink" href="#public-classes" title="Permalink to this headline">¶</a></h2>
+<p>This module is built around two main parts: the first one is the <strong>reporting
+manager</strong>; the second one is a collection of <strong>handlers</strong> which manages the way
+by which the report is going to be published.</p>
+<p>The <strong>reporting manager</strong> has only on public class.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.Report" title="support.report.Report"><code class="xref any py py-class docutils literal"><span class="pre">Report</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>To date, the module includes a number of <strong>handlers</strong> listed below in
+alphabetical order. A handler is a derived class from the <a class="reference internal" href="#support.report.BaseHandler" title="support.report.BaseHandler"><code class="xref any py py-class docutils literal"><span class="pre">BaseHandler</span></code></a>
+class.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.FileHandler" title="support.report.FileHandler"><code class="xref any py py-class docutils literal"><span class="pre">FileHandler</span></code></a></td>
+<td><a class="reference internal" href="#support.report.StreamHandler" title="support.report.StreamHandler"><code class="xref any py py-class docutils literal"><span class="pre">StreamHandler</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#support.report.MailHandler" title="support.report.MailHandler"><code class="xref any py py-class docutils literal"><span class="pre">MailHandler</span></code></a></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="using-the-module">
+<h2>Using the module<a class="headerlink" href="#using-the-module" title="Permalink to this headline">¶</a></h2>
+<p>The first step is to create a report and at least a handler, then you fill
+the report with some sections and then publish it. The creating step may done
+either in programmatic way or using a configuration file.</p>
+<div class="section" id="using-the-module-with-its-api">
+<h3>Using the module with its API<a class="headerlink" href="#using-the-module-with-its-api" title="Permalink to this headline">¶</a></h3>
+<p>Creating a report needs at least the following steps.</p>
+<ol class="arabic simple">
+<li>Create a <a class="reference internal" href="#support.report.Report" title="support.report.Report"><code class="xref any py py-class docutils literal"><span class="pre">Report</span></code></a> class instance.</li>
+<li>Set the template report with the <a class="reference internal" href="#support.report.Report.set_template" title="support.report.Report.set_template"><code class="xref any py py-meth docutils literal"><span class="pre">Report.set_template</span></code></a> method.</li>
+<li>Create at least a <strong>handler</strong> class instance (see <a class="reference internal" href="#support.report.FileHandler" title="support.report.FileHandler"><code class="xref any py py-class docutils literal"><span class="pre">FileHandler</span></code></a> for a file
+handler).</li>
+<li>Set the handler options (see <a class="reference internal" href="#support.report.FileHandler.set_filename" title="support.report.FileHandler.set_filename"><code class="xref any py py-meth docutils literal"><span class="pre">FileHandler.set_filename</span></code></a> for the file
+handler).</li>
+<li>Add the created handler to the report with the <a class="reference internal" href="#support.report.Report.add_handler" title="support.report.Report.add_handler"><code class="xref any py py-meth docutils literal"><span class="pre">Report.add_handler</span></code></a> method.</li>
+</ol>
+<p>A report mainly consist in four parts: a <em>header</em>, a <em>table of contents</em>, a list
+of <em>sections</em> and a <em>tail</em>. The <em>header</em> and the <em>tail</em> may have some optional
+variables which has set with the <a class="reference internal" href="#support.report.Report.set_attributes" title="support.report.Report.set_attributes"><code class="xref any py py-meth docutils literal"><span class="pre">Report.set_attributes</span></code></a> method. The
+<em>table of contents</em> is automatically generated from the list of <em>sections</em>.
+Theses are added to the report with the <a class="reference internal" href="#support.report.Report.add_section" title="support.report.Report.add_section"><code class="xref any py py-meth docutils literal"><span class="pre">Report.add_section</span></code></a> method.</p>
+<p>Then, the report is ready to be published by calling the <a class="reference internal" href="#support.report.Report.publish" title="support.report.Report.publish"><code class="xref any py py-meth docutils literal"><span class="pre">Report.publish</span></code></a> which
+is going to use the registered handlers.</p>
+<dl class="docutils">
+<dt>Examples</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">content_attributes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dummy Product&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;editor&quot;</span><span class="p">:</span> <span class="s2">&quot;Dummy Company, SA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Dummy product is a amazing tool to do nothing&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.0+dummy&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://dummy.exemple.com/installer.exe&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;installer&quot;</span><span class="p">:</span> <span class="s2">&quot;./store/installer_0.1.0+dummy.exe&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;release_note&quot;</span><span class="p">:</span> <span class="s2">&quot;http://dummy.exemple.com/release_note.html&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;published&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-02-18&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;file_size&quot;</span><span class="p">:</span> <span class="mi">12345689</span>
+<span class="p">}</span>
+
+<span class="n">a_report</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">Report</span><span class="p">()</span>
+<span class="n">a_report</span><span class="o">.</span><span class="n">set_template</span><span class="p">()</span>
+<span class="n">a_report</span><span class="o">.</span><span class="n">set_attributes</span><span class="p">(</span><span class="n">report_attributes</span><span class="p">)</span>
+
+<span class="n">a_handler</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">()</span>
+<span class="n">a_handler</span><span class="o">.</span><span class="n">set_filename</span><span class="p">(</span><span class="s2">&quot;report.html&quot;</span><span class="p">)</span>
+<span class="n">a_report</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">a_handler</span><span class="p">)</span>
+
+<span class="n">a_report</span><span class="o">.</span><span class="n">add_section</span><span class="p">(</span><span class="n">content_attributes</span><span class="p">)</span>
+<span class="n">a_report</span><span class="o">.</span><span class="n">publish</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="using-the-module-with-a-configuration-file">
+<h3>Using the module with a configuration file<a class="headerlink" href="#using-the-module-with-a-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>The creation step may be described in a configuration file (see
+<a class="reference internal" href="#report-example-ini"><span class="std std-ref">Example of configuration file</span></a> for an example) which is going to load by the
+<a class="reference internal" href="#support.report.Report.load_config" title="support.report.Report.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">Report.load_config</span></code></a> method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">a_report</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">Report</span><span class="p">()</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s2">&quot;report.example.ini&quot;</span><span class="p">)</span>
+<span class="n">a_report</span><span class="o">.</span><span class="n">load_config</span><span class="p">(</span><span class="n">_load_config</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="bp">False</span><span class="p">)</span>
+<span class="n">a_report</span><span class="o">.</span><span class="n">set_attributes</span><span class="p">(</span><span class="n">report_attributes</span><span class="p">)</span>
+<span class="n">a_report</span><span class="o">.</span><span class="n">add_section</span><span class="p">(</span><span class="n">content_attributes</span><span class="p">)</span>
+<span class="n">a_report</span><span class="o">.</span><span class="n">publish</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="objects-reference">
+<h2>Objects reference<a class="headerlink" href="#objects-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the objects defined in this module.</p>
+<dl class="class">
+<dt id="support.report.Report">
+<em class="property">class </em><code class="descclassname">support.report.</code><code class="descname">Report</code><a class="headerlink" href="#support.report.Report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Make and publish report with the registered handlers.</p>
+<p>The report is based on a template using named keyword argument and composed
+of named sections. The module use the <a class="reference internal" href="#report-template-html"><span class="std std-ref">HTML Default template</span></a> by default.
+The use of the named keyword argument is based on the <a class="reference external" href="https://docs.python.org/3/library/string.html#formatstrings" title="(in Python v3.5)"><code class="docutils literal"><span class="pre">Format</span> <span class="pre">String</span> <span class="pre">Syntax</span></code></a> of the
+<a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">string</span></code></a> module.</p>
+<p>Each section starts with a HTML comment and it ends with the start of next
+section or with the end of the file. The comment must have the following
+format and must be on one line:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;!-- $lau:&lt;name&gt;$ --&gt;
+</pre></div>
+</div>
+<p>where <code class="docutils literal"><span class="pre">name</span></code> MUST comprise only ASCII alphanumerics and hyphen
+[0-9A-Za-z-] and MUST NOT be empty.</p>
+<p>If a named section is not declared in <a class="reference internal" href="#support.report.Report.names" title="support.report.Report.names"><code class="xref any py py-attr docutils literal"><span class="pre">Report.names</span></code></a>, its contents is added
+to the current section (i.e. no section is created).</p>
+<dl class="attribute">
+<dt id="support.report.Report.names">
+<code class="descname">names</code><a class="headerlink" href="#support.report.Report.names" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list</em> &#8211; The well-known named sections in a report template.</p>
+</dd></dl>
+
+<dl class="docutils">
+<dt><strong>Configuration</strong></dt>
+<dd><a class="reference internal" href="#report-example-ini"><span class="std std-ref">Example of configuration file</span></a> details the configuration options the
+<a class="reference internal" href="#support.report.Report" title="support.report.Report"><code class="xref any py py-class docutils literal"><span class="pre">Report</span></code></a>.</dd>
+<dt><strong>Public Methods</strong></dt>
+<dd><p class="first">This class has a number of public methods listed below in alphabetical
+order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.Report.add_handler" title="support.report.Report.add_handler"><code class="xref any py py-meth docutils literal"><span class="pre">add_handler</span></code></a></td>
+<td><a class="reference internal" href="#support.report.Report.publish" title="support.report.Report.publish"><code class="xref any py py-meth docutils literal"><span class="pre">publish</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#support.report.Report.add_section" title="support.report.Report.add_section"><code class="xref any py py-meth docutils literal"><span class="pre">add_section</span></code></a></td>
+<td><a class="reference internal" href="#support.report.Report.set_attributes" title="support.report.Report.set_attributes"><code class="xref any py py-meth docutils literal"><span class="pre">set_attributes</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.Report.load_config" title="support.report.Report.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">load_config</span></code></a></td>
+<td><a class="reference internal" href="#support.report.Report.set_template" title="support.report.Report.set_template"><code class="xref any py py-meth docutils literal"><span class="pre">set_template</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Using Report...</strong></dt>
+<dd>The section &#8220;<a class="reference internal" href="#using-the-module">Using the module</a>&#8221; provides a simple use case of the
+class.</dd>
+</dl>
+<dl class="method">
+<dt id="support.report.Report._clear_template">
+<code class="descname">_clear_template</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#support.report.Report._clear_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the template.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.Report._load_default">
+<code class="descname">_load_default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#support.report.Report._load_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the report module with its default value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.Report._parse_template">
+<code class="descname">_parse_template</code><span class="sig-paren">(</span><em>template</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.Report._parse_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the template to extract the report sections.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The full path name of the template file.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.Report.add_handler">
+<code class="descname">add_handler</code><span class="sig-paren">(</span><em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.Report.add_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a handler to publish the report.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>handler</strong> (<a class="reference internal" href="#support.report.BaseHandler" title="support.report.BaseHandler"><em>BaseHandler</em></a>) &#8211; The handler to add, It&#8217;s a class instance
+derived from the <a class="reference internal" href="#support.report.BaseHandler" title="support.report.BaseHandler"><code class="xref any py py-class docutils literal"><span class="pre">BaseHandler</span></code></a> base class.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.Report.add_section">
+<code class="descname">add_section</code><span class="sig-paren">(</span><em>attributes</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.Report.add_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a section to the report.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attributes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) &#8211; The product attributes (typically the one
+returned by the <a class="reference internal" href="../cots/core.html#cots.core.BaseProduct.dump" title="cots.core.BaseProduct.dump"><code class="xref any py py-meth docutils literal"><span class="pre">cots.core.BaseProduct.dump</span></code></a> method).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.Report.load_config">
+<code class="descname">load_config</code><span class="sig-paren">(</span><em>config</em>, <em>append=True</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.Report.load_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the report module from a dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) &#8211; The configuration as described in the
+<code class="file docutils literal"><span class="pre">report.example.ini</span></code>.</li>
+<li><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) &#8211; (optional) False to indicate if the configuration
+specified by the <em class="dfn">config</em> parameter will overwrite the
+current configuration. True to indicate if the configuration
+specified by the <em class="dfn">config</em> parameter will append to the
+current configuration.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.Report.publish">
+<code class="descname">publish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#support.report.Report.publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publish the report with the registered handler</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.Report.set_attributes">
+<code class="descname">set_attributes</code><span class="sig-paren">(</span><em>attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.Report.set_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the attributes of the report.</p>
+<p>Theses attributes are used in the header and tail sections of the
+report (see <code class="docutils literal"><span class="pre">Title</span></code>, <code class="docutils literal"><span class="pre">BodyStart</span></code>, <code class="docutils literal"><span class="pre">BodyEnd</span></code>, <code class="docutils literal"><span class="pre">Tail</span></code> sections
+in the template)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attributes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) &#8211; The attributes.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.Report.set_template">
+<code class="descname">set_template</code><span class="sig-paren">(</span><em>template='U:\\Users\\frederic\\Mes Projets\\lappupdate\\lapptrack\\support\\report_template.html'</em>, <em>separator=''</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.Report.set_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the report template.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) is the full path name of the template
+file. The format of the template file is described in the Report
+class introduction. The <a class="reference internal" href="#report-template-html"><span class="std std-ref">HTML Default template</span></a> is used by
+default.</li>
+<li><strong>separator</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) The separator added at the end of each
+added section in the report.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="support.report.BaseHandler">
+<em class="property">class </em><code class="descclassname">support.report.</code><code class="descname">BaseHandler</code><a class="headerlink" href="#support.report.BaseHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Base class for all publishing handlers.</p>
+<dl class="docutils">
+<dt><strong>Public Methods</strong></dt>
+<dd><p class="first">This class has a number of public methods listed below in alphabetical
+order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.BaseHandler.load_config" title="support.report.BaseHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">load_config</span></code></a></td>
+<td><a class="reference internal" href="#support.report.BaseHandler.publish" title="support.report.BaseHandler.publish"><code class="xref any py py-meth docutils literal"><span class="pre">publish</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Methods to Override</strong></dt>
+<dd><p class="first">This class is a abstract class, so all the methods must be
+overridden. They are listed below in alphabetical order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.BaseHandler._load_default" title="support.report.BaseHandler._load_default"><code class="xref any py py-meth docutils literal"><span class="pre">_load_default</span></code></a></td>
+<td><a class="reference internal" href="#support.report.BaseHandler.load_config" title="support.report.BaseHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">load_config</span></code></a></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><a class="reference internal" href="#support.report.BaseHandler.publish" title="support.report.BaseHandler.publish"><code class="xref any py py-meth docutils literal"><span class="pre">publish</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Using BaseHandler...</strong></dt>
+<dd>This class is the abstract class for publishing handler used by
+<a class="reference internal" href="#support.report.Report" title="support.report.Report"><code class="xref any py py-class docutils literal"><span class="pre">Report</span></code></a> and this one only use the public methods.</dd>
+</dl>
+<dl class="method">
+<dt id="support.report.BaseHandler._load_default">
+<code class="descname">_load_default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#support.report.BaseHandler._load_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the handler with its default value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.BaseHandler.load_config">
+<code class="descname">load_config</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.BaseHandler.load_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the handler from a dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) &#8211; The configuration as described in the
+<code class="file docutils literal"><span class="pre">report.example.ini</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.BaseHandler.publish">
+<code class="descname">publish</code><span class="sig-paren">(</span><em>report</em>, <em>subtype</em>, <em>charset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.BaseHandler.publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publish the report</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>report</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The report.</li>
+<li><strong>subtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The subtype of the content report as defined by the
+<a class="reference external" href="http://www.iana.org/assignments/media-types/media-types.xhtml#text">IANA</a>.</li>
+<li><strong>charset</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The charset used in the report. If a &#8220;charset&#8221;
+parameter is specified in the report, this parameter should not
+used according to the <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6838.html"><strong>RFC 6838</strong></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="support.report.MailHandler">
+<em class="property">class </em><code class="descclassname">support.report.</code><code class="descname">MailHandler</code><a class="headerlink" href="#support.report.MailHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#support.report.BaseHandler" title="support.report.BaseHandler"><code class="xref py py-class docutils literal"><span class="pre">support.report.BaseHandler</span></code></a></p>
+<p>Mail publishing handler.</p>
+<p>This concrete class implements the publishing mechanism by sending the
+report by mail. So most of information are in the <a class="reference internal" href="#support.report.BaseHandler" title="support.report.BaseHandler"><code class="xref any py py-class docutils literal"><span class="pre">BaseHandler</span></code></a> class
+documentation. The information below focuses on the added value of this
+class.</p>
+<dl class="docutils">
+<dt><strong>Public Methods</strong></dt>
+<dd><p class="first">This class has a number of public methods listed below in alphabetical
+order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.MailHandler.load_config" title="support.report.MailHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">load_config</span></code></a></td>
+<td><a class="reference internal" href="#support.report.MailHandler.set_sent_mail_folder" title="support.report.MailHandler.set_sent_mail_folder"><code class="xref any py py-meth docutils literal"><span class="pre">set_sent_mail_folder</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#support.report.MailHandler.publish" title="support.report.MailHandler.publish"><code class="xref any py py-meth docutils literal"><span class="pre">publish</span></code></a></td>
+<td><a class="reference internal" href="#support.report.MailHandler.set_pending_mail_folder" title="support.report.MailHandler.set_pending_mail_folder"><code class="xref any py py-meth docutils literal"><span class="pre">set_pending_mail_folder</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.MailHandler.set_credentials" title="support.report.MailHandler.set_credentials"><code class="xref any py py-meth docutils literal"><span class="pre">set_credentials</span></code></a></td>
+<td><a class="reference internal" href="#support.report.MailHandler.set_subject" title="support.report.MailHandler.set_subject"><code class="xref any py py-meth docutils literal"><span class="pre">set_subject</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#support.report.MailHandler.set_from_address" title="support.report.MailHandler.set_from_address"><code class="xref any py py-meth docutils literal"><span class="pre">set_from_address</span></code></a></td>
+<td><a class="reference internal" href="#support.report.MailHandler.set_to_addresses" title="support.report.MailHandler.set_to_addresses"><code class="xref any py py-meth docutils literal"><span class="pre">set_to_addresses</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.MailHandler.set_host" title="support.report.MailHandler.set_host"><code class="xref any py py-meth docutils literal"><span class="pre">set_host</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Overridden Methods</strong></dt>
+<dd><p class="first">This class is a concrete class, so the overridden methods are listed
+below in alphabetical order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.MailHandler._load_default" title="support.report.MailHandler._load_default"><code class="xref any py py-meth docutils literal"><span class="pre">_load_default</span></code></a></td>
+<td><a class="reference internal" href="#support.report.MailHandler.load_config" title="support.report.MailHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">load_config</span></code></a></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><a class="reference internal" href="#support.report.MailHandler.publish" title="support.report.MailHandler.publish"><code class="xref any py py-meth docutils literal"><span class="pre">publish</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Using MailHandler...</strong></dt>
+<dd><p class="first">The &#8220;<a class="reference internal" href="#using-the-module">Using the module</a>&#8221; section provides a simple use case of a
+publishing handler concrete class (a file handler in the example). The
+handler classes differ by the options to set.</p>
+<p>For this handler, only the mail host and the mail recipient must be set
+with the <a class="reference internal" href="#support.report.MailHandler.set_host" title="support.report.MailHandler.set_host"><code class="xref any py py-meth docutils literal"><span class="pre">set_host</span></code></a> and <a class="reference internal" href="#support.report.MailHandler.set_to_addresses" title="support.report.MailHandler.set_to_addresses"><code class="xref any py py-meth docutils literal"><span class="pre">set_to_addresses</span></code></a> methods as shown in the
+following example. All other options have default values.</p>
+<dl class="docutils">
+<dt>Examples</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">a_handler</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">MailHandler</span><span class="p">()</span>
+<span class="n">a_handler</span><span class="o">.</span><span class="n">set_host</span><span class="p">(</span><span class="s2">&quot;smtp.example.com&quot;</span><span class="p">)</span>
+<span class="n">a_handler</span><span class="o">.</span><span class="n">set_to_addresses</span><span class="p">(</span><span class="s2">&quot;sysadmin@example.com&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="last">The above steps, except the first one, may be described in a dictionary
+which is going to load by the <a class="reference internal" href="#support.report.MailHandler.load_config" title="support.report.MailHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">MailHandler.load_config</span></code></a> method. The
+<a class="reference internal" href="#support.report.Report.load_config" title="support.report.Report.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">Report.load_config</span></code></a> method use this one to set options for each
+declared handler (see &#8220;<a class="reference internal" href="#configuration-file">Configuration file</a>&#8221; section).</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="support.report.MailHandler._load_default">
+<code class="descname">_load_default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler._load_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the handler with its default value.</p>
+<p>For the mail handler, there is no default value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.MailHandler._subject2filename">
+<code class="descname">_subject2filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler._subject2filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a mail subject in a file name.</p>
+<p>The method replace special characters in string using the %xx escape
+using the <a class="reference external" href="https://docs.python.org/3/library/urllib.parse.html#urllib.parse.quote" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">urllib.parse.quote</span></code></a> function.</p>
+<p>The method use only the first 20 characters of the subject to avoid long
+file name. The file name has a suffix based on current date time to
+guarantee to have a unique value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">unique string for the filename.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.MailHandler.load_config">
+<code class="descname">load_config</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler.load_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the handler from a dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) &#8211; The configuration as described in the
+<code class="file docutils literal"><span class="pre">report.example.ini</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.MailHandler.publish">
+<code class="descname">publish</code><span class="sig-paren">(</span><em>report</em>, <em>subtype</em>, <em>charset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler.publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publish the report</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>report</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The report.</li>
+<li><strong>subtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The subtype of the content report as defined by the
+<a class="reference external" href="http://www.iana.org/assignments/media-types/media-types.xhtml#text">IANA</a>.</li>
+<li><strong>charset</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The charset used in the report. If a &#8220;charset&#8221;
+parameter is specified in the report, this parameter should not
+used according to the <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6838.html"><strong>RFC 6838</strong></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.MailHandler.set_credentials">
+<code class="descname">set_credentials</code><span class="sig-paren">(</span><em>credentials</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler.set_credentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the recipients mail addresses.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>credentials</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a>) &#8211; The username and the password to connect to the
+SMTP server.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.MailHandler.set_from_address">
+<code class="descname">set_from_address</code><span class="sig-paren">(</span><em>address=''</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler.set_from_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the sender mail address.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>address</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) The mail addresses of the sender. If not
+specified, the address is set to the local hostname. (see
+<a class="reference external" href="https://docs.python.org/3/library/smtplib.html#smtplib.SMTP" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">smtplib.SMTP</span></code></a>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.MailHandler.set_host">
+<code class="descname">set_host</code><span class="sig-paren">(</span><em>hostname</em>, <em>port_number=25</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler.set_host" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the SMTP host.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hostname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The full qualified name of the SMTP server host.</li>
+<li><strong>port_number</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; (optional): The port number to use. By default,
+the standard SMTP port number is used.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.MailHandler.set_pending_mail_folder">
+<code class="descname">set_pending_mail_folder</code><span class="sig-paren">(</span><em>path=''</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler.set_pending_mail_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the pending mail special folder.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) The full path name of the folder where a copy
+of the mail will be written until it is sent. It avoid to lost
+mail if the mail server configuration is erroneous or if the
+mail server doesn&#8217;t answer. An empty string does nothing.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.MailHandler.set_sent_mail_folder">
+<code class="descname">set_sent_mail_folder</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler.set_sent_mail_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the mail sent special folder.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The full path name of the folder where a copy of the
+mail will be written. If the folder doesn&#8217;t exit, it will be
+create. An empty string does nothing.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.MailHandler.set_subject">
+<code class="descname">set_subject</code><span class="sig-paren">(</span><em>subject=''</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler.set_subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the subject mail.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>subject</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The subject mail. An empty string does nothing.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.MailHandler.set_to_addresses">
+<code class="descname">set_to_addresses</code><span class="sig-paren">(</span><em>addresses</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.MailHandler.set_to_addresses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the recipients mail addresses.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>addresses</strong> (<em>str or list</em>) &#8211; The mail addresses of the recipient. An
+empty item of the list, an empty list or an empty string (or
+only composed of space) raised a ValueError exception.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="support.report.FileHandler">
+<em class="property">class </em><code class="descclassname">support.report.</code><code class="descname">FileHandler</code><a class="headerlink" href="#support.report.FileHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#support.report.BaseHandler" title="support.report.BaseHandler"><code class="xref py py-class docutils literal"><span class="pre">support.report.BaseHandler</span></code></a></p>
+<p>File publishing handler.</p>
+<p>This concrete class implements the publishing mechanism by writing the
+report in a regular file. So most of information are in the <a class="reference internal" href="#support.report.BaseHandler" title="support.report.BaseHandler"><code class="xref any py py-class docutils literal"><span class="pre">BaseHandler</span></code></a>
+class documentation. The information below focuses on the added value of
+this class.</p>
+<dl class="docutils">
+<dt><strong>Public Methods</strong></dt>
+<dd><p class="first">This class has a number of public methods listed below in alphabetical
+order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.FileHandler.load_config" title="support.report.FileHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">load_config</span></code></a></td>
+<td><a class="reference internal" href="#support.report.FileHandler.set_filename" title="support.report.FileHandler.set_filename"><code class="xref any py py-meth docutils literal"><span class="pre">set_filename</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#support.report.FileHandler.publish" title="support.report.FileHandler.publish"><code class="xref any py py-meth docutils literal"><span class="pre">publish</span></code></a></td>
+<td><a class="reference internal" href="#support.report.FileHandler.set_mode" title="support.report.FileHandler.set_mode"><code class="xref any py py-meth docutils literal"><span class="pre">set_mode</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Overridden Methods</strong></dt>
+<dd><p class="first">This class is a concrete class, so the overridden methods are listed
+below in alphabetical order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.FileHandler._load_default" title="support.report.FileHandler._load_default"><code class="xref any py py-meth docutils literal"><span class="pre">_load_default</span></code></a></td>
+<td><a class="reference internal" href="#support.report.FileHandler.load_config" title="support.report.FileHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">load_config</span></code></a></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><a class="reference internal" href="#support.report.FileHandler.publish" title="support.report.FileHandler.publish"><code class="xref any py py-meth docutils literal"><span class="pre">publish</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Using MailHandler...</strong></dt>
+<dd><p class="first">The &#8220;<a class="reference internal" href="#using-the-module">Using the module</a>&#8221; section provides a simple use case of a
+publishing handler concrete class (precisely a file handler in the
+example). The handler classes differ by the options to set.</p>
+<p>For this handler, only filename must be set with the <a class="reference internal" href="#support.report.FileHandler.set_filename" title="support.report.FileHandler.set_filename"><code class="xref any py py-meth docutils literal"><span class="pre">set_filename</span></code></a> as
+shown in the following example. All other options have default values.</p>
+<p>With the default settings, the file is open in overwriting mode (i.e
+(&#8220;w&#8221; <a class="reference external" href="https://docs.python.org/3/library/functions.html#open" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">open</span></code></a> mode). The <a class="reference internal" href="#support.report.FileHandler.set_mode" title="support.report.FileHandler.set_mode"><code class="xref any py py-meth docutils literal"><span class="pre">set_mode</span></code></a> sets the opening mode of the file
+(practically the &#8220;w&#8221; or &#8220;a&#8221; mode, the others mode aren&#8217;t useful in this
+context).</p>
+<dl class="docutils">
+<dt>Examples</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">a_handler</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">()</span>
+<span class="n">a_handler</span><span class="o">.</span><span class="n">set_filename</span><span class="p">(</span><span class="s2">&quot;report.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="last">The above steps, except the first one, may be described in a dictionary
+which is going to load by the <a class="reference internal" href="#support.report.FileHandler.load_config" title="support.report.FileHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">FileHandler.load_config</span></code></a> method. The
+<a class="reference internal" href="#support.report.Report.load_config" title="support.report.Report.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">Report.load_config</span></code></a> method use this one to set options for each
+declared handler (see &#8220;<a class="reference internal" href="#configuration-file">Configuration file</a>&#8221; section).</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="support.report.FileHandler._load_default">
+<code class="descname">_load_default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#support.report.FileHandler._load_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the handler with its default value.</p>
+<p>For the file handler, there is no default value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.FileHandler.load_config">
+<code class="descname">load_config</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.FileHandler.load_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the handler from a dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) &#8211; The configuration as described in
+<a class="reference internal" href="../../docs/lapptrack_user_guide/report_ini.html#lapptrack-userguide-report-ini-content"><span class="std std-ref">report.ini</span></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.FileHandler.publish">
+<code class="descname">publish</code><span class="sig-paren">(</span><em>report</em>, <em>subtype</em>, <em>charset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.FileHandler.publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publish the report</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>report</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The report.</li>
+<li><strong>subtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The subtype of the content report as defined by the
+<a class="reference external" href="http://www.iana.org/assignments/media-types/media-types.xhtml#text">IANA</a>.</li>
+<li><strong>charset</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The charset used in the report. If a &#8220;charset&#8221;
+parameter is specified in the report, this parameter should not
+used according to the <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6838.html"><strong>RFC 6838</strong></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.FileHandler.set_filename">
+<code class="descname">set_filename</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.FileHandler.set_filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the full path name of the destination file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The full path name of the destination file.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.FileHandler.set_mode">
+<code class="descname">set_mode</code><span class="sig-paren">(</span><em>mode='w'</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.FileHandler.set_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the mode in which the file is opened.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The mode in which the file is opened.(see <a class="reference external" href="https://docs.python.org/3/library/functions.html#open" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">open</span></code></a>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="support.report.StreamHandler">
+<em class="property">class </em><code class="descclassname">support.report.</code><code class="descname">StreamHandler</code><a class="headerlink" href="#support.report.StreamHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#support.report.BaseHandler" title="support.report.BaseHandler"><code class="xref py py-class docutils literal"><span class="pre">support.report.BaseHandler</span></code></a></p>
+<p>Stream publishing handler.</p>
+<p>This concrete class implements the publishing mechanism by writing the
+report in a stream. So most of information are in the <a class="reference internal" href="#support.report.BaseHandler" title="support.report.BaseHandler"><code class="xref any py py-class docutils literal"><span class="pre">BaseHandler</span></code></a> class
+documentation. The information below focuses on the added value of this
+class.</p>
+<dl class="docutils">
+<dt><strong>Public Methods</strong></dt>
+<dd><p class="first">This class has a number of public methods listed below in alphabetical
+order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.StreamHandler.load_config" title="support.report.StreamHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">load_config</span></code></a></td>
+<td><a class="reference internal" href="#support.report.StreamHandler.set_stream" title="support.report.StreamHandler.set_stream"><code class="xref any py py-meth docutils literal"><span class="pre">set_stream</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#support.report.StreamHandler.publish" title="support.report.StreamHandler.publish"><code class="xref any py py-meth docutils literal"><span class="pre">publish</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Overridden Methods</strong></dt>
+<dd><p class="first">This class is a concrete class, so the overridden methods are listed
+below in alphabetical order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.report.StreamHandler._load_default" title="support.report.StreamHandler._load_default"><code class="xref any py py-meth docutils literal"><span class="pre">_load_default</span></code></a></td>
+<td><a class="reference internal" href="#support.report.StreamHandler.load_config" title="support.report.StreamHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">load_config</span></code></a></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><a class="reference internal" href="#support.report.StreamHandler.publish" title="support.report.StreamHandler.publish"><code class="xref any py py-meth docutils literal"><span class="pre">publish</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Using MailHandler...</strong></dt>
+<dd><p class="first">The &#8220;<a class="reference internal" href="#using-the-module">Using the module</a>&#8221; section provides a simple use case of a
+publishing handler concrete class (a file handler in the example). The
+handler classes differ by the options to set.</p>
+<p>For this handler, there is no mandatory option to set, the only option
+is the stream, and its default value is the standard output
+(see <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.stdout" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">sys.stdout</span></code></a>).</p>
+<dl class="docutils">
+<dt>Examples</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">a_handler</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="last">The above steps, except the first one, may be described in a dictionary
+which is going to load by the <a class="reference internal" href="#support.report.StreamHandler.load_config" title="support.report.StreamHandler.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">StreamHandler.load_config</span></code></a> method. The
+<a class="reference internal" href="#support.report.Report.load_config" title="support.report.Report.load_config"><code class="xref any py py-meth docutils literal"><span class="pre">Report.load_config</span></code></a> method use this one to set options for each
+declared handler (see &#8220;<a class="reference internal" href="#configuration-file">Configuration file</a>&#8221; section).</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="support.report.StreamHandler._load_default">
+<code class="descname">_load_default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#support.report.StreamHandler._load_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the handler with its default value.</p>
+<p>For the file handler, there is no default value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.StreamHandler.load_config">
+<code class="descname">load_config</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.StreamHandler.load_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the handler from a dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) &#8211; The configuration as described in the
+<code class="file docutils literal"><span class="pre">report.example.ini</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.StreamHandler.publish">
+<code class="descname">publish</code><span class="sig-paren">(</span><em>report</em>, <em>subtype</em>, <em>charset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.StreamHandler.publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publish the report</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>report</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The report.</li>
+<li><strong>subtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The subtype of the content report as defined by the
+<a class="reference external" href="http://www.iana.org/assignments/media-types/media-types.xhtml#text">IANA</a>.</li>
+<li><strong>charset</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The charset used in the report. If a &#8220;charset&#8221;
+parameter is specified in the report, this parameter should not
+used according to the <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6838.html"><strong>RFC 6838</strong></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="support.report.StreamHandler.set_stream">
+<code class="descname">set_stream</code><span class="sig-paren">(</span><em>stream=&lt;colorama.ansitowin32.StreamWrapper object at 0x0000029114D0B588&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.StreamHandler.set_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the stream in which the report will be written.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.TextIOWrapper" title="(in Python v3.5)"><em>io.TextIOWrapper</em></a>) &#8211; The standard stream on which report will
+be written. If it is not present, <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.stdout" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">sys.stdout</span></code></a> is going to be
+used.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="configuration-file">
+<h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper container" id="report-example-ini">
+<div class="code-block-caption"><span class="caption-text">Example of configuration file</span><a class="headerlink" href="#report-example-ini" title="Permalink to this code">¶</a></div>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1"># This ini file contains the configuration details of the report module.</span>
+<span class="c1"># Only one report and its ways of publication have to define in this file. If</span>
+<span class="c1"># you need of several report, you must define several configurations file and</span>
+<span class="c1"># call `Report.load_config()` method for each of them.</span>
+<span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Core section contains configuration items for the report processor.</span>
+<span class="c1"># handlers (mandatory): is the list of handlers to publish the report. Each</span>
+<span class="c1"># handler has to have a corresponding section for its own configuration.</span>
+<span class="c1"># template (optional): is the full path name of the template file. The Report</span>
+<span class="c1"># class introduction described the format of the template file. The default</span>
+<span class="c1"># value is &#39;summary_tmpl.html&#39;.</span>
+<span class="k">[core]</span>
+<span class="na">handlers</span> <span class="o">=</span> <span class="s">mailhandler,filehandler</span>
+<span class="c1">;template = summary_tmpl.html</span>
+
+<span class="c1"># Attributes section contains named keyword used in the template report (see</span>
+<span class="c1"># `template` item in the above section. Theses attributes are used in the header</span>
+<span class="c1"># and tail sections of the report (see `Title`, `BodyStart`, `BodyEnd`, `Tail`</span>
+<span class="c1"># sections in the template). The &#39;summary_tmpl.html&#39; doesn&#39;t use any additional</span>
+<span class="c1"># attribute, so this section is empty if you use the default template.</span>
+<span class="c1">;[attributes]</span>
+<span class="c1">;about = &quot;Short text to summarize the report content&quot;</span>
+
+<span class="c1"># Handlers section contains configuration details for handlers declared in the</span>
+<span class="c1"># `core`section (see `handlers`item).</span>
+<span class="c1"># The following sections give an example for each handler supported by the</span>
+<span class="c1"># `report` module (send a mail, write in a file, write in a stream). Each</span>
+<span class="c1"># handler section has to define a `class` item.</span>
+<span class="c1"># Warning: name section must be lowercase, since the section name is a key in</span>
+<span class="c1"># core section.</span>
+<span class="c1">#</span>
+<span class="c1"># Mail handler.</span>
+<span class="c1"># class: indicates the handler’s class (as determined in the report module).</span>
+<span class="c1"># By default, the name of the section is used as the class name.</span>
+<span class="c1"># host (mandatory): is a string containing the full qualified name of the SMTP</span>
+<span class="c1"># server host, or a 2-tuple containing the full qualified name of the SMTP</span>
+<span class="c1"># server and the port number to use.</span>
+<span class="c1"># credentials (optional): is a 2-tuple containing the username and the password</span>
+<span class="c1"># to connect to the SMTP server.</span>
+<span class="c1"># from_address(optional): is a string containing the mail addresses of the</span>
+<span class="c1"># sender. If not specified, the address is set to the local hostname. (see</span>
+<span class="c1"># smtplib.SMTP())</span>
+<span class="c1"># mail_sent (optional): is the full path name of the folder where a copy of the</span>
+<span class="c1"># mail will be written. An empty string does nothing.</span>
+<span class="c1"># pending_mail (optional): is the full path name of the folder where a copy of</span>
+<span class="c1"># the mail will be written until it is sent. It avoid to lost mail if the mail</span>
+<span class="c1"># server configuration is erroneous or if the mail server doesn&#39;t answer. An</span>
+<span class="c1"># empty string does nothing.</span>
+<span class="c1"># to_addresses (mandatory): is a string or a list containing the mail addresses</span>
+<span class="c1"># of the recipient.</span>
+<span class="c1"># subject (optional): is a string containing the mail subject. An empty string</span>
+<span class="c1"># does nothing.</span>
+<span class="k">[mailhandler]</span>
+<span class="na">class</span> <span class="o">=</span> <span class="s">MailHandler</span>
+<span class="na">host</span> <span class="o">=</span> <span class="s">smtp.example.com</span>
+<span class="c1">;host = smtp.example.com, 25</span>
+<span class="c1">;credentials= username, password</span>
+<span class="c1">;from_address = lappupdate@example.com</span>
+<span class="c1">;mail_sent = ./mailstore/sent</span>
+<span class="c1">;pending_mail = ./mailstore/pending</span>
+<span class="na">to_addresses</span> <span class="o">=</span> <span class="s">sysadmin@example.com</span>
+<span class="c1">;to_addresses = sysadmin@example.com, helpdesk@example.com</span>
+<span class="c1">;subject = lAppUpdate: New Update(s) Alert</span>
+
+<span class="c1"># File handler.</span>
+<span class="c1"># class: indicates the handler’s class (as determined in the report module).</span>
+<span class="c1"># By default, the name of the section is used as the class name.</span>
+<span class="c1"># filename (mandatory): is a string containing the full path name of the</span>
+<span class="c1"># destination file.</span>
+<span class="c1"># mode (optional): is a string specifying the mode in which the file is opened.</span>
+<span class="c1"># (see [`open()`](https://docs.python.org/3/library/functions.html#open)</span>
+<span class="k">[filehandler]</span>
+<span class="na">class</span> <span class="o">=</span> <span class="s">FileHandler</span>
+<span class="na">filename</span> <span class="o">=</span> <span class="s">./tempstore/report.html</span>
+<span class="c1">;mode = w</span>
+
+<span class="c1"># Stream handler.</span>
+<span class="c1"># class: indicates the handler’s class (as determined in the report module).</span>
+<span class="c1"># By default, the name of the section is used as the class name.</span>
+<span class="c1"># stream (optional): is a string specifying the [standard stream](https://docs.</span>
+<span class="c1"># python.org/3/library/sys.html#sys.stdout) on which report will be written. By </span>
+<span class="c1"># default, sys.stdout will be used.</span>
+<span class="k">[streamhandler]</span>
+<span class="na">class</span> <span class="o">=</span> <span class="s">StreamHandler</span>
+<span class="c1">;stream = sys.stderr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="report-templates">
+<h2>Report Templates<a class="headerlink" href="#report-templates" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper container" id="report-template-html">
+<div class="code-block-caption"><span class="caption-text">HTML Default template</span><a class="headerlink" href="#report-template-html" title="Permalink to this code">¶</a></div>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">en-GB</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:HeaderStart$ --&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">Content-Type</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="o">&lt;!</span><span class="nt">--</span>
+        <span class="c">/* Font Definitions */</span>
+        <span class="k">@font-face</span>
+            <span class="p">{</span><span class="nt">font-family</span><span class="nd">:Wingdings</span><span class="o">;</span>
+            <span class="nt">panose-1</span><span class="nd">:5</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span><span class="o">;</span><span class="p">}</span>
+        <span class="k">@font-face</span>
+            <span class="p">{</span><span class="nt">font-family</span><span class="nd">:Wingdings</span><span class="o">;</span>
+            <span class="nt">panose-1</span><span class="nd">:5</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span><span class="o">;</span><span class="p">}</span>
+        <span class="k">@font-face</span>
+            <span class="p">{</span><span class="nt">font-family</span><span class="nd">:Calibri</span><span class="o">;</span>
+            <span class="nt">panose-1</span><span class="nd">:2</span> <span class="nt">15</span> <span class="nt">5</span> <span class="nt">2</span> <span class="nt">2</span> <span class="nt">2</span> <span class="nt">4</span> <span class="nt">3</span> <span class="nt">2</span> <span class="nt">4</span><span class="o">;</span><span class="p">}</span>
+         <span class="c">/* Style Definitions */</span>
+        <span class="nt">p</span><span class="nc">.body</span><span class="o">,</span> <span class="nt">li</span><span class="nc">.body</span><span class="o">,</span> <span class="nt">div</span><span class="nc">.body</span>
+            <span class="p">{</span><span class="nb">margin-top</span><span class="o">:</span><span class="m">10.0pt</span><span class="p">;</span>
+            <span class="nb">margin-right</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:</span><span class="m">10.0pt</span><span class="p">;</span>
+            <span class="nb">margin-left</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">line-height</span><span class="o">:</span><span class="m">115%</span><span class="p">;</span>
+            <span class="nb">font-size</span><span class="o">:</span><span class="m">11.0pt</span><span class="p">;</span>
+            <span class="nb">font-family</span><span class="o">:</span><span class="s2">&quot;Calibri&quot;</span><span class="o">,</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">;}</span>
+        <span class="nt">h1</span>
+            <span class="p">{</span><span class="nb">margin-top</span><span class="o">:</span><span class="m">10.0pt</span><span class="p">;</span>
+            <span class="nb">margin-right</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-left</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:.</span><span class="m">0001pt</span><span class="p">;</span>
+            <span class="nb">line-height</span><span class="o">:</span><span class="m">115%</span><span class="p">;</span>
+            <span class="nb">background</span><span class="o">:</span><span class="m">#4F81BD</span><span class="p">;</span>
+            <span class="nb">border</span><span class="o">:</span><span class="nb">none</span><span class="p">;</span>
+            <span class="nb">padding</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">font-size</span><span class="o">:</span><span class="m">12.0pt</span><span class="p">;</span>
+            <span class="nb">font-family</span><span class="o">:</span><span class="s2">&quot;Calibri&quot;</span><span class="o">,</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">;</span>
+            <span class="nb">color</span><span class="o">:</span><span class="nb">white</span><span class="p">;</span>
+            <span class="nb">text-transform</span><span class="o">:</span><span class="nb">uppercase</span><span class="p">;</span>
+            <span class="nb">letter-spacing</span><span class="o">:.</span><span class="m">75pt</span><span class="p">;</span>
+            <span class="nb">font-weight</span><span class="o">:</span><span class="nb">bold</span><span class="p">;}</span>
+        <span class="nt">h2</span>
+            <span class="p">{</span><span class="nb">margin-top</span><span class="o">:</span><span class="m">10.0pt</span><span class="p">;</span>
+            <span class="nb">margin-right</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-left</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:.</span><span class="m">0001pt</span><span class="p">;</span>
+            <span class="nb">line-height</span><span class="o">:</span><span class="m">115%</span><span class="p">;</span>
+            <span class="nb">background</span><span class="o">:</span><span class="m">#DBE5F1</span><span class="p">;</span>
+            <span class="nb">border</span><span class="o">:</span><span class="nb">none</span><span class="p">;</span>
+            <span class="nb">padding</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">font-size</span><span class="o">:</span><span class="m">10.0pt</span><span class="p">;</span>
+            <span class="nb">font-family</span><span class="o">:</span><span class="s2">&quot;Calibri&quot;</span><span class="o">,</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">;</span>
+            <span class="nb">text-transform</span><span class="o">:</span><span class="nb">uppercase</span><span class="p">;</span>
+            <span class="nb">letter-spacing</span><span class="o">:.</span><span class="m">75pt</span><span class="p">;</span>
+            <span class="nb">font-weight</span><span class="o">:</span><span class="nb">normal</span><span class="p">;}</span>
+        <span class="nt">a</span><span class="nd">:link</span><span class="o">,</span> <span class="nt">span</span><span class="nc">.link</span>
+            <span class="p">{</span><span class="nb">color</span><span class="o">:</span><span class="nb">blue</span><span class="p">;</span>
+            <span class="nb">text-decoration</span><span class="o">:</span><span class="nb">underline</span><span class="p">;}</span>
+        <span class="nt">a</span><span class="nd">:visited</span><span class="o">,</span> <span class="nt">span</span><span class="nc">.visited</span>
+            <span class="p">{</span><span class="nb">color</span><span class="o">:</span><span class="nb">purple</span><span class="p">;</span>
+            <span class="nb">text-decoration</span><span class="o">:</span><span class="nb">underline</span><span class="p">;}</span>
+        <span class="nt">em</span>
+            <span class="p">{</span><span class="nb">color</span><span class="o">:</span><span class="m">#243F60</span><span class="p">;</span>
+            <span class="nb">text-transform</span><span class="o">:</span><span class="nb">uppercase</span><span class="p">;</span>
+            <span class="nb">letter-spacing</span><span class="o">:.</span><span class="m">25pt</span><span class="p">;</span>
+            <span class="nb">font-style</span><span class="o">:</span><span class="nb">normal</span><span class="p">;}</span>
+        <span class="nt">p</span>
+            <span class="p">{</span><span class="nb">margin-right</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-left</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">font-size</span><span class="o">:</span><span class="m">12.0pt</span><span class="p">;</span>
+            <span class="nb">font-family</span><span class="o">:</span><span class="s2">&quot;Times New Roman&quot;</span><span class="o">,</span><span class="s2">&quot;serif&quot;</span><span class="p">;}</span>
+        <span class="nt">p</span><span class="nc">.list_body</span><span class="o">,</span> <span class="nt">li</span><span class="nc">.list_body</span><span class="o">,</span> <span class="nt">div</span><span class="nc">.list_body</span>
+            <span class="p">{</span><span class="nb">margin-top</span><span class="o">:</span><span class="m">3.0pt</span><span class="p">;</span>
+            <span class="nb">margin-right</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:</span><span class="m">3.0pt</span><span class="p">;</span>
+            <span class="nb">margin-left</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">line-height</span><span class="o">:</span><span class="m">100%</span><span class="p">;</span>
+            <span class="nb">font-size</span><span class="o">:</span><span class="m">11.0pt</span><span class="p">;</span>
+            <span class="nb">font-family</span><span class="o">:</span><span class="s2">&quot;Calibri&quot;</span><span class="o">,</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">;}</span>
+        <span class="k">@page</span> <span class="nt">WordSection1</span>
+            <span class="p">{</span><span class="nt">size</span><span class="nd">:595</span><span class="nc">.3pt</span> <span class="nt">841</span><span class="nc">.9pt</span><span class="o">;</span>
+            <span class="nt">margin</span><span class="nd">:70</span><span class="nc">.85pt</span> <span class="nt">70</span><span class="nc">.85pt</span> <span class="nt">70</span><span class="nc">.85pt</span> <span class="nt">70</span><span class="nc">.85pt</span><span class="o">;</span><span class="p">}</span>
+        <span class="nt">div</span><span class="nc">.WordSection1</span>
+            <span class="p">{</span><span class="nb">page</span><span class="o">:</span><span class="n">WordSection1</span><span class="p">;}</span>
+        <span class="c">/* List Definitions */</span>
+        <span class="nt">ol</span>
+            <span class="p">{</span><span class="nb">margin-bottom</span><span class="o">:</span><span class="m">0cm</span><span class="p">;}</span>
+        <span class="nt">ul</span>
+            <span class="p">{</span><span class="nb">margin-bottom</span><span class="o">:</span><span class="m">0cm</span><span class="p">;}</span>
+        <span class="nt">--</span><span class="o">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:Title$ --&gt;</span>
+    <span class="c">&lt;!-- reserved for &lt;title&gt;&lt;/title&gt; tag in a HTML document published on a web server --&gt;</span>
+<span class="c">&lt;!-- $lau:HeaderEnd$ --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:BodyStart$ --&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">link</span><span class="o">=</span><span class="s">blue</span> <span class="na">vlink</span><span class="o">=</span><span class="s">purple</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">WordSection1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span><span class="p">&gt;</span>On {date}, the following products have available updates.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:TOCStart$ --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:TOCEntry$ --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">list_body</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#{id}&quot;</span><span class="p">&gt;</span>{name} ({version})<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:TOCEnd$ --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:SummaryStart$ --&gt;</span>
+<span class="c">&lt;!-- $lau:SummaryEntry$ --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;border:solid #4F81BD 3.0pt;padding:0cm 0cm 0cm 0cm;background:#4F81BD&#39;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin-top:0cm;line-height:normal;background:#4F81BD&#39;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;{id}&quot;</span><span class="p">&gt;</span>{name}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{location}&quot;</span><span class="p">&gt;</span>{name} ({version})<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> has been released on {published}. It will be
+        fetched on the next step.
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span><span class="p">&gt;</span>
+        file size: {file_size}<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+        hash: {secure_hash}
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;border:solid #DBE5F1 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DBE5F1&#39;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin-top:0cm;line-height:normal;background:#DBE5F1&#39;</span><span class="p">&gt;</span>
+            Release note
+        <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span><span class="p">&gt;</span>See the <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{release_note}&quot;</span><span class="p">&gt;</span>detailed change history<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;border:solid #DBE5F1 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DBE5F1&#39;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin-top:0cm;line-height:normal;background:#DBE5F1&#39;</span><span class="p">&gt;</span>
+            Product information
+        <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin-bottom:0cm;margin-bottom:.0001pt;line-height:normal&#39;</span><span class="p">&gt;</span>
+        Published by {editor}, {description}
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin-bottom:0cm;margin-bottom:.0001pt;line-height:normal&#39;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:SummaryEnd$ --&gt;</span>
+<span class="c">&lt;!-- $lau:BodyEnd$ --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:Tail$ --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper container" id="report-template-txt">
+<div class="code-block-caption"><span class="caption-text">Example of a text template</span><a class="headerlink" href="#report-template-txt" title="Permalink to this code">¶</a></div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&lt;!-- $lau:BodyStart$ --&gt;
+On {date}, products below have available updates.
+--------------------------------------------------------------------------------
+&lt;!-- $lau:SummaryStart$ --&gt;
+&lt;!-- $lau:SummaryEntry$ --&gt;
+{name} {version} released on {published}
+================================================================================
+location: {location}
+installer: {installer}
+file size: {file_size}
+
+Release note since ...
+------------------------
+See the detailed change history at {release_note}
+
+{release_note}
+
+Product information
+------------------------
+Published by {editor}, {description}
+&lt;!-- $lau:SummaryEnd$ --&gt;
+&lt;!-- $lau:BodyEnd$ --&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

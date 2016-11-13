@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>lapptrack.ini Content &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="Configuration Files" href="configuration_files.html" />
+    <link rel="next" title="logger.ini Content" href="logger_ini.html" />
+    <link rel="prev" title="Configuration Files" href="configuration_files.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">lAppTrack User Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usages.html">Usages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="configuration_files.html">Configuration Files</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">lapptrack.ini Content</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#core-section">Core Section</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#sets-section">Sets Section</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#applications-section">Applications Section</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#application-section">Application Section</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="logger_ini.html">logger.ini Content</a></li>
+<li class="toctree-l4"><a class="reference internal" href="report_ini.html">report.ini</a></li>
+<li class="toctree-l4"><a class="reference internal" href="report_template.html">Report Template</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../contents.html">Table Of Contents</a><ul>
+  <li><a href="index.html">lAppTrack User Guide</a><ul>
+  <li><a href="configuration_files.html">Configuration Files</a><ul>
+      <li>Previous: <a href="configuration_files.html" title="previous chapter">Configuration Files</a></li>
+      <li>Next: <a href="logger_ini.html" title="next chapter">logger.ini Content</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="lapptrack-ini-content">
+<span id="lapptrack-userguide-lapptrack-ini-content"></span><h1>lapptrack.ini Content<a class="headerlink" href="#lapptrack-ini-content" title="Permalink to this headline">¶</a></h1>
+<p>This file contains the configuration of <a class="reference internal" href="lapptrack.html"><span class="doc">lapptrack</span></a> script. It use a
+structure similar to what’s found in Microsoft Windows INI files, and parse with
+the <a class="reference external" href="https://docs.python.org/3/library/configparser.html#module-configparser" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">configparser</span></code></a> module of the Python standard library. See the &#8216;Supported INI
+File Structure&#8217; section to have details about the file format.</p>
+<p>The configuration consists of three main sections and one section per
+applications such as below.</p>
+<ul class="simple">
+<li><a class="reference internal" href="#lapptrack-userguide-lapptrack-ini-core-section"><span class="std std-ref">Core Section</span></a> contains general
+parameter</li>
+<li><a class="reference internal" href="#lapptrack-userguide-lapptrack-ini-sets-section"><span class="std std-ref">Sets Section</span></a> contains the list of
+named sets used to deploy applications</li>
+<li><a class="reference internal" href="#lapptrack-userguide-lapptrack-ini-applications-section"><span class="std std-ref">Applications Section</span></a> contains the
+list of applications to maintains.</li>
+<li><a class="reference internal" href="#lapptrack-userguide-lapptrack-ini-application-section"><span class="std std-ref">Application Section</span></a> contains
+configuration items for a specific application.</li>
+</ul>
+<p>The following items details each sections and the associated options, and give
+an example.</p>
+<div class="topic">
+<p class="topic-title first">Example of lapptrack.ini</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="c1"># Core section contains general parameters</span>
+<span class="c1"># store (mandatory): contains the path where installation package and applist</span>
+<span class="c1">#   files are stored.</span>
+<span class="c1"># logger (optional): contains the path name of the configuration file of the</span>
+<span class="c1"># logging system based on [`logging`](https://docs.python.org/3/library/</span>
+<span class="c1"># logging.html) module.</span>
+<span class="c1"># pulling_report (optional): contains the path name of the configuration file of</span>
+<span class="c1"># the pulling activity report  (see `cots.report` for detailed informations)</span>
+<span class="c1"># fetching_report (optional): contains the path name of the configuration file</span>
+<span class="c1"># of the fetching activity report (see `cots.report` for detailed informations)</span>
+<span class="c1"># approving_report (optional): contains the path name of the configuration file</span>
+<span class="c1"># of the approving activity report (see `cots.report` for detailed informations)</span>
+<span class="k">[core]</span>
+<span class="na">store</span> <span class="o">=</span> <span class="s">..\appstore</span>
+<span class="c1">;logger = .\logger.ini</span>
+<span class="c1">;pulling_report = .\pulling_report.ini</span>
+<span class="c1">;fetching_report = .\fetching_report.ini</span>
+<span class="c1">;approving_report = .\approving_report.ini</span>
+
+<span class="c1"># Sets section contains the list of named sets used to deploy applications.</span>
+<span class="c1"># &lt;name&gt;: is the name of the set and contains a set of computer names or any</span>
+<span class="c1">#   organisational units according with the lappdeploy script call. A set may be</span>
+<span class="c1">#   empty, in this case, no file is going to be created for this one.</span>
+<span class="c1">#   __manual__: is a special set to specify that the installer must be manually</span>
+<span class="c1">#   launched (an user interaction is necessary)</span>
+<span class="c1">#   __thirdparty__:is a special set to specify that the installer is going to be</span>
+<span class="c1">#  launched from an other installer (extension or language pack for exemple)</span>
+<span class="c1">#  __all__: is a special set to specify that the installer is going to be</span>
+<span class="c1">#  launched on all computer.</span>
+<span class="k">[sets]</span>
+<span class="na">__manual__</span> <span class="o">=</span> <span class="s">manual</span>
+<span class="na">__thirdparty__</span> <span class="o">=</span>
+<span class="na">__all__</span> <span class="o">=</span> <span class="s">all</span>
+<span class="na">userset</span> <span class="o">=</span> <span class="s">pc1, pc2</span>
+
+<span class="c1"># Applications section contains the list of applications to maintains.</span>
+<span class="c1"># &lt;name&gt;: is the name of the application section (see below) and contains</span>
+<span class="c1">#   a flag specifying if the application section have been taking into account.</span>
+<span class="k">[applications]</span>
+<span class="na">dummy</span> <span class="o">=</span> <span class="s">on</span>
+<span class="na">dummy2</span> <span class="o">=</span> <span class="s">on</span>
+<span class="na">ignored</span> <span class="o">=</span> <span class="s">off</span>
+
+<span class="c1"># Application section contains configuration items for a specific application</span>
+<span class="c1">#   (e.g. python module name which manage this application)</span>
+<span class="c1"># Warning: name section must be lowercase, since the section name is a key in</span>
+<span class="c1">#   applications section.</span>
+<span class="c1"># handler (optional): is the qualified name of the handler class (A dotted name</span>
+<span class="c1">#   showing the “path” from the global scope to the handler class). The default</span>
+<span class="c1">#   value is &#39;cots.&lt;section name&gt;.&lt;section name&gt;Handler&#39; with the first letter</span>
+<span class="c1">#   of section is capitalised for having a camel case name for the class</span>
+<span class="c1">#   handler.</span>
+<span class="c1"># path (optional): is the path name where to store the installer package.</span>
+<span class="c1">#   The default value is &#39;${core:store}\&lt;section name&gt;&#39;.</span>
+<span class="c1"># set (optional): is the name of the set associated with the application</span>
+<span class="c1">#   (see sets section)</span>
+<span class="c1">#   The default value is &#39;__all__&#39;.</span>
+<span class="k">[dummy2]</span>
+<span class="na">handler</span> <span class="o">=</span> <span class="s">cots.dummy.DummyHandler</span>
+<span class="na">path</span> <span class="o">=</span> <span class="s">${core:store}\dummy</span>
+<span class="na">set</span> <span class="o">=</span> <span class="s">userset</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="core-section">
+<span id="lapptrack-userguide-lapptrack-ini-core-section"></span><h2>Core Section<a class="headerlink" href="#core-section" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">[core]</span></code> section contains general parameters.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">store</span></code></td>
+<td>(mandatory) contains the path where installation package
+and <a class="reference internal" href="../glossary.html#term-applist"><code class="xref any std std-term docutils literal"><span class="pre">applist</span></code></a> files are stored</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">logger</span></code></td>
+<td>(optional) contains the path name of the configuration
+file of the logging system based on <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">logging</span></code></a> module.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">pulling_report</span></code></td>
+<td>(optional) contains the path name of the configuration
+file of the pulling activity report  (see <a class="reference internal" href="../../lapptrack/support/report.html#module-support.report" title="support.report: Reporting Manager (all)"><code class="xref any py py-mod docutils literal"><span class="pre">support.report</span></code></a>
+for detailed information.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">fetching_report</span></code></td>
+<td>(optional) contains the path name of the configuration
+file of the fetching activity report (see <a class="reference internal" href="../../lapptrack/support/report.html#module-support.report" title="support.report: Reporting Manager (all)"><code class="xref any py py-mod docutils literal"><span class="pre">support.report</span></code></a>
+for detailed information.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">approving_report</span></code></td>
+<td>(optional) contains the path name of the configuration
+file of the approving activity report (see
+<a class="reference internal" href="../../lapptrack/support/report.html#module-support.report" title="support.report: Reporting Manager (all)"><code class="xref any py py-mod docutils literal"><span class="pre">support.report</span></code></a> for detailed information.</td>
+</tr>
+</tbody>
+</table>
+<p>..topic:  Example of a <code class="docutils literal"><span class="pre">[core]</span></code> section</p>
+<blockquote>
+<div><div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[core]</span>
+<span class="na">store</span> <span class="o">=</span> <span class="s">..\appstore</span>
+<span class="c1">;logger = .\logger.ini</span>
+<span class="c1">;pulling_report = .\pulling_report.ini</span>
+<span class="c1">;fetching_report = .\fetching_report.ini</span>
+<span class="c1">;approving_report = .\approving_report.ini</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sets-section">
+<span id="lapptrack-userguide-lapptrack-ini-sets-section"></span><h2>Sets Section<a class="headerlink" href="#sets-section" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">[sets]</span></code> section contains the list of named sets used to deploy
+applications.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">&lt;name&gt;</span></code></td>
+<td><p class="first">(mandatory) is the name of the set and contains a set of
+computer names or any organisational units according with
+the lappdeploy script call. A set may be empty, in this
+case, no file is going to be created for this one.</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">__manual__</span></code>: is a special set to specify that the
+installer must be manually launched (an user interaction
+is necessary)</li>
+<li><code class="docutils literal"><span class="pre">__thirdparty__</span></code>: is a special set to specify that the
+installer is going to be launched from an other
+installer (extension or language pack for exemple)</li>
+<li><code class="docutils literal"><span class="pre">__all__</span></code>: is a special set to specify that the
+installer is going to be launched on all computer.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="topic">
+<p class="topic-title first">Example of a <code class="docutils literal"><span class="pre">[sets]</span></code> section</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[sets]</span>
+<span class="na">__manual__</span> <span class="o">=</span> <span class="s">manual</span>
+<span class="na">__thirdparty__</span> <span class="o">=</span>
+<span class="na">__all__</span> <span class="o">=</span> <span class="s">all</span>
+<span class="na">userset</span> <span class="o">=</span> <span class="s">pc1, pc2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="applications-section">
+<span id="lapptrack-userguide-lapptrack-ini-applications-section"></span><h2>Applications Section<a class="headerlink" href="#applications-section" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">[applications]</span></code> section contains the list of applications to maintains.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">&lt;name&gt;</span></code></td>
+<td>(mandatory) is the name of the <a class="reference internal" href="#lapptrack-userguide-lapptrack-ini-application-section"><span class="std std-ref">application section</span></a>
+and contains a flag specifying if the application have
+been taking into account.</td>
+</tr>
+</tbody>
+</table>
+<div class="topic">
+<p class="topic-title first">Example of a <code class="docutils literal"><span class="pre">[applications]</span></code> section</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[applications]</span>
+<span class="na">dummy</span> <span class="o">=</span> <span class="s">on</span>
+<span class="na">dummy2</span> <span class="o">=</span> <span class="s">on</span>
+<span class="na">ignored</span> <span class="o">=</span> <span class="s">off</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="application-section">
+<span id="lapptrack-userguide-lapptrack-ini-application-section"></span><h2>Application Section<a class="headerlink" href="#application-section" title="Permalink to this headline">¶</a></h2>
+<p>The application (<code class="docutils literal"><span class="pre">[&lt;name&gt;]</span></code>) section contains configuration items for
+a specific application.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Name section must be lowercase, since the section name is a key in
+<a class="reference internal" href="#lapptrack-userguide-lapptrack-ini-applications-section"><span class="std std-ref">applications section</span></a></p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">handler</span></code></td>
+<td>(optional) is the qualified name of the handler class (A
+dotted name showing the “path” from the global scope to
+the handler class). The default value is
+<code class="docutils literal"><span class="pre">cots.&lt;section</span> <span class="pre">name&gt;.&lt;section</span> <span class="pre">name&gt;Handler</span></code> with the
+first letter of section capitalised for having a camel
+case name for the class handler.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">path</span></code></td>
+<td>(optional) is the path name where to store the installer
+package. The default value is <code class="docutils literal"><span class="pre">${core:store}\&lt;section</span>
+<span class="pre">name&gt;</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">set</span></code></td>
+<td>(optional) is the name of the set associated with the
+application (see
+<a class="reference internal" href="#lapptrack-userguide-lapptrack-ini-sets-section"><span class="std std-ref">Sets Section</span></a>). The
+default value is <code class="docutils literal"><span class="pre">__all__</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<div class="topic">
+<p class="topic-title first">Example of an application section</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[dummy2]</span>
+<span class="na">handler</span> <span class="o">=</span> <span class="s">cots.dummy.DummyHandler</span>
+<span class="na">path</span> <span class="o">=</span> <span class="s">${core:store}\dummy</span>
+<span class="na">set</span> <span class="o">=</span> <span class="s">userset</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

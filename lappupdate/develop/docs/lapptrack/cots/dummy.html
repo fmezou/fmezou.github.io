@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cots.dummy – Dummy Product Handler &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="cots – Product Handlers Package" href="index.html" />
+    <link rel="next" title="cots.core – Product Handler Core Module" href="core.html" />
+    <link rel="prev" title="cots.makemkv – MakeMKV’s Product Handler" href="makemkv.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../docs/contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../docs/about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../scripts.html">Main Script</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="makemkv.html"><code class="docutils literal"><span class="pre">cots.makemkv</span></code> &#8211; MakeMKV&#8217;s Product Handler</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">cots.dummy</span></code> &#8211; Dummy Product Handler</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#public-classes">Public Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#objects-reference">Objects reference</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="core.html"><code class="docutils literal"><span class="pre">cots.core</span></code> &#8211; Product Handler Core Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../support/index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../further-modules.html">Further Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../../docs/glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../docs/contents.html">Table Of Contents</a><ul>
+  <li><a href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul>
+  <li><a href="index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a><ul>
+      <li>Previous: <a href="makemkv.html" title="previous chapter"><code class="docutils literal"><span class="pre">cots.makemkv</span></code> &#8211; MakeMKV&#8217;s Product Handler</a></li>
+      <li>Next: <a href="core.html" title="next chapter"><code class="docutils literal"><span class="pre">cots.core</span></code> &#8211; Product Handler Core Module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cots.dummy">
+<span id="cots-dummy-dummy-product-handler"></span><h1><a class="reference internal" href="#module-cots.dummy" title="cots.dummy: Dummy Product Handler (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots.dummy</span></code></a> &#8211; Dummy Product Handler<a class="headerlink" href="#module-cots.dummy" title="Permalink to this headline">¶</a></h1>
+<p>This module is a dummy product handler. It provides as an example of
+implementation.</p>
+<div class="section" id="public-classes">
+<h2>Public Classes<a class="headerlink" href="#public-classes" title="Permalink to this headline">¶</a></h2>
+<p>This module has only one public class.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.dummy.DummyHandler" title="cots.dummy.DummyHandler"><code class="xref py py-class docutils literal"><span class="pre">DummyHandler</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="objects-reference">
+<h2>Objects reference<a class="headerlink" href="#objects-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the objects defined in this module.</p>
+<dl class="class">
+<dt id="cots.dummy.DummyHandler">
+<em class="property">class </em><code class="descclassname">cots.dummy.</code><code class="descname">DummyHandler</code><a class="headerlink" href="#cots.dummy.DummyHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="core.html#cots.core.BaseProduct" title="cots.core.BaseProduct"><code class="xref py py-class docutils literal"><span class="pre">cots.core.BaseProduct</span></code></a></p>
+<p>Dummy product handler.</p>
+<p>This concrete class implements the tracking mechanism for a dummy
+product. So most of information are in the <code class="xref py py-mod docutils literal"><span class="pre">core</span></code> and more particularly
+in the <a class="reference internal" href="core.html#cots.core.BaseProduct" title="cots.core.BaseProduct"><code class="xref any py py-class docutils literal"><span class="pre">BaseProduct</span></code></a> class documentation. The information below focuses on
+the added value of this class.</p>
+<dl class="docutils">
+<dt><strong>Overridden Methods</strong></dt>
+<dd><p class="first">This class is a concrete class, so the overridden methods are listed
+below in alphabetical order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.dummy.DummyHandler.get_origin" title="cots.dummy.DummyHandler.get_origin"><code class="xref any py py-meth docutils literal"><span class="pre">get_origin</span></code></a></td>
+<td><a class="reference internal" href="#cots.dummy.DummyHandler.is_update" title="cots.dummy.DummyHandler.is_update"><code class="xref any py py-meth docutils literal"><span class="pre">is_update</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="method">
+<dt id="cots.dummy.DummyHandler.get_origin">
+<code class="descname">get_origin</code><span class="sig-paren">(</span><em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.dummy.DummyHandler.get_origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get product information from the remote repository.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The version of the reference product (i.e. the
+deployed product). It&#8217;a string following the editor versioning
+rules.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.dummy.DummyHandler.is_update">
+<code class="descname">is_update</code><span class="sig-paren">(</span><em>product</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.dummy.DummyHandler.is_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return if this instance is an update of product.</p>
+<p>This method compare the version of the two product, and return the
+comparison result. The version numbers used by the editor are compliant
+with the semantic versioning specification 2.0.0 (see <a class="reference internal" href="../support/semver.html#module-support.semver" title="support.semver: Semantic Versioning Support (all)"><code class="xref any py py-mod docutils literal"><span class="pre">support.semver</span></code></a>
+module)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>product</strong> (<a class="reference internal" href="core.html#cots.core.BaseProduct" title="cots.core.BaseProduct"><em>BaseProduct</em></a>) &#8211; The reference product (i.e. the deployed one)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="docutils">
+<dt>True if this instance is an update of the product specified</dt>
+<dd>by the <a class="reference internal" href="../../docs/glossary.html#term-product"><code class="xref any std std-term docutils literal"><span class="pre">product</span></code></a> parameter.</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)">bool</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

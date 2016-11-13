@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Report Template &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="Configuration Files" href="configuration_files.html" />
+    <link rel="next" title="lAppDeploy User Guide" href="../lappdeploy_user_guide/index.html" />
+    <link rel="prev" title="report.ini" href="report_ini.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">lAppTrack User Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usages.html">Usages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="configuration_files.html">Configuration Files</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="lapptrack_ini.html">lapptrack.ini Content</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logger_ini.html">logger.ini Content</a></li>
+<li class="toctree-l4"><a class="reference internal" href="report_ini.html">report.ini</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Report Template</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../contents.html">Table Of Contents</a><ul>
+  <li><a href="index.html">lAppTrack User Guide</a><ul>
+  <li><a href="configuration_files.html">Configuration Files</a><ul>
+      <li>Previous: <a href="report_ini.html" title="previous chapter">report.ini</a></li>
+      <li>Next: <a href="../lappdeploy_user_guide/index.html" title="next chapter">lAppDeploy User Guide</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="report-template">
+<span id="lapptrack-userguide-report-template"></span><h1>Report Template<a class="headerlink" href="#report-template" title="Permalink to this headline">¶</a></h1>
+<p>This file contains the configuration of the logging facility used by the
+<a class="reference internal" href="lapptrack.html"><span class="doc">lapptrack</span></a> script. It use a structure similar to what’s found in Microsoft
+Windows INI files. See the <a class="reference external" href="https://docs.python.org/3/library/logging.config.html#logging-config-fileformat" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">Configuration</span> <span class="pre">file</span> <span class="pre">format</span></code></a> section to have details about the file format.</p>
+<div class="sidebar">
+<p class="first sidebar-title">future</p>
+<p class="last">the report module will use the <a class="reference external" href="http://jinja.pocoo.org/">Jinja2 template engine</a> in a next release.</p>
+</div>
+<p>A report is based on a template using named keyword argument and composed of
+named sections. The module use the <code class="file docutils literal"><span class="pre">report_template.html</span></code> by default.
+The use of the named keyword argument is based on the <a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">string</span></code></a> module.</p>
+<p>Each section starts with a HTML comment and it ends with the start of next
+section or the end of the file. The comment match the following format and
+must be on one line:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;!-- $lau:&lt;name&gt;$ --&gt;
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">&lt;name&gt;</span></code> is the name of the section. It MUST comprise only ASCII alphanumerics
+and hyphen [0-9A-Za-z-] and MUST NOT be empty. If a named section is not
+declared in <a class="reference internal" href="../../lapptrack/support/report.html#support.report.Report.names" title="support.report.Report.names"><code class="xref any py py-attr docutils literal"><span class="pre">Report.names</span></code></a>, its contents is added to the current section
+(i.e. no section is created).</p>
+<div class="topic">
+<p class="topic-title first">Example of Report Template</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">en-GB</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:HeaderStart$ --&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">Content-Type</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="o">&lt;!</span><span class="nt">--</span>
+        <span class="c">/* Font Definitions */</span>
+        <span class="k">@font-face</span>
+            <span class="p">{</span><span class="nt">font-family</span><span class="nd">:Wingdings</span><span class="o">;</span>
+            <span class="nt">panose-1</span><span class="nd">:5</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span><span class="o">;</span><span class="p">}</span>
+        <span class="k">@font-face</span>
+            <span class="p">{</span><span class="nt">font-family</span><span class="nd">:Wingdings</span><span class="o">;</span>
+            <span class="nt">panose-1</span><span class="nd">:5</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span><span class="o">;</span><span class="p">}</span>
+        <span class="k">@font-face</span>
+            <span class="p">{</span><span class="nt">font-family</span><span class="nd">:Calibri</span><span class="o">;</span>
+            <span class="nt">panose-1</span><span class="nd">:2</span> <span class="nt">15</span> <span class="nt">5</span> <span class="nt">2</span> <span class="nt">2</span> <span class="nt">2</span> <span class="nt">4</span> <span class="nt">3</span> <span class="nt">2</span> <span class="nt">4</span><span class="o">;</span><span class="p">}</span>
+         <span class="c">/* Style Definitions */</span>
+        <span class="nt">p</span><span class="nc">.body</span><span class="o">,</span> <span class="nt">li</span><span class="nc">.body</span><span class="o">,</span> <span class="nt">div</span><span class="nc">.body</span>
+            <span class="p">{</span><span class="nb">margin-top</span><span class="o">:</span><span class="m">10.0pt</span><span class="p">;</span>
+            <span class="nb">margin-right</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:</span><span class="m">10.0pt</span><span class="p">;</span>
+            <span class="nb">margin-left</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">line-height</span><span class="o">:</span><span class="m">115%</span><span class="p">;</span>
+            <span class="nb">font-size</span><span class="o">:</span><span class="m">11.0pt</span><span class="p">;</span>
+            <span class="nb">font-family</span><span class="o">:</span><span class="s2">&quot;Calibri&quot;</span><span class="o">,</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">;}</span>
+        <span class="nt">h1</span>
+            <span class="p">{</span><span class="nb">margin-top</span><span class="o">:</span><span class="m">10.0pt</span><span class="p">;</span>
+            <span class="nb">margin-right</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-left</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:.</span><span class="m">0001pt</span><span class="p">;</span>
+            <span class="nb">line-height</span><span class="o">:</span><span class="m">115%</span><span class="p">;</span>
+            <span class="nb">background</span><span class="o">:</span><span class="m">#4F81BD</span><span class="p">;</span>
+            <span class="nb">border</span><span class="o">:</span><span class="nb">none</span><span class="p">;</span>
+            <span class="nb">padding</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">font-size</span><span class="o">:</span><span class="m">12.0pt</span><span class="p">;</span>
+            <span class="nb">font-family</span><span class="o">:</span><span class="s2">&quot;Calibri&quot;</span><span class="o">,</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">;</span>
+            <span class="nb">color</span><span class="o">:</span><span class="nb">white</span><span class="p">;</span>
+            <span class="nb">text-transform</span><span class="o">:</span><span class="nb">uppercase</span><span class="p">;</span>
+            <span class="nb">letter-spacing</span><span class="o">:.</span><span class="m">75pt</span><span class="p">;</span>
+            <span class="nb">font-weight</span><span class="o">:</span><span class="nb">bold</span><span class="p">;}</span>
+        <span class="nt">h2</span>
+            <span class="p">{</span><span class="nb">margin-top</span><span class="o">:</span><span class="m">10.0pt</span><span class="p">;</span>
+            <span class="nb">margin-right</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-left</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:.</span><span class="m">0001pt</span><span class="p">;</span>
+            <span class="nb">line-height</span><span class="o">:</span><span class="m">115%</span><span class="p">;</span>
+            <span class="nb">background</span><span class="o">:</span><span class="m">#DBE5F1</span><span class="p">;</span>
+            <span class="nb">border</span><span class="o">:</span><span class="nb">none</span><span class="p">;</span>
+            <span class="nb">padding</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">font-size</span><span class="o">:</span><span class="m">10.0pt</span><span class="p">;</span>
+            <span class="nb">font-family</span><span class="o">:</span><span class="s2">&quot;Calibri&quot;</span><span class="o">,</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">;</span>
+            <span class="nb">text-transform</span><span class="o">:</span><span class="nb">uppercase</span><span class="p">;</span>
+            <span class="nb">letter-spacing</span><span class="o">:.</span><span class="m">75pt</span><span class="p">;</span>
+            <span class="nb">font-weight</span><span class="o">:</span><span class="nb">normal</span><span class="p">;}</span>
+        <span class="nt">a</span><span class="nd">:link</span><span class="o">,</span> <span class="nt">span</span><span class="nc">.link</span>
+            <span class="p">{</span><span class="nb">color</span><span class="o">:</span><span class="nb">blue</span><span class="p">;</span>
+            <span class="nb">text-decoration</span><span class="o">:</span><span class="nb">underline</span><span class="p">;}</span>
+        <span class="nt">a</span><span class="nd">:visited</span><span class="o">,</span> <span class="nt">span</span><span class="nc">.visited</span>
+            <span class="p">{</span><span class="nb">color</span><span class="o">:</span><span class="nb">purple</span><span class="p">;</span>
+            <span class="nb">text-decoration</span><span class="o">:</span><span class="nb">underline</span><span class="p">;}</span>
+        <span class="nt">em</span>
+            <span class="p">{</span><span class="nb">color</span><span class="o">:</span><span class="m">#243F60</span><span class="p">;</span>
+            <span class="nb">text-transform</span><span class="o">:</span><span class="nb">uppercase</span><span class="p">;</span>
+            <span class="nb">letter-spacing</span><span class="o">:.</span><span class="m">25pt</span><span class="p">;</span>
+            <span class="nb">font-style</span><span class="o">:</span><span class="nb">normal</span><span class="p">;}</span>
+        <span class="nt">p</span>
+            <span class="p">{</span><span class="nb">margin-right</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-left</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">font-size</span><span class="o">:</span><span class="m">12.0pt</span><span class="p">;</span>
+            <span class="nb">font-family</span><span class="o">:</span><span class="s2">&quot;Times New Roman&quot;</span><span class="o">,</span><span class="s2">&quot;serif&quot;</span><span class="p">;}</span>
+        <span class="nt">p</span><span class="nc">.list_body</span><span class="o">,</span> <span class="nt">li</span><span class="nc">.list_body</span><span class="o">,</span> <span class="nt">div</span><span class="nc">.list_body</span>
+            <span class="p">{</span><span class="nb">margin-top</span><span class="o">:</span><span class="m">3.0pt</span><span class="p">;</span>
+            <span class="nb">margin-right</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">margin-bottom</span><span class="o">:</span><span class="m">3.0pt</span><span class="p">;</span>
+            <span class="nb">margin-left</span><span class="o">:</span><span class="m">0cm</span><span class="p">;</span>
+            <span class="nb">line-height</span><span class="o">:</span><span class="m">100%</span><span class="p">;</span>
+            <span class="nb">font-size</span><span class="o">:</span><span class="m">11.0pt</span><span class="p">;</span>
+            <span class="nb">font-family</span><span class="o">:</span><span class="s2">&quot;Calibri&quot;</span><span class="o">,</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">;}</span>
+        <span class="k">@page</span> <span class="nt">WordSection1</span>
+            <span class="p">{</span><span class="nt">size</span><span class="nd">:595</span><span class="nc">.3pt</span> <span class="nt">841</span><span class="nc">.9pt</span><span class="o">;</span>
+            <span class="nt">margin</span><span class="nd">:70</span><span class="nc">.85pt</span> <span class="nt">70</span><span class="nc">.85pt</span> <span class="nt">70</span><span class="nc">.85pt</span> <span class="nt">70</span><span class="nc">.85pt</span><span class="o">;</span><span class="p">}</span>
+        <span class="nt">div</span><span class="nc">.WordSection1</span>
+            <span class="p">{</span><span class="nb">page</span><span class="o">:</span><span class="n">WordSection1</span><span class="p">;}</span>
+        <span class="c">/* List Definitions */</span>
+        <span class="nt">ol</span>
+            <span class="p">{</span><span class="nb">margin-bottom</span><span class="o">:</span><span class="m">0cm</span><span class="p">;}</span>
+        <span class="nt">ul</span>
+            <span class="p">{</span><span class="nb">margin-bottom</span><span class="o">:</span><span class="m">0cm</span><span class="p">;}</span>
+        <span class="nt">--</span><span class="o">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:Title$ --&gt;</span>
+    <span class="c">&lt;!-- reserved for &lt;title&gt;&lt;/title&gt; tag in a HTML document published on a web server --&gt;</span>
+<span class="c">&lt;!-- $lau:HeaderEnd$ --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:BodyStart$ --&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">link</span><span class="o">=</span><span class="s">blue</span> <span class="na">vlink</span><span class="o">=</span><span class="s">purple</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">WordSection1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span><span class="p">&gt;</span>On {date}, the following products have available updates.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:TOCStart$ --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:TOCEntry$ --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">list_body</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#{id}&quot;</span><span class="p">&gt;</span>{name} ({version})<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:TOCEnd$ --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:SummaryStart$ --&gt;</span>
+<span class="c">&lt;!-- $lau:SummaryEntry$ --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;border:solid #4F81BD 3.0pt;padding:0cm 0cm 0cm 0cm;background:#4F81BD&#39;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin-top:0cm;line-height:normal;background:#4F81BD&#39;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;{id}&quot;</span><span class="p">&gt;</span>{name}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{location}&quot;</span><span class="p">&gt;</span>{name} ({version})<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> has been released on {published}. It will be
+        fetched on the next step.
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span><span class="p">&gt;</span>
+        file size: {file_size}<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+        hash: {secure_hash}
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;border:solid #DBE5F1 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DBE5F1&#39;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin-top:0cm;line-height:normal;background:#DBE5F1&#39;</span><span class="p">&gt;</span>
+            Release note
+        <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span><span class="p">&gt;</span>See the <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{release_note}&quot;</span><span class="p">&gt;</span>detailed change history<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;border:solid #DBE5F1 3.0pt;padding:0cm 0cm 0cm 0cm;background:#DBE5F1&#39;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin-top:0cm;line-height:normal;background:#DBE5F1&#39;</span><span class="p">&gt;</span>
+            Product information
+        <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin-bottom:0cm;margin-bottom:.0001pt;line-height:normal&#39;</span><span class="p">&gt;</span>
+        Published by {editor}, {description}
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin-bottom:0cm;margin-bottom:.0001pt;line-height:normal&#39;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:SummaryEnd$ --&gt;</span>
+<span class="c">&lt;!-- $lau:BodyEnd$ --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- $lau:Tail$ --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

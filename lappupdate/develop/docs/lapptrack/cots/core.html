@@ -1,0 +1,811 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cots.core – Product Handler Core Module &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="cots – Product Handlers Package" href="index.html" />
+    <link rel="next" title="support – Supporting Modules Package" href="../support/index.html" />
+    <link rel="prev" title="cots.dummy – Dummy Product Handler" href="dummy.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../docs/contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../docs/about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../scripts.html">Main Script</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="makemkv.html"><code class="docutils literal"><span class="pre">cots.makemkv</span></code> &#8211; MakeMKV&#8217;s Product Handler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dummy.html"><code class="docutils literal"><span class="pre">cots.dummy</span></code> &#8211; Dummy Product Handler</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">cots.core</span></code> &#8211; Product Handler Core Module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#public-classes">Public Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#public-functions">Public Functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#public-exceptions">Public Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#objects-reference">Objects reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#functions-reference">Functions reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#data-reference">Data reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#exceptions-reference">Exceptions reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../support/index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../further-modules.html">Further Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../../docs/glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../docs/contents.html">Table Of Contents</a><ul>
+  <li><a href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul>
+  <li><a href="index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a><ul>
+      <li>Previous: <a href="dummy.html" title="previous chapter"><code class="docutils literal"><span class="pre">cots.dummy</span></code> &#8211; Dummy Product Handler</a></li>
+      <li>Next: <a href="../support/index.html" title="next chapter"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cots.core">
+<span id="cots-core-product-handler-core-module"></span><h1><a class="reference internal" href="#module-cots.core" title="cots.core: Product Handlers Core Module (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots.core</span></code></a> &#8211; Product Handler Core Module<a class="headerlink" href="#module-cots.core" title="Permalink to this headline">¶</a></h1>
+<p>This module defines core functions and classes for product handlers.</p>
+<p>All product handlers are derived classes from <a class="reference internal" href="#cots.core.BaseProduct" title="cots.core.BaseProduct"><code class="xref any py py-class docutils literal"><span class="pre">BaseProduct</span></code></a> class.</p>
+<div class="section" id="public-classes">
+<h2>Public Classes<a class="headerlink" href="#public-classes" title="Permalink to this headline">¶</a></h2>
+<p>This module has only one public class.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.core.BaseProduct" title="cots.core.BaseProduct"><code class="xref any py py-class docutils literal"><span class="pre">BaseProduct</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="public-functions">
+<h2>Public Functions<a class="headerlink" href="#public-functions" title="Permalink to this headline">¶</a></h2>
+<p>This module has a number of functions listed below in alphabetical order.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.core.get_handler" title="cots.core.get_handler"><code class="xref any py py-func docutils literal"><span class="pre">get_handler</span></code></a></td>
+<td><a class="reference internal" href="#cots.core.retrieve_tempfile" title="cots.core.retrieve_tempfile"><code class="xref any py py-func docutils literal"><span class="pre">retrieve_tempfile</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#cots.core.retrieve_file" title="cots.core.retrieve_file"><code class="xref any py py-func docutils literal"><span class="pre">retrieve_file</span></code></a></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="public-exceptions">
+<h2>Public Exceptions<a class="headerlink" href="#public-exceptions" title="Permalink to this headline">¶</a></h2>
+<p>This module has has a number of exceptions listed below in alphabetical order.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.core.UnexpectedContentError" title="cots.core.UnexpectedContentError"><code class="xref any py py-exc docutils literal"><span class="pre">UnexpectedContentError</span></code></a></td>
+<td><a class="reference internal" href="#cots.core.UnexpectedContentLengthError" title="cots.core.UnexpectedContentLengthError"><code class="xref any py py-exc docutils literal"><span class="pre">UnexpectedContentLengthError</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#cots.core.UnexpectedContentTypeError" title="cots.core.UnexpectedContentTypeError"><code class="xref any py py-exc docutils literal"><span class="pre">UnexpectedContentTypeError</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="objects-reference">
+<h2>Objects reference<a class="headerlink" href="#objects-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the objects defined in this module.</p>
+<dl class="class">
+<dt id="cots.core.BaseProduct">
+<em class="property">class </em><code class="descclassname">cots.core.</code><code class="descname">BaseProduct</code><a class="headerlink" href="#cots.core.BaseProduct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Common base class for all product handlers.</p>
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.name">
+<code class="descname">name</code><a class="headerlink" href="#cots.core.BaseProduct.name" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The name of the product (used in a_report mail and log
+file).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.display_name">
+<code class="descname">display_name</code><a class="headerlink" href="#cots.core.BaseProduct.display_name" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The name of the product as it appears in the
+&#8216;Programs and Features&#8217; control panel (see
+<a class="reference external" href="https://msdn.microsoft.com/library/windows/desktop/aa372105%28v=vs.85%29.aspx">Uninstall Registry Key</a>).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.version">
+<code class="descname">version</code><a class="headerlink" href="#cots.core.BaseProduct.version" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The current version of the product using the editor
+versioning rules.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.published">
+<code class="descname">published</code><a class="headerlink" href="#cots.core.BaseProduct.published" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The date of the installer’s publication expressed in
+the <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3339.html"><strong>RFC 3339</strong></a> format.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.target">
+<code class="descname">target</code><a class="headerlink" href="#cots.core.BaseProduct.target" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The target architecture type (the Windows’ one) for the
+product. This argument must be one of the following values:
+<a class="reference internal" href="#cots.core.TARGET_X86" title="cots.core.TARGET_X86"><code class="xref any py py-data docutils literal"><span class="pre">TARGET_X86</span></code></a>, <a class="reference internal" href="#cots.core.TARGET_X64" title="cots.core.TARGET_X64"><code class="xref any py py-data docutils literal"><span class="pre">TARGET_X64</span></code></a> or <a class="reference internal" href="#cots.core.TARGET_UNIFIED" title="cots.core.TARGET_UNIFIED"><code class="xref any py py-data docutils literal"><span class="pre">TARGET_UNIFIED</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.description">
+<code class="descname">description</code><a class="headerlink" href="#cots.core.BaseProduct.description" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; Short description of the product (~250 characters).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.editor">
+<code class="descname">editor</code><a class="headerlink" href="#cots.core.BaseProduct.editor" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The name of the editor of the product.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.web_site_location">
+<code class="descname">web_site_location</code><a class="headerlink" href="#cots.core.BaseProduct.web_site_location" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The location of the editor ou product web site.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.location">
+<code class="descname">location</code><a class="headerlink" href="#cots.core.BaseProduct.location" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The location of the current version of the installer.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.icon">
+<code class="descname">icon</code><a class="headerlink" href="#cots.core.BaseProduct.icon" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The name of the icon file (in the same directory than the
+installer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.announce_location">
+<code class="descname">announce_location</code><a class="headerlink" href="#cots.core.BaseProduct.announce_location" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The location of the page announcing the product
+releases.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.feed_location">
+<code class="descname">feed_location</code><a class="headerlink" href="#cots.core.BaseProduct.feed_location" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The location of the RSS feed announcing the product
+releases.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.release_note_location">
+<code class="descname">release_note_location</code><a class="headerlink" href="#cots.core.BaseProduct.release_note_location" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The location of the release note for the
+detailed history change of the product.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.change_summary">
+<code class="descname">change_summary</code><a class="headerlink" href="#cots.core.BaseProduct.change_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The changelog of the product since the deployed
+product.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.installer">
+<code class="descname">installer</code><a class="headerlink" href="#cots.core.BaseProduct.installer" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The filename of the installer (local full path).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.file_size">
+<code class="descname">file_size</code><a class="headerlink" href="#cots.core.BaseProduct.file_size" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> &#8211; The size of the product installer expressed in bytes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.secure_hash">
+<code class="descname">secure_hash</code><a class="headerlink" href="#cots.core.BaseProduct.secure_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>2-tuple</em> &#8211; The secure_hash value of the product installer.
+It&#8217;s a 2-tuple containing, in this order, the name of secure_hash
+algorithm (see <a class="reference external" href="https://docs.python.org/3/library/hashlib.html#hashlib.algorithms_guaranteed" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">hashlib.algorithms_guaranteed</span></code></a>) and the secure_hash
+value in hexadecimal notation.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.std_inst_args">
+<code class="descname">std_inst_args</code><a class="headerlink" href="#cots.core.BaseProduct.std_inst_args" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; Arguments to use with the installer for a standard
+installation.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.BaseProduct.silent_inst_args">
+<code class="descname">silent_inst_args</code><a class="headerlink" href="#cots.core.BaseProduct.silent_inst_args" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; Arguments to use with the installer for a silent
+installation (i.e. without any user&#8217;s interaction, typically while
+an automated deployment using <code class="docutils literal"><span class="pre">lappdeploy</span></code> script).</p>
+</dd></dl>
+
+<dl class="docutils">
+<dt><strong>Public Methods</strong></dt>
+<dd><p class="first">This class has a number of public methods listed below in alphabetical
+order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.core.BaseProduct.dump" title="cots.core.BaseProduct.dump"><code class="xref any py py-meth docutils literal"><span class="pre">dump</span></code></a></td>
+<td><a class="reference internal" href="#cots.core.BaseProduct.get_origin" title="cots.core.BaseProduct.get_origin"><code class="xref any py py-meth docutils literal"><span class="pre">get_origin</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#cots.core.BaseProduct.fetch" title="cots.core.BaseProduct.fetch"><code class="xref any py py-meth docutils literal"><span class="pre">fetch</span></code></a></td>
+<td><a class="reference internal" href="#cots.core.BaseProduct.is_update" title="cots.core.BaseProduct.is_update"><code class="xref any py py-meth docutils literal"><span class="pre">is_update</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#cots.core.BaseProduct.load" title="cots.core.BaseProduct.load"><code class="xref any py py-meth docutils literal"><span class="pre">load</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Methods to Override</strong></dt>
+<dd><p class="first">This class is a base class, so a number of public methods must be
+overridden. They are listed below in alphabetical order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.core.BaseProduct.get_origin" title="cots.core.BaseProduct.get_origin"><code class="xref any py py-meth docutils literal"><span class="pre">get_origin</span></code></a></td>
+<td><a class="reference internal" href="#cots.core.BaseProduct.is_update" title="cots.core.BaseProduct.is_update"><code class="xref any py py-meth docutils literal"><span class="pre">is_update</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Using BaseProduct...</strong></dt>
+<dd><p class="first">This class is the base class for product handler used by
+<a class="reference internal" href="../lapptrack.html#lapptrack.lAppTrack" title="lapptrack.lAppTrack"><code class="xref any py py-class docutils literal"><span class="pre">lapptrack.lAppTrack</span></code></a> and this one only use the public methods.</p>
+<p>After created a class instance, the <a class="reference internal" href="#cots.core.BaseProduct.get_origin" title="cots.core.BaseProduct.get_origin"><code class="xref any py py-meth docutils literal"><span class="pre">get_origin</span></code></a> method populate the
+attributes with the most up-to-date information from the editor&#8217;s
+site. An alternative way, is to call the <a class="reference internal" href="#cots.core.BaseProduct.load" title="cots.core.BaseProduct.load"><code class="xref any py py-meth docutils literal"><span class="pre">load</span></code></a> method to populate
+attributes with a set of data previously saved on disk.</p>
+<p>Then calling <a class="reference internal" href="#cots.core.BaseProduct.fetch" title="cots.core.BaseProduct.fetch"><code class="xref any py py-meth docutils literal"><span class="pre">fetch</span></code></a> method retrieves the current version (i.e. the one
+described in the attributes) of the installer and store it on the local
+disk.</p>
+<p class="last">Then you can save the updated instances by calling the <a class="reference internal" href="#cots.core.BaseProduct.dump" title="cots.core.BaseProduct.dump"><code class="xref any py py-meth docutils literal"><span class="pre">dump</span></code></a> method.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="cots.core.BaseProduct._rename_installer">
+<code class="descname">_rename_installer</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.BaseProduct._rename_installer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rename the installer executable.</p>
+<p>Installer name match the following format:
+<code class="docutils literal"><span class="pre">&lt;name&gt;_&lt;version&gt;.&lt;extension&gt;</span></code></p>
+<p>where</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">name</span></code>: is the name of the product</li>
+<li><code class="docutils literal"><span class="pre">version</span></code>: is the version of the product</li>
+<li><code class="docutils literal"><span class="pre">extension</span></code>: is the original extension of the download resource.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The local name of the installer executable.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</li>
+<li>The others exception are the same as <a class="reference external" href="https://docs.python.org/3/library/os.html#os.replace" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">os.replace</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.core.BaseProduct.dump">
+<code class="descname">dump</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.BaseProduct.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump a product class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Contain a copy of the instance variables values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.core.BaseProduct.fetch">
+<code class="descname">fetch</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.BaseProduct.fetch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download the product installer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The path name where to store the installer package.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</li>
+<li><a class="reference internal" href="#cots.core.UnexpectedContentLengthError" title="cots.core.UnexpectedContentLengthError"><code class="xref py py-exc docutils literal"><span class="pre">UnexpectedContentLengthError</span></code></a> &#8211; The content length don&#8217;t match.</li>
+<li><a class="reference internal" href="#cots.core.UnexpectedContentError" title="cots.core.UnexpectedContentError"><code class="xref py py-exc docutils literal"><span class="pre">UnexpectedContentError</span></code></a> &#8211; The content secure hash don&#8217;t match.</li>
+<li>Same as <a class="reference external" href="https://docs.python.org/3/library/urllib.request.html#urllib.request.urlopen" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">urllib.request.urlopen</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.core.BaseProduct.get_origin">
+<code class="descname">get_origin</code><span class="sig-paren">(</span><em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.BaseProduct.get_origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get product information from the remote repository.</p>
+<p>The latest catalog of the product is downloaded and parsed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The version of the reference product (i.e. the
+deployed product). It&#8217;a string following the editor versioning
+rules.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.core.BaseProduct.is_update">
+<code class="descname">is_update</code><span class="sig-paren">(</span><em>product</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.BaseProduct.is_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return if this instance is an update of product</p>
+<p>This method compare the version of the two product, and return the
+comparison result.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>product</strong> (<a class="reference internal" href="#cots.core.BaseProduct" title="cots.core.BaseProduct"><em>BaseProduct</em></a>) &#8211; The reference product (i.e. the deployed one)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="docutils">
+<dt>True if this instance is an update of the product specified</dt>
+<dd>by the <a class="reference internal" href="../../docs/glossary.html#term-product"><code class="xref any std std-term docutils literal"><span class="pre">product</span></code></a> parameter.</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)">bool</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.core.BaseProduct.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.BaseProduct.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a product class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attributes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) &#8211; The instance variables values to set. Previous
+value of the instance variables kept if this argument value is
+None. The key value pairs which don&#8217;t exist in the
+instance variables dictionary are ignored.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="functions-reference">
+<h2>Functions reference<a class="headerlink" href="#functions-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the specific functions used in this module.</p>
+<dl class="function">
+<dt id="cots.core.retrieve_file">
+<code class="descclassname">cots.core.</code><code class="descname">retrieve_file</code><span class="sig-paren">(</span><em>url</em>, <em>dir_name</em>, <em>content_type=None</em>, <em>content_length=-1</em>, <em>content_hash=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.retrieve_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a URL into a file on disk.</p>
+<p>The filename is the same as the name of the retrieved resource.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The URL of the file to retrieve.</li>
+<li><strong>dir_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The pathname of the directory where the retrieved file
+is going to be written.</li>
+<li><strong>content_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) The mime type of the retrieved file. No
+check will be done if the value is None.</li>
+<li><strong>content_length</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; (optional) The expected length of the retrieved
+file expressed in bytes. -1 means that the expected length is
+unknown.</li>
+<li><strong>content_hash</strong> (<em>2-tuple</em>) &#8211; The expected secure hash value of the
+retrieved file. No check will be done if the value is None. It&#8217;s a
+tuple containing, in this order, the name of secure hash algorithm
+(see <a class="reference external" href="https://docs.python.org/3/library/hashlib.html#hashlib.algorithms_guaranteed" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">hashlib.algorithms_guaranteed</span></code></a>) and the secure hash value in
+hexadecimal notation. If the secure hash algorithm is not supported,
+it will be ignored.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a string specifying the local file name.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)">str</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</li>
+<li><a class="reference internal" href="#cots.core.UnexpectedContentTypeError" title="cots.core.UnexpectedContentTypeError"><code class="xref py py-exc docutils literal"><span class="pre">UnexpectedContentTypeError</span></code></a> &#8211; The downloaded content-type don&#8217;t match.</li>
+<li><a class="reference internal" href="#cots.core.UnexpectedContentLengthError" title="cots.core.UnexpectedContentLengthError"><code class="xref py py-exc docutils literal"><span class="pre">UnexpectedContentLengthError</span></code></a> &#8211; The content length don&#8217;t match.</li>
+<li><a class="reference internal" href="#cots.core.UnexpectedContentError" title="cots.core.UnexpectedContentError"><code class="xref py py-exc docutils literal"><span class="pre">UnexpectedContentError</span></code></a> &#8211; The content secure hash don&#8217;t match.</li>
+<li>Same as <a class="reference external" href="https://docs.python.org/3/library/urllib.request.html#urllib.request.urlopen" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">urllib.request.urlopen</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cots.core.retrieve_tempfile">
+<code class="descclassname">cots.core.</code><code class="descname">retrieve_tempfile</code><span class="sig-paren">(</span><em>url</em>, <em>content_type=None</em>, <em>content_length=-1</em>, <em>content_hash=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.retrieve_tempfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a URL into a temporary url on disk.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The URL of the file to retrieve.</li>
+<li><strong>content_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) The mime type of the retrieved file. No
+check will be done if the value is None.</li>
+<li><strong>content_length</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; (optional) The expected length of the retrieved
+file expressed in bytes. -1 means that the expected length is
+unknown.</li>
+<li><strong>content_hash</strong> (<em>2-tuple</em>) &#8211; The expected secure hash value of the
+retrieved file. No check will be done if the value is None. It&#8217;s a
+tuple containing, in this order, the name of secure hash algorithm
+(see <a class="reference external" href="https://docs.python.org/3/library/hashlib.html#hashlib.algorithms_guaranteed" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">hashlib.algorithms_guaranteed</span></code></a>) and the secure hash value in
+hexadecimal notation. If the secure hash algorithm is not supported,
+it will be ignored.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a string specifying the local file name.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)">str</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</li>
+<li><a class="reference internal" href="#cots.core.UnexpectedContentTypeError" title="cots.core.UnexpectedContentTypeError"><code class="xref py py-exc docutils literal"><span class="pre">UnexpectedContentTypeError</span></code></a> &#8211; The downloaded content-type don&#8217;t match.</li>
+<li><a class="reference internal" href="#cots.core.UnexpectedContentLengthError" title="cots.core.UnexpectedContentLengthError"><code class="xref py py-exc docutils literal"><span class="pre">UnexpectedContentLengthError</span></code></a> &#8211; The content length don&#8217;t match.</li>
+<li><a class="reference internal" href="#cots.core.UnexpectedContentError" title="cots.core.UnexpectedContentError"><code class="xref py py-exc docutils literal"><span class="pre">UnexpectedContentError</span></code></a> &#8211; the content secure hash don&#8217;t match.</li>
+<li>Same as <a class="reference external" href="https://docs.python.org/3/library/urllib.request.html#urllib.request.urlopen" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">urllib.request.urlopen</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cots.core.get_handler">
+<code class="descclassname">cots.core.</code><code class="descname">get_handler</code><span class="sig-paren">(</span><em>qualname</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.get_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve an instance of a handler class.</p>
+<p>A handler class is appointed by its <a class="reference external" href="https://docs.python.org/3/glossary.html#term-qualified-name" title="(in Python v3.5)"><span class="xref std std-term">qualified name</span></a>
+(<code class="xref py py-class docutils literal"><span class="pre">package.module.MyHandler</span></code> for example). If the module part is not
+specified, an ImportError exception is raised.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>qualname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The qualified name of the handler class.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">an instance of the handler class.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#cots.core.BaseProduct" title="cots.core.BaseProduct">BaseProduct</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</li>
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ImportError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">ImportError</span></code></a> &#8211; Import fails to find the handler module or class.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="data-reference">
+<h2>Data reference<a class="headerlink" href="#data-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details global data, including both variables and values used
+as &#8216;defined constants&#8217;.</p>
+<dl class="data">
+<dt id="cots.core.TARGET_X86">
+<code class="descclassname">cots.core.</code><code class="descname">TARGET_X86</code><em class="property"> = 'x86'</em><a class="headerlink" href="#cots.core.TARGET_X86" title="Permalink to this definition">¶</a></dt>
+<dd><p>The application works only on 32 bits architecture.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cots.core.TARGET_X64">
+<code class="descclassname">cots.core.</code><code class="descname">TARGET_X64</code><em class="property"> = 'x64'</em><a class="headerlink" href="#cots.core.TARGET_X64" title="Permalink to this definition">¶</a></dt>
+<dd><p>The application works only on 64 bits architecture.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cots.core.TARGET_UNIFIED">
+<code class="descclassname">cots.core.</code><code class="descname">TARGET_UNIFIED</code><em class="property"> = 'unified'</em><a class="headerlink" href="#cots.core.TARGET_UNIFIED" title="Permalink to this definition">¶</a></dt>
+<dd><p>The application or the installation program work on both architectures.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="exceptions-reference">
+<h2>Exceptions reference<a class="headerlink" href="#exceptions-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the specific exception used in this module.</p>
+<dl class="exception">
+<dt id="cots.core.UnexpectedContentLengthError">
+<em class="property">exception </em><code class="descclassname">cots.core.</code><code class="descname">UnexpectedContentLengthError</code><span class="sig-paren">(</span><em>url</em>, <em>expected</em>, <em>received</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.UnexpectedContentLengthError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cots.core.Error</span></code></p>
+<p>Raised when the content length don&#8217;t match.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The URL of the fetched file.</li>
+<li><strong>expected</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; The expected content length. Must be positive.</li>
+<li><strong>received</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; The received content length. Must be positive.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cots.core.UnexpectedContentLengthError.url">
+<code class="descname">url</code><a class="headerlink" href="#cots.core.UnexpectedContentLengthError.url" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The URL of the fetched file.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.UnexpectedContentLengthError.expected">
+<code class="descname">expected</code><a class="headerlink" href="#cots.core.UnexpectedContentLengthError.expected" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> &#8211; The expected content length. Must be positive.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.UnexpectedContentLengthError.received">
+<code class="descname">received</code><a class="headerlink" href="#cots.core.UnexpectedContentLengthError.received" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> &#8211; The received content length. Must be positive.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="cots.core.UnexpectedContentError">
+<em class="property">exception </em><code class="descclassname">cots.core.</code><code class="descname">UnexpectedContentError</code><span class="sig-paren">(</span><em>url</em>, <em>algorithm</em>, <em>expected</em>, <em>computed</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.UnexpectedContentError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cots.core.Error</span></code></p>
+<p>Raised when the content secure hash don&#8217;t match.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The URL of the fetched file.</li>
+<li><strong>algorithm</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The name of the secure hash algorithm.</li>
+<li><strong>expected</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The expected secure hash value in hexadecimal notation.</li>
+<li><strong>computed</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The computed secure hash value in hexadecimal notation.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cots.core.UnexpectedContentError.url">
+<code class="descname">url</code><a class="headerlink" href="#cots.core.UnexpectedContentError.url" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The URL of the fetched file.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.UnexpectedContentError.algorithm">
+<code class="descname">algorithm</code><a class="headerlink" href="#cots.core.UnexpectedContentError.algorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The name of the secure hash algorithm.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.UnexpectedContentError.expected">
+<code class="descname">expected</code><a class="headerlink" href="#cots.core.UnexpectedContentError.expected" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The expected secure hash value in hexadecimal notation.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.UnexpectedContentError.computed">
+<code class="descname">computed</code><a class="headerlink" href="#cots.core.UnexpectedContentError.computed" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The computed secure hash value in hexadecimal notation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="cots.core.UnexpectedContentTypeError">
+<em class="property">exception </em><code class="descclassname">cots.core.</code><code class="descname">UnexpectedContentTypeError</code><span class="sig-paren">(</span><em>url</em>, <em>expected</em>, <em>received</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.core.UnexpectedContentTypeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cots.core.Error</span></code></p>
+<p>Raised when the content-type don&#8217;t match.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The URL of the fetched file.</li>
+<li><strong>expected</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The expected content type.</li>
+<li><strong>received</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The received content length.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cots.core.UnexpectedContentTypeError.url">
+<code class="descname">url</code><a class="headerlink" href="#cots.core.UnexpectedContentTypeError.url" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The URL of the fetched file.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.UnexpectedContentTypeError.expected">
+<code class="descname">expected</code><a class="headerlink" href="#cots.core.UnexpectedContentTypeError.expected" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The expected content type.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cots.core.UnexpectedContentTypeError.received">
+<code class="descname">received</code><a class="headerlink" href="#cots.core.UnexpectedContentTypeError.received" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The received content type.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

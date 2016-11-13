@@ -1,0 +1,685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>lapptrack – Products Tracking Manager &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../index.html" />
+    <link rel="up" title="Main Script" href="scripts.html" />
+    <link rel="next" title="cots – Product Handlers Package" href="cots/index.html" />
+    <link rel="prev" title="Main Script" href="scripts.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../docs/contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../docs/about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="scripts.html">Main Script</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">lapptrack</span></code> &#8211; Products Tracking Manager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#description">Description</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#command-line-options">Command line options</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#exit-code">Exit code</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#public-classes">Public Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#public-data">Public data</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#public-exceptions">Public Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#objects-reference">Objects reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#data-reference">Data reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#exceptions-reference">Exceptions reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#configuration-file">Configuration file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cots/index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="support/index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="further-modules.html">Further Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../docs/glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../docs/contents.html">Table Of Contents</a><ul>
+  <li><a href="../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul>
+  <li><a href="scripts.html">Main Script</a><ul>
+      <li>Previous: <a href="scripts.html" title="previous chapter">Main Script</a></li>
+      <li>Next: <a href="cots/index.html" title="next chapter"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-lapptrack">
+<span id="lapptrack-products-tracking-manager"></span><h1><a class="reference internal" href="#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref py py-mod docutils literal"><span class="pre">lapptrack</span></code></a> &#8211; Products Tracking Manager<a class="headerlink" href="#module-lapptrack" title="Permalink to this headline">¶</a></h1>
+<p>This module is in charge of plug-in handling and operations scheduling.
+It may use as a module by a third party offering a new GUI for
+example, or as a script with the command line interface:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">lapptrack</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="http://fmezou.github.io/lappupdate/lappupdate_wiki.html">user manual</a> details use cases and the configuration files.</p>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">lapptrack.py</span> <span class="pre">[-h]</span> <span class="pre">[-p</span> <span class="pre">|</span> <span class="pre">-f</span> <span class="pre">|</span> <span class="pre">-a</span> <span class="pre">[-y]|</span> <span class="pre">-m</span> <span class="pre">|</span> <span class="pre">-t]</span> <span class="pre">[-v]</span> <span class="pre">[-c</span> <span class="pre">FILE]</span></code></p>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Pull update information from the editor information channel (web, rss..), fetch
+the update, store it on the local server and generate an applist file for
+deploying the application with the <strong class="command">lappdeploy</strong> script. A plug-in
+handles information sources to determine if an update has been published, and to
+fetch it.</p>
+<p>All information about a handled <a class="reference internal" href="../docs/glossary.html#term-product"><span class="xref std std-term">product</span></a> are stored in a <a class="reference internal" href="../docs/glossary.html#term-catalog"><span class="xref std std-term">catalog</span></a>
+file (see <a class="reference internal" href="../docs/background_papers/catalog-format.html#background-catalog-format"><span class="std std-ref">Catalog Format</span></a> section for a detailed description)</p>
+<div class="section" id="command-line-options">
+<h3>Command line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-h">
+<span id="cmdoption--help"></span><code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-p">
+<span id="cmdoption--pull"></span><code class="descname">-p</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--pull</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>pull the availability of updates</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-f">
+<span id="cmdoption--fetch"></span><code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--fetch</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>fetch applications updates based on the last build catalog (useful to
+recover a crashed application storage)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-a">
+<span id="cmdoption--approve"></span><code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--approve</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>approve the deployment of applications</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-m">
+<span id="cmdoption--make"></span><code class="descname">-m</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--make</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-m" title="Permalink to this definition">¶</a></dt>
+<dd><p>make applist files based on the last build catalog (useful to make applist
+files after a configuration modification)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-t">
+<span id="cmdoption--testconf"></span><code class="descname">-t</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--testconf</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>check the configuration file for internal correctness</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-y">
+<span id="cmdoption--yes"></span><code class="descname">-y</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--yes</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-y" title="Permalink to this definition">¶</a></dt>
+<dd><p>force applications approval (see <a class="reference internal" href="#cmdoption--approve"><code class="xref std std-option docutils literal"><span class="pre">--approve</span></code></a>). With this flag,
+applications are approved without any interaction else each application
+will has to be approved in interactive mode on the console</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-c">
+<span id="cmdoption--configfile"></span><code class="descname">-c</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--configfile</code><code class="descclassname"> FILE</code><a class="headerlink" href="#cmdoption-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>specifies the configuration file. It includes the list of handled
+applications, the <a class="reference internal" href="#lapptrack-example-ini"><span class="std std-ref">Example of configuration file</span></a> details configuration topics. The
+default configuration file name is <code class="file docutils literal"><span class="pre">lapptrack.ini</span></code> located in the
+current working directory</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-v">
+<span id="cmdoption--version"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--version</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>show program&#8217;s version number and exit</p>
+</dd></dl>
+
+</div>
+<div class="section" id="exit-code">
+<h3>Exit code<a class="headerlink" href="#exit-code" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>0</td>
+<td>no error</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>an error occurred (error messages are print on stderr stream console
+and write in a log file).</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>invalid argument. An argument of the command line isn&#8217;t valid (see Usage).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="public-classes">
+<h2>Public Classes<a class="headerlink" href="#public-classes" title="Permalink to this headline">¶</a></h2>
+<p>This module has only one public class.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#lapptrack.lAppTrack" title="lapptrack.lAppTrack"><code class="xref any py py-class docutils literal"><span class="pre">lAppTrack</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="public-data">
+<h2>Public data<a class="headerlink" href="#public-data" title="Permalink to this headline">¶</a></h2>
+<p>This module has a number of public global data, including both variables and
+values used as &#8216;defined constants&#8217; listed below in alphabetical order.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#lapptrack.CATALOG_FNAME" title="lapptrack.CATALOG_FNAME"><code class="xref any py py-data docutils literal"><span class="pre">CATALOG_FNAME</span></code></a></td>
+<td><a class="reference internal" href="#lapptrack.CAT_PULLED_KNAME" title="lapptrack.CAT_PULLED_KNAME"><code class="xref any py py-data docutils literal"><span class="pre">CAT_PULLED_KNAME</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#lapptrack.CAT_APPROVED_KNAME" title="lapptrack.CAT_APPROVED_KNAME"><code class="xref any py py-data docutils literal"><span class="pre">CAT_APPROVED_KNAME</span></code></a></td>
+<td><a class="reference internal" href="#lapptrack.CAT_VERSION_KNAME" title="lapptrack.CAT_VERSION_KNAME"><code class="xref any py py-data docutils literal"><span class="pre">CAT_VERSION_KNAME</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#lapptrack.CAT_FETCHED_KNAME" title="lapptrack.CAT_FETCHED_KNAME"><code class="xref any py py-data docutils literal"><span class="pre">CAT_FETCHED_KNAME</span></code></a></td>
+<td><a class="reference internal" href="#lapptrack.CAT_VERSION" title="lapptrack.CAT_VERSION"><code class="xref any py py-data docutils literal"><span class="pre">CAT_VERSION</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#lapptrack.CAT_MODIFIED_KNAME" title="lapptrack.CAT_MODIFIED_KNAME"><code class="xref any py py-data docutils literal"><span class="pre">CAT_MODIFIED_KNAME</span></code></a></td>
+<td><a class="reference internal" href="#lapptrack.CAT_WARNING_KNAME" title="lapptrack.CAT_WARNING_KNAME"><code class="xref any py py-data docutils literal"><span class="pre">CAT_WARNING_KNAME</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#lapptrack.CAT_PRODUCTS_KNAME" title="lapptrack.CAT_PRODUCTS_KNAME"><code class="xref any py py-data docutils literal"><span class="pre">CAT_PRODUCTS_KNAME</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="public-exceptions">
+<h2>Public Exceptions<a class="headerlink" href="#public-exceptions" title="Permalink to this headline">¶</a></h2>
+<p>This module has only one exception.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#lapptrack.ConfigurationError" title="lapptrack.ConfigurationError"><code class="xref any py py-exc docutils literal"><span class="pre">ConfigurationError</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="objects-reference">
+<h2>Objects reference<a class="headerlink" href="#objects-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the objects defined in this module. In this case, there is
+only one object which is the main entry point of the scheduler. It offers an API
+for implementing user interface.</p>
+<dl class="class">
+<dt id="lapptrack.lAppTrack">
+<em class="property">class </em><code class="descclassname">lapptrack.</code><code class="descname">lAppTrack</code><span class="sig-paren">(</span><em>config_file</em><span class="sig-paren">)</span><a class="headerlink" href="#lapptrack.lAppTrack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Schedule products updates retrieving operations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config_file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The name of the configuration file. It may
+be a partial or a full pathname.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Public Methods</strong></dt>
+<dd><p class="first">This class has a number of public methods listed below in alphabetical
+order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#lapptrack.lAppTrack.approve" title="lapptrack.lAppTrack.approve"><code class="xref any py py-meth docutils literal"><span class="pre">approve</span></code></a></td>
+<td><a class="reference internal" href="#lapptrack.lAppTrack.pull" title="lapptrack.lAppTrack.pull"><code class="xref any py py-meth docutils literal"><span class="pre">pull</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#lapptrack.lAppTrack.fetch" title="lapptrack.lAppTrack.fetch"><code class="xref any py py-meth docutils literal"><span class="pre">fetch</span></code></a></td>
+<td><a class="reference internal" href="#lapptrack.lAppTrack.run" title="lapptrack.lAppTrack.run"><code class="xref any py py-meth docutils literal"><span class="pre">run</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#lapptrack.lAppTrack.make" title="lapptrack.lAppTrack.make"><code class="xref any py py-meth docutils literal"><span class="pre">make</span></code></a></td>
+<td><a class="reference internal" href="#lapptrack.lAppTrack.test_config" title="lapptrack.lAppTrack.test_config"><code class="xref any py py-meth docutils literal"><span class="pre">test_config</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Using lAppTrack...</strong></dt>
+<dd><p class="first">This class is the scheduler and handles elementary operations to
+complete the expected task.</p>
+<p>The easiest way of using this class is to call the <a class="reference internal" href="#lapptrack.lAppTrack.run" title="lapptrack.lAppTrack.run"><code class="xref any py py-meth docutils literal"><span class="pre">run</span></code></a> method. This
+all-in-one method retrieve information from the web site editor, fetch
+possible updates, and generate the <a class="reference internal" href="../docs/glossary.html#term-applist"><code class="xref any std std-term docutils literal"><span class="pre">applist</span></code></a> files without any user
+action.</p>
+<p class="last">To have more control, you must call individually each method. A typical
+use case is to fetch the possible update by calling the <a class="reference internal" href="#lapptrack.lAppTrack.pull" title="lapptrack.lAppTrack.pull"><code class="xref any py py-meth docutils literal"><span class="pre">pull</span></code></a> method
+then the <a class="reference internal" href="#lapptrack.lAppTrack.fetch" title="lapptrack.lAppTrack.fetch"><code class="xref any py py-meth docutils literal"><span class="pre">fetch</span></code></a> method, and approve each update by calling the
+<a class="reference internal" href="#lapptrack.lAppTrack.approve" title="lapptrack.lAppTrack.approve"><code class="xref any py py-meth docutils literal"><span class="pre">approve</span></code></a> method, and then generate the <a class="reference internal" href="../docs/glossary.html#term-applist"><code class="xref any std std-term docutils literal"><span class="pre">applist</span></code></a> file with the <a class="reference internal" href="#lapptrack.lAppTrack.make" title="lapptrack.lAppTrack.make"><code class="xref any py py-meth docutils literal"><span class="pre">make</span></code></a>
+method.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="lapptrack.lAppTrack.approve">
+<code class="descname">approve</code><span class="sig-paren">(</span><em>force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#lapptrack.lAppTrack.approve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Approve the deployment of applications.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>force</strong> (<em>optional[bool]</em>) &#8211; False to indicates if the user must approved
+each deployment in a interactive session. True to indicates that
+updates are all approved without prompt.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lapptrack.lAppTrack.fetch">
+<code class="descname">fetch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lapptrack.lAppTrack.fetch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch application updates based on the last build catalog.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lapptrack.lAppTrack.make">
+<code class="descname">make</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lapptrack.lAppTrack.make" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make <a class="reference internal" href="../docs/glossary.html#term-applist"><code class="xref any std std-term docutils literal"><span class="pre">applist</span></code></a> files based on the last build catalog</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lapptrack.lAppTrack.pull">
+<code class="descname">pull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lapptrack.lAppTrack.pull" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pull the availability of updates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lapptrack.lAppTrack.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lapptrack.lAppTrack.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the lAppTrack application.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lapptrack.lAppTrack.test_config">
+<code class="descname">test_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lapptrack.lAppTrack.test_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the configuration file for internal correctness.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="data-reference">
+<h2>Data reference<a class="headerlink" href="#data-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details global data, including both variables and values used
+as &#8216;defined constants&#8217;.</p>
+<dl class="data">
+<dt id="lapptrack.CATALOG_FNAME">
+<code class="descclassname">lapptrack.</code><code class="descname">CATALOG_FNAME</code><em class="property"> = 'catalog.json'</em><a class="headerlink" href="#lapptrack.CATALOG_FNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the file name of the catalog.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lapptrack.CAT_WARNING_KNAME">
+<code class="descclassname">lapptrack.</code><code class="descname">CAT_WARNING_KNAME</code><em class="property"> = '__warning__'</em><a class="headerlink" href="#lapptrack.CAT_WARNING_KNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the key name of the warning string of the catalog.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lapptrack.CAT_VERSION_KNAME">
+<code class="descclassname">lapptrack.</code><code class="descname">CAT_VERSION_KNAME</code><em class="property"> = '__version__'</em><a class="headerlink" href="#lapptrack.CAT_VERSION_KNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the key name of the version string of the catalog.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lapptrack.CAT_VERSION">
+<code class="descclassname">lapptrack.</code><code class="descname">CAT_VERSION</code><em class="property"> = '0.2.0'</em><a class="headerlink" href="#lapptrack.CAT_VERSION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the current version of the catalog scheme.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lapptrack.CAT_MODIFIED_KNAME">
+<code class="descclassname">lapptrack.</code><code class="descname">CAT_MODIFIED_KNAME</code><em class="property"> = 'modified'</em><a class="headerlink" href="#lapptrack.CAT_MODIFIED_KNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the key name of the latest modification date of the catalog.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lapptrack.CAT_PRODUCTS_KNAME">
+<code class="descclassname">lapptrack.</code><code class="descname">CAT_PRODUCTS_KNAME</code><em class="property"> = 'products'</em><a class="headerlink" href="#lapptrack.CAT_PRODUCTS_KNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the key name of the list of handled application.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lapptrack.CAT_PULLED_KNAME">
+<code class="descclassname">lapptrack.</code><code class="descname">CAT_PULLED_KNAME</code><em class="property"> = 'pulled'</em><a class="headerlink" href="#lapptrack.CAT_PULLED_KNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the key name of the object indicating the latest version of the
+product available on the web site of the editor.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lapptrack.CAT_FETCHED_KNAME">
+<code class="descclassname">lapptrack.</code><code class="descname">CAT_FETCHED_KNAME</code><em class="property"> = 'fetched'</em><a class="headerlink" href="#lapptrack.CAT_FETCHED_KNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the key name of the object indicating the latest fetched version of
+the product.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lapptrack.CAT_APPROVED_KNAME">
+<code class="descclassname">lapptrack.</code><code class="descname">CAT_APPROVED_KNAME</code><em class="property"> = 'approved'</em><a class="headerlink" href="#lapptrack.CAT_APPROVED_KNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contain the key name of the object indicating the latest approved version of
+the product.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="exceptions-reference">
+<h2>Exceptions reference<a class="headerlink" href="#exceptions-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the specific exception used in this module.</p>
+<dl class="exception">
+<dt id="lapptrack.Error">
+<em class="property">exception </em><code class="descclassname">lapptrack.</code><code class="descname">Error</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#lapptrack.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></a></p>
+<p>Base class for lAppTrack exceptions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) Human readable string describing the exception.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="lapptrack.Error.message">
+<code class="descname">message</code><a class="headerlink" href="#lapptrack.Error.message" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; Human readable string describing the exception.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="lapptrack.ConfigurationError">
+<em class="property">exception </em><code class="descclassname">lapptrack.</code><code class="descname">ConfigurationError</code><span class="sig-paren">(</span><em>filename</em>, <em>message</em>, <em>solution=''</em><span class="sig-paren">)</span><a class="headerlink" href="#lapptrack.ConfigurationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lapptrack.Error" title="lapptrack.Error"><code class="xref py py-class docutils literal"><span class="pre">lapptrack.Error</span></code></a></p>
+<p>Raised when a key or a value is erroneous in the configuration file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The path name (full or partial) of the configuration
+file.</li>
+<li><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; Human readable string describing the exception.</li>
+<li><strong>solution</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) Human readable string providing a
+recommendation to solve the error.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="lapptrack.ConfigurationError.filename">
+<code class="descname">filename</code><a class="headerlink" href="#lapptrack.ConfigurationError.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The path name (full or partial) of the configuration
+file.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lapptrack.ConfigurationError.message">
+<code class="descname">message</code><a class="headerlink" href="#lapptrack.ConfigurationError.message" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; Human readable string describing the exception.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lapptrack.ConfigurationError.solution">
+<code class="descname">solution</code><a class="headerlink" href="#lapptrack.ConfigurationError.solution" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; (optional) Human readable string providing a
+recommendation to solve the error.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="configuration-file">
+<h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper container" id="lapptrack-example-ini">
+<div class="code-block-caption"><span class="caption-text">Example of configuration file</span><a class="headerlink" href="#lapptrack-example-ini" title="Permalink to this code">¶</a></div>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="c1"># Core section contains general parameters</span>
+<span class="c1"># store (mandatory): contains the path where installation package and applist</span>
+<span class="c1">#   files are stored.</span>
+<span class="c1"># logger (optional): contains the path name of the configuration file of the</span>
+<span class="c1"># logging system based on [`logging`](https://docs.python.org/3/library/</span>
+<span class="c1"># logging.html) module.</span>
+<span class="c1"># pulling_report (optional): contains the path name of the configuration file of</span>
+<span class="c1"># the pulling activity report  (see `cots.report` for detailed informations)</span>
+<span class="c1"># fetching_report (optional): contains the path name of the configuration file</span>
+<span class="c1"># of the fetching activity report (see `cots.report` for detailed informations)</span>
+<span class="c1"># approving_report (optional): contains the path name of the configuration file</span>
+<span class="c1"># of the approving activity report (see `cots.report` for detailed informations)</span>
+<span class="k">[core]</span>
+<span class="na">store</span> <span class="o">=</span> <span class="s">..\appstore</span>
+<span class="c1">;logger = .\logger.ini</span>
+<span class="c1">;pulling_report = .\pulling_report.ini</span>
+<span class="c1">;fetching_report = .\fetching_report.ini</span>
+<span class="c1">;approving_report = .\approving_report.ini</span>
+
+<span class="c1"># Sets section contains the list of named sets used to deploy applications.</span>
+<span class="c1"># &lt;name&gt;: is the name of the set and contains a set of computer names or any</span>
+<span class="c1">#   organisational units according with the lappdeploy script call. A set may be</span>
+<span class="c1">#   empty, in this case, no file is going to be created for this one.</span>
+<span class="c1">#   __manual__: is a special set to specify that the installer must be manually</span>
+<span class="c1">#   launched (an user interaction is necessary)</span>
+<span class="c1">#   __thirdparty__:is a special set to specify that the installer is going to be</span>
+<span class="c1">#  launched from an other installer (extension or language pack for exemple)</span>
+<span class="c1">#  __all__: is a special set to specify that the installer is going to be</span>
+<span class="c1">#  launched on all computer.</span>
+<span class="k">[sets]</span>
+<span class="na">__manual__</span> <span class="o">=</span> <span class="s">manual</span>
+<span class="na">__thirdparty__</span> <span class="o">=</span>
+<span class="na">__all__</span> <span class="o">=</span> <span class="s">all</span>
+<span class="na">userset</span> <span class="o">=</span> <span class="s">pc1, pc2</span>
+
+<span class="c1"># Applications section contains the list of applications to maintains.</span>
+<span class="c1"># &lt;name&gt;: is the name of the application section (see below) and contains</span>
+<span class="c1">#   a flag specifying if the application section have been taking into account.</span>
+<span class="k">[applications]</span>
+<span class="na">dummy</span> <span class="o">=</span> <span class="s">on</span>
+<span class="na">dummy2</span> <span class="o">=</span> <span class="s">on</span>
+<span class="na">ignored</span> <span class="o">=</span> <span class="s">off</span>
+
+<span class="c1"># Application section contains configuration items for a specific application</span>
+<span class="c1">#   (e.g. python module name which manage this application)</span>
+<span class="c1"># Warning: name section must be lowercase, since the section name is a key in</span>
+<span class="c1">#   applications section.</span>
+<span class="c1"># handler (optional): is the qualified name of the handler class (A dotted name</span>
+<span class="c1">#   showing the “path” from the global scope to the handler class). The default</span>
+<span class="c1">#   value is &#39;cots.&lt;section name&gt;.&lt;section name&gt;Handler&#39; with the first letter</span>
+<span class="c1">#   of section is capitalised for having a camel case name for the class</span>
+<span class="c1">#   handler.</span>
+<span class="c1"># path (optional): is the path name where to store the installer package.</span>
+<span class="c1">#   The default value is &#39;${core:store}\&lt;section name&gt;&#39;.</span>
+<span class="c1"># set (optional): is the name of the set associated with the application</span>
+<span class="c1">#   (see sets section)</span>
+<span class="c1">#   The default value is &#39;__all__&#39;.</span>
+<span class="k">[dummy2]</span>
+<span class="na">handler</span> <span class="o">=</span> <span class="s">cots.dummy.DummyHandler</span>
+<span class="na">path</span> <span class="o">=</span> <span class="s">${core:store}\dummy</span>
+<span class="na">set</span> <span class="o">=</span> <span class="s">userset</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper container" id="logger-example-ini">
+<div class="code-block-caption"><span class="caption-text">Example of logging configuration file</span><a class="headerlink" href="#logger-example-ini" title="Permalink to this code">¶</a></div>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="c1"># Logging configuration section contains configuration items used by the</span>
+<span class="c1"># logging module. See the &#39;Configuration file format&#39; (docs.python.org/3/</span>
+<span class="c1"># library/logging.config.html#configuration-file-format) to have details about</span>
+<span class="c1"># the file format.</span>
+<span class="k">[loggers]</span>
+<span class="na">keys</span><span class="o">=</span><span class="s">root,main,dummy</span>
+
+<span class="k">[handlers]</span>
+<span class="na">keys</span><span class="o">=</span><span class="s">consoleHandler,logfileHandler</span>
+
+<span class="k">[formatters]</span>
+<span class="na">keys</span><span class="o">=</span><span class="s">standardFormatter,debugFormatter</span>
+
+<span class="k">[logger_root]</span>
+<span class="na">level</span><span class="o">=</span><span class="s">NOTSET</span>
+<span class="na">handlers</span><span class="o">=</span><span class="s">consoleHandler</span>
+
+<span class="k">[logger_main]</span>
+<span class="na">qualname</span><span class="o">=</span><span class="s">__main__</span>
+<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span>
+<span class="na">handlers</span><span class="o">=</span><span class="s">consoleHandler</span>
+<span class="na">propagate</span><span class="o">=</span><span class="s">0</span>
+
+<span class="k">[logger_dummy]</span>
+<span class="na">qualname</span><span class="o">=</span><span class="s">cots.dummy</span>
+<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span>
+<span class="na">handlers</span><span class="o">=</span><span class="s">consoleHandler,logfileHandler</span>
+<span class="na">propagate</span><span class="o">=</span><span class="s">0</span>
+
+<span class="k">[handler_consoleHandler]</span>
+<span class="na">class</span><span class="o">=</span><span class="s">StreamHandler</span>
+<span class="na">level</span><span class="o">=</span><span class="s">INFO</span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">standardFormatter</span>
+<span class="na">args</span><span class="o">=</span><span class="s">(sys.stdout,)</span>
+
+<span class="k">[handler_logfileHandler]</span>
+<span class="na">class</span><span class="o">=</span><span class="s">FileHandler</span>
+<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">debugFormatter</span>
+<span class="na">args</span><span class="o">=</span><span class="s">(&#39;${core:store}\\lapptrack.log&#39;, &#39;w&#39;)</span>
+
+<span class="k">[formatter_standardFormatter]</span>
+<span class="na">format</span><span class="o">=</span><span class="s">%(asctime)s - %(levelname)s - %(name)s - %(message)s</span>
+
+<span class="k">[formatter_debugFormatter]</span>
+<span class="na">format</span><span class="o">=</span><span class="s">%(asctime)s - %(levelname)s - %(name)s [%(funcName)s] - %(message)s</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

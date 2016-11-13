@@ -1,0 +1,1248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>support.pad – Lightweight Portable Application Description Support &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="support – Supporting Modules Package" href="index.html" />
+    <link rel="next" title="support.progressbar – Progress Bar Widgets" href="progressbar.html" />
+    <link rel="prev" title="support.report – Reporting Manager" href="report.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../docs/contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../docs/about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../scripts.html">Main Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cots/index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="report.html"><code class="docutils literal"><span class="pre">support.report</span></code> &#8211; Reporting Manager</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">support.pad</span></code> &#8211; Lightweight Portable Application Description Support</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#public-classes">Public Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#public-exceptions">Public Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#objects-reference">Objects reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#exceptions-reference">Exceptions reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#definitions-files">Definitions files</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="progressbar.html"><code class="docutils literal"><span class="pre">support.progressbar</span></code> &#8211; Progress Bar Widgets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="semver.html"><code class="docutils literal"><span class="pre">support.semver</span></code> &#8211; Semantic Versioning Support</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../further-modules.html">Further Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../../docs/glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../docs/contents.html">Table Of Contents</a><ul>
+  <li><a href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul>
+  <li><a href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul>
+      <li>Previous: <a href="report.html" title="previous chapter"><code class="docutils literal"><span class="pre">support.report</span></code> &#8211; Reporting Manager</a></li>
+      <li>Next: <a href="progressbar.html" title="next chapter"><code class="docutils literal"><span class="pre">support.progressbar</span></code> &#8211; Progress Bar Widgets</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-support.pad">
+<span id="support-pad-lightweight-portable-application-description-support"></span><h1><a class="reference internal" href="#module-support.pad" title="support.pad: Lightweight Portable Application Description Support (all)"><code class="xref any py py-mod docutils literal"><span class="pre">support.pad</span></code></a> &#8211; Lightweight Portable Application Description Support<a class="headerlink" href="#module-support.pad" title="Permalink to this headline">¶</a></h1>
+<p>This module defines functions and classes for a lightweight Portable
+Application Description (PAD) support.</p>
+<p>The parser uses <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html#module-xml.etree.ElementTree" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">xml.etree.ElementTree</span></code></a> module, and checks the <a class="reference external" href="http://pad.asp-software.org/spec/spec.php">PAD 4.0</a>
+Specification compliance.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">the values checking is done only when a file is parsed (i.e. when
+loading a file). When building or modifying a PAD File, no control is done.</p>
+</div>
+<div class="section" id="public-classes">
+<h2>Public Classes<a class="headerlink" href="#public-classes" title="Permalink to this headline">¶</a></h2>
+<p>This module has only one public class.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.pad.PadParser" title="support.pad.PadParser"><code class="xref any py py-class docutils literal"><span class="pre">PadParser</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="public-exceptions">
+<h2>Public Exceptions<a class="headerlink" href="#public-exceptions" title="Permalink to this headline">¶</a></h2>
+<p>This module has has a number of exceptions listed below in alphabetical order.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.pad.PADSyntaxError" title="support.pad.PADSyntaxError"><code class="xref any py py-exc docutils literal"><span class="pre">PADSyntaxError</span></code></a></td>
+<td><a class="reference internal" href="#support.pad.SpecSyntaxError" title="support.pad.SpecSyntaxError"><code class="xref any py py-exc docutils literal"><span class="pre">SpecSyntaxError</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="objects-reference">
+<h2>Objects reference<a class="headerlink" href="#objects-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the objects defined in this module.</p>
+<dl class="class">
+<dt id="support.pad.PadParser">
+<em class="property">class </em><code class="descclassname">support.pad.</code><code class="descname">PadParser</code><span class="sig-paren">(</span><em>element=None</em>, <em>file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#support.pad.PadParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html#xml.etree.ElementTree.ElementTree" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">xml.etree.ElementTree.ElementTree</span></code></a></p>
+<p>A PAD element hierarchy.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>element</strong> (<em>xml.etree.ElementTree.ElementTree, optional</em>) &#8211; Root element node</li>
+<li><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) A file handle or file name of an XML file whose
+contents will be used to initialize the tree with.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Public Methods</strong></dt>
+<dd><p class="first">This class has a number of public methods listed below in alphabetical
+order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#support.pad.PadParser.parse" title="support.pad.PadParser.parse"><code class="xref any py py-meth docutils literal"><span class="pre">parse</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Using PadParser...</strong></dt>
+<dd>This class is a derived class from <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html#xml.etree.ElementTree.ElementTree" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">xml.etree.ElementTree.ElementTree</span></code></a>,
+and have the same using. Only the
+<a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html#xml.etree.ElementTree.ElementTree.parse" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">xml.etree.ElementTree.ElementTree.parse</span></code></a> has been extended to support
+the PAD specification.</dd>
+</dl>
+<dl class="method">
+<dt id="support.pad.PadParser.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>source</em>, <em>parser=None</em><span class="sig-paren">)</span><a class="headerlink" href="#support.pad.PadParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load external PAD file into element tree.</p>
+<p>The PAD compliance is done at this time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><em>object</em></a>) &#8211; A file name or file object.</li>
+<li><strong>parser</strong> (<em>object, optional</em>) &#8211; An optional parser instance that defaults
+to XMLParser.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><a class="reference internal" href="#support.pad.SpecSyntaxError" title="support.pad.SpecSyntaxError"><code class="xref py py-exc docutils literal"><span class="pre">SpecSyntaxError</span></code></a> &#8211; Spec file is erroneous.</li>
+<li><a class="reference internal" href="#support.pad.PADSyntaxError" title="support.pad.PADSyntaxError"><code class="xref py py-exc docutils literal"><span class="pre">PADSyntaxError</span></code></a> &#8211; A tag in a PAD file don&#8217;t match the PAD Specs</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><dl class="docutils">
+<dt>the root element of the</dt>
+<dd><p class="first last">given source document.</p>
+</dd>
+</dl>
+</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html#xml.etree.ElementTree.ElementTree" title="(in Python v3.5)">xml.etree.ElementTree.ElementTree</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="exceptions-reference">
+<h2>Exceptions reference<a class="headerlink" href="#exceptions-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the specific exception used in this module.</p>
+<dl class="exception">
+<dt id="support.pad.Error">
+<em class="property">exception </em><code class="descclassname">support.pad.</code><code class="descname">Error</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#support.pad.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></a></p>
+<p>Base class for PADParser exceptions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) Human readable string describing the exception.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="support.pad.Error.message">
+<code class="descname">message</code><a class="headerlink" href="#support.pad.Error.message" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; Human readable string describing the exception.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="support.pad.SpecSyntaxError">
+<em class="property">exception </em><code class="descclassname">support.pad.</code><code class="descname">SpecSyntaxError</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#support.pad.SpecSyntaxError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#support.pad.Error" title="support.pad.Error"><code class="xref py py-class docutils literal"><span class="pre">support.pad.Error</span></code></a></p>
+<p>Raised when spec file is erroneous.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The name of the missing tag.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="support.pad.SpecSyntaxError.name">
+<code class="descname">name</code><a class="headerlink" href="#support.pad.SpecSyntaxError.name" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The name of the missing tag.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="support.pad.PADSyntaxError">
+<em class="property">exception </em><code class="descclassname">support.pad.</code><code class="descname">PADSyntaxError</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#support.pad.PADSyntaxError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#support.pad.Error" title="support.pad.Error"><code class="xref py py-class docutils literal"><span class="pre">support.pad.Error</span></code></a></p>
+<p>Raised when a tag in a PAD file don&#8217;t match the PAD Specs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The URL of the fetched file.</li>
+<li><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; The value of the erroneous tag.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="support.pad.PADSyntaxError.name">
+<code class="descname">name</code><a class="headerlink" href="#support.pad.PADSyntaxError.name" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The URL of the fetched file.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="support.pad.PADSyntaxError.value">
+<code class="descname">value</code><a class="headerlink" href="#support.pad.PADSyntaxError.value" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> &#8211; The value of the erroneous tag.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="definitions-files">
+<h2>Definitions files<a class="headerlink" href="#definitions-files" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper container" id="padspec40-xml">
+<div class="code-block-caption"><span class="caption-text">PAD specification version 4.0</span><a class="headerlink" href="#padspec40-xml" title="Permalink to this code">¶</a></div>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;PAD_Spec&gt;</span>
+    <span class="nt">&lt;PAD_Spec_Version&gt;</span>4.0<span class="nt">&lt;/PAD_Spec_Version&gt;</span>
+    <span class="nt">&lt;Fields&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>MASTER_PAD_VERSION<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/MASTER_PAD_VERSION_INFO/MASTER_PAD_VERSION<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>PAD Version<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>PAD specification version that the PAD file complies with<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Decimal major and minor version numbers with separator (.)<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^\d.\d+\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>MASTER_PAD_EDITOR<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/MASTER_PAD_VERSION_INFO/MASTER_PAD_EDITOR<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>PAD Editor<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Name of tool producing PAD file<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-100 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{0,100}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>MASTER_PAD_INFO<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/MASTER_PAD_VERSION_INFO/MASTER_PAD_INFO<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>PAD Comment<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Information on how to find out more about PAD<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-1000 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{0,1000}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>CERTIFIED<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/MASTER_PAD_VERSION_INFO/CERTIFIED<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Certified<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Y, y, N, or n<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[YyNn]\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>CERTIFICATE_ID<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/MASTER_PAD_VERSION_INFO/CERTIFICATE_ID<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Certificate ID<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Server generated # from AppVisor<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(crt\-[0-9A-Z]{12}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>CERTIFICATE_LICENSE<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/MASTER_PAD_VERSION_INFO/CERTIFICATE_LICENSE<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Certificate License<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Prooflink ID URL hosted in AppVisor URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>http://repository.appvisor.com/<span class="ni">&amp;lt;</span>CertificateID<span class="ni">&amp;gt;</span><span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(http\:\/\/repository\.appvisor\.com\/crt\-[0-9a-z]{12}|)\Z<span class="nt">&lt;/RegEx&gt;</span>                   
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>PublisherID<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/PublisherID<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Publisher ID<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Unique identifier generated by AppVisor.com after publisher registration on AppVisor.com<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Server generated # from AppVisor<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^pid-[0-9a-z]{12}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Company_Name<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Company_Name<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Company name<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Company name or, if no company name, author name<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 2-40 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{2,40}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Address_1<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Address_1<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Address<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>First line of the mailing address<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-40 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[a-zA-Z0-9\xbc-\xff .\-,#\/\x27]{0,40}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Address_2<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Address_2<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Address 2nd line<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Second line of the mailing address, optional<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-40 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[a-zA-Z\xbc-\xff0-9 .\-,#\/\x27]{0,40}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>City_Town<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/City_Town<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>City or town<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>City, town or village<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 2-40 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[a-zA-Z\xbc-\xff0-9 .\-,#\/\x27]{2,40}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>State_Province<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/State_Province<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>State<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>State, province or region<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-30 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[a-zA-Z\xbc-\xff0-9 .\-,\/]{0,30}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Zip_Postal_Code<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Zip_Postal_Code<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>ZIP<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>ZIP or Postal code<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-20 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{0,20}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Country<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Country<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Country<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Country<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 2-40 alphabetic<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[a-z A-Z\xbc-\xff\x27-]{2,40}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Company_WebSite_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Company_WebSite_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Website<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Company website URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 2-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(http|https):\/\/.{2,120}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Author_First_Name<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Contact_Info/Author_First_Name<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Author first name<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Author&#39;s first name<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 2-30 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{2,30}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Author_Last_Name<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Contact_Info/Author_Last_Name<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Author last name<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Author&#39;s last name<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 2-30 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{2,30}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Author_Email<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Contact_Info/Author_Email<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Author email<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Author&#39;s email address<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Email address 2-30@2-63.2-20 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^.{2,30}\@.{2,63}\..{2,20}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Contact_First_Name<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Contact_Info/Contact_First_Name<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Contact first name<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>First name of the person that should be used to contact the company regarding this product<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 2-30 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{2,30}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Contact_Last_Name<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Contact_Info/Contact_Last_Name<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Contact last name<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Last name of the person that should be used to contact the company regarding this product<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 2-30 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{2,30}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Contact_Email<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Contact_Info/Contact_Email<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Contact email<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Email address of the person that should be used to contact the company regarding this product<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Email address 2-30@2-63.2-20 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^.{2,30}\@.{2,63}\..{2,20}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Sales_Email<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Support_Info/Sales_Email<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Sales email<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Email address where sales inquiries should be directed<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Email address 2-30@2-63.2-20 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^.{2,30}\@.{2,63}\..{2,20}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Support_Email<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Support_Info/Support_Email<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Support email<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Email address where technical support inquiries should be directed<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Email address 2-30@2-63.2-20 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^.{2,30}\@.{2,63}\..{2,20}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>General_Email<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Support_Info/General_Email<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>General email<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Email address where general inquiries should be directed<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Email address 2-30@2-63.2-20 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^.{2,30}\@.{2,63}\..{2,20}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Sales_Phone<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Support_Info/Sales_Phone<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Sales phone<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Phone number where sales inquiries should be directed<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numeric with punctuations (allowed: #*()-/_) 7-40 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^\+{0,2}(([0-9#*()-\/_] *){7,40})?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Support_Phone<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Support_Info/Support_Phone<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Support phone<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Phone number where technical support inquiries should be directed<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numeric with punctuations (allowed: #*()-/_) 7-40 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^\+{0,2}(([0-9#*()-\/_] *){7,40})?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>General_Phone<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Support_Info/General_Phone<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>General phone<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Phone number where general inquiries should be directed<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numeric with punctuations (allowed: #*()-/_) 7-40 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^\+{0,2}(([0-9#*()-\/_] *){7,40})?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Fax_Phone<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/Support_Info/Fax_Phone<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Fax<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Fax number<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numeric with punctuations (allowed: #*()-/_) 7-40 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^\+{0,2}(([0-9#*()-\/_] *){7,40})?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>GooglePlusPage<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/GooglePlusPage<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Google Plus Page<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Google Plus Page URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 4-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{4,120}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>LinkedinPage<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/LinkedinPage<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Linkedin Page<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Linkedin Page URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 4-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{4,120}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>TwitterCompanyPage<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/TwitterCompanyPage<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Twitter Company Page<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Twitter Company Page URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 4-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{4,120}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>FacebookCompanyPage<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/FacebookCompanyPage<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Facebook Company Page<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Facebook Company Page URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 4-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{4,120}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>CompanyStorePage<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Company_Info/CompanyStorePage<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Company Store Page<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Company Store Page URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 4-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{4,120}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>AppID<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/AppID<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Application ID<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>AppID is a unique identifier that is assigned to each product. We encourage download sites and publisher to rely on the AppID instead of the product name<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Server generated # from AppVisor<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^app-[0-9a-z]{12}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Name<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Name<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Program name<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Full name of the program WITHOUT version numbers<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 1-40 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{1,40}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Version<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Version<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Version<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Version number of the product, should NOT contain the &#39;v.&#39; characters<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Alphanumeric with punctuations (allowed: ._-) 1-15 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[a-zA-Z0-9_.\-]{1,15}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Release_Month<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Release_Month<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Release month<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Month that the program was released. Must be 1 or 2 digits: 1-12<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>1 or 2 digits 1-12<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^([1-9]|0[1-9]|1[0-2])\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Release_Day<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Release_Day<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Release day<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Day of the month the program was released. Must be 1 or 2 digits: 1-31<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>1 or  digits 1-31<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^([1-9]|0[1-9]|[12][0-9]|3[01])\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Release_Year<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Release_Year<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Release year<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Year the program was released. Must be a 4 digit year: 1900-2199<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>4 digits 1900-2199<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(19|20|21)[0-9]{2}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Cost_Dollars<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Cost_Dollars<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Cost amount<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Numerical cost of the program in US Dollars, without currency symbol<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numeric with &quot;.&quot; as decimal separator<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^([0-9]+(\.[0-9]{2})?)?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Cost_Other_Code<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Cost_Other_Code<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Cost other currency<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>International code used for Cost other<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Three letter currency code, must be selected from list<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(AED|AFN|ALL|AMD|ANG|AOA|ARS|AUD|AWG|AZM|BAM|BBD|BDT|BGN|BHD|BIF|BMD|BND|BOB|BRL|BSD|BTN|BWP|BYR|BZD|CAD|CDF|CHF|CLP|CNY|COP|COU|CRC|CSD|CZK|CUP|CVE|CYP|DJF|DKK|DOP|DZD|EEK|EGP|ERN|ETB|EUR|FJD|FKP|GBP|GEL|GHC|GIP|GMD|GNF|GTQ|GYD|HKD|HNL|HRK|HTG|HUF|IDR|ILS|INR|IQD|IRR|ISK|JMD|JOD|JPY|KES|KGS|KHR|KMF|KPW|KRW|KWD|KYD|KZT|LAK|LBP|LKR|LRD|LSL|LTL|LVL|LYD|MAD|MDL|MGA|MKD|MMK|MNT|MOP|MRO|MTL|MUR|MVR|MWK|MXN|MYR|MZN|NAD|NGN|NIO|NOK|NPR|NZD|OMR|PAB|PEN|PGK|PHP|PKR|PLN|PYG|QAR|RON|RUB|RWF|SAR|SBD|SCR|SDD|SEK|SGD|SHP|SIT|SKK|SLL|SOS|SRD|STD|SYP|SZL|THB|TJS|TMM|TND|TOP|TRY|TTD|TWD|TZS|UAH|UGX|USD|UYU|UZS|VEB|VND|VUV|WST|XAF|XCD|XOF|XPF|YER|ZAR|ZMK|ZWD)?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Cost_Other<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Cost_Other<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Cost other<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Numerical cost of the program in currency other than US Dollars, without currency symbol<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numeric with &quot;.&quot; as decimal separator<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^([0-9]+(\.[0-9]{2})?)?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Type<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Type<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Type<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Type of program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Program type identifier, must be selected from list<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(Shareware|Freeware|Adware|Demo|Commercial|Data Only)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Release_Status<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Release_Status<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Status<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Release status of the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Release status identifier, must be selected from list<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(Major Update|Minor Update|New Release|Beta|Alpha|Media Only)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Install_Support<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Install_Support<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Install<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Type of install support the program has<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Install support identifier, must be selected from list<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(Install and Uninstall|Install Only|No Install Support|Uninstall Only)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_OS_Support<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_OS_Support<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Operating Systems<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Operating systems supported by the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Operating system ids, must be selected from list. As of PAD 3.10 May 1, 2009, many terms have been deprecated.  You may still be able to use these terms even though they are not included in the current PAD Spec.  This validator test only against the current spec.  <span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((Android|BlackBerry|Handheld\/Mobile Other|iPhone|iPad|iPod|iTouch|Java|Linux|Linux Console|Linux Gnome|Linux GPL|Linux Open Source|Mac OS X|Mac Other|MS-DOS|Netware|OpenVMS|Palm|Pocket PC|Symbian|Unix|Win2000|Win7 x32|Win7 x64|Win98|WinMobile|WinOther|WinServer|WinVista|WinVista x64|WinXP|Windows 8|Windows Phone 7|Windows Phone 8|Windows RT|Other|Not Applicable)[, ]*)+\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Target_Platform<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Target_Platform<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Target Platform<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Target platform for your program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Specify a target platform for your product. Please use separate product profiles if your product supports more than one platform. Make sure to alter product name for non-Windows versions if a Windows version exists. For example, &quot;MyProduct for Mac&quot; or &quot;MyProduct for Android&quot;.<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(Windows|OS X|Linux|Android|iOS|Web Browser)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Language<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Language<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Languages<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Languages supported by the program user interface<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Language identifiers, must be selected from list<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(Abkhazian|Afar|Afrikaans|Albanian|Amharic|Arabic|Armenian|Assamese|Aymara|Azerbaijani|Bashkir|Basque|Bengali|Bhutani|Bihari|Bislama|Breton|Bulgarian|Burmese|Byelorussian|Cambodian|Catalan|Chinese|ChineseSimplified|ChineseTraditional|Corsican|Croatian|Czech|Danish|Dutch|English|Esperanto|Estonian|Faeroese|Fiji|Finnish|French|Frisian|Gaelic|Galician|Georgian|German|Greek|Greenlandic|Guarani|Gujarati|Hausa|Hebrew|Hindi|Hungarian|Icelandic|Indonesian|Interlingua|Interlingue|Inupiak|Irish|Italian|Japanese|Javanese|Kannada|Kashmiri|Kazakh|Kinyarwanda|Kirghiz|Kirundi|Korean|Kurdish|Laothian|Latin|Latvian|Lingala|Lithuanian|Macedonian|Malagasy|Malay|Malayalam|Maltese|Maori|Marathi|Moldavian|Mongolian|Nauru|Nepali|Norwegian|Occitan|Oriya|Oromo|Other|Pashto|Persian|Polish|Portuguese|Punjabi|Quechua|Rhaeto-Romance|Romanian|Russian|Samoan|Sangro|Sanskrit|Serbian|Serbo-Croatian|Sesotho|Setswana|Shona|Sindhi|Singhalese|Siswati|Slovak|Slovenian|Somali|Spanish|Sudanese|Swahili|Swedish|Tagalog|Tajik|Tamil|Tatar|Telugu|Thai|Tibetan|Tigrinya|Tonga|Tsonga|Turkish|Turkmen|Twi|Ukrainian|Urdu|Uzbek|Vietnamese|Volapuk|Welsh|Wolof|Xhosa|Yiddish|Yoruba|Zulu|,)+\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>File_Size_Bytes<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/File_Info/File_Size_Bytes<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Size Bytes<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Size of the distribution file in Bytes<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numerical 3-16 digits<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[0-9]{3,16}\Z<span class="nt">&lt;/RegEx&gt;</span>
+            <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>File_Size_K<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/File_Info/File_Size_K<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Size KB<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Size of the distribution file in Kilobytes<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numerical 1-12 digits<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[0-9.]{1,12}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>File_Size_MB<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/File_Info/File_Size_MB<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Size MB<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Size of the distribution file in Megabytes<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numerical 1-8 digits<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[0-9.]{1,8}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Has_Expire_Info<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Expire_Info/Has_Expire_Info<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Has expire information<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Used to determine if the program has expiration parameters<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Y, y, N, or n<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[YyNn]\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Expire_Count<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Expire_Info/Expire_Count<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Expire count<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Number of days or uses until program expires<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numerical 0-15 digits<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[0-9]{0,15}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Expire_Based_On<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Expire_Info/Expire_Based_On<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Expire base<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Type of expiration<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Expiration type identifier, must be selected from list<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(Days|Uses|Either\/Or)?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Expire_Other_Info<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Expire_Info/Expire_Other_Info<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Expire other<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Other important information regarding expiration of the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-100 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{0,100}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Expire_Month<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Expire_Info/Expire_Month<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Expire month<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Month that the program will expire. Must be 2 digits: 01-12<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numeric 2 digits<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(0[1-9]|1[0-2])?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Expire_Day<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Expire_Info/Expire_Day<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Expire day<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Day of the month the program will expire. Must be 2 digits: 01-31<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numeric 2 digits<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(0[1-9]|[12][0-9]|3[01])?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Expire_Year<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Expire_Info/Expire_Year<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Expire year<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Year the program will expire. Must be a 4 digit year: 1900-2199<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Numeric 4 digits (1900-2199)<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((19|20|21)[0-9]{2})?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Change_Info<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Change_Info<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Change info<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Changes since the last release<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-300 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{0,300}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Category_Class<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Category_Class<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Category: class and subclass<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Category class that best fits the application<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Category class identifier, must be selected from list<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(Audio <span class="ni">&amp;amp;</span> Multimedia::Audio Encoders\/Decoders|Audio <span class="ni">&amp;amp;</span> Multimedia::Audio File Players|Audio <span class="ni">&amp;amp;</span> Multimedia::Audio File Recorders|Audio <span class="ni">&amp;amp;</span> Multimedia::CD Burners|Audio <span class="ni">&amp;amp;</span> Multimedia::CD Players|Audio <span class="ni">&amp;amp;</span> Multimedia::Multimedia Creation Tools|Audio <span class="ni">&amp;amp;</span> Multimedia::Music Composers|Audio <span class="ni">&amp;amp;</span> Multimedia::Other|Audio <span class="ni">&amp;amp;</span> Multimedia::Presentation Tools|Audio <span class="ni">&amp;amp;</span> Multimedia::Rippers <span class="ni">&amp;amp;</span> Converters|Audio <span class="ni">&amp;amp;</span> Multimedia::Speech|Audio <span class="ni">&amp;amp;</span> Multimedia::Video Tools|Business::Accounting <span class="ni">&amp;amp;</span> Finance|Business::Calculators <span class="ni">&amp;amp;</span> Converters|Business::Databases <span class="ni">&amp;amp;</span> Tools|Business::Helpdesk <span class="ni">&amp;amp;</span> Remote PC|Business::Inventory <span class="ni">&amp;amp;</span> Barcoding|Business::Investment Tools|Business::Math <span class="ni">&amp;amp;</span> Scientific Tools|Business::Office Suites <span class="ni">&amp;amp;</span> Tools|Business::Other|Business::PIMS <span class="ni">&amp;amp;</span> Calendars|Business::Project Management|Business::Vertical Market Apps|Communications::Chat <span class="ni">&amp;amp;</span> Instant Messaging|Communications::Dial Up <span class="ni">&amp;amp;</span> Connection Tools|Communications::E-Mail Clients|Communications::E-Mail List Management|Communications::Fax Tools|Communications::Newsgroup Clients|Communications::Other Comms Tools|Communications::Other E-Mail Tools|Communications::Pager Tools|Communications::Telephony|Communications::Web\/Video Cams|Desktop::Clocks <span class="ni">&amp;amp;</span> Alarms|Desktop::Cursors <span class="ni">&amp;amp;</span> Fonts|Desktop::Icons|Desktop::Other|Desktop::Screen Savers: Art|Desktop::Screen Savers: Cartoons|Desktop::Screen Savers: Nature|Desktop::Screen Savers: Other|Desktop::Screen Savers: People|Desktop::Screen Savers: Science|Desktop::Screen Savers: Seasonal|Desktop::Screen Savers: Vehicles|Desktop::Themes <span class="ni">&amp;amp;</span> Wallpaper|Development::Active X|Development::Basic, VB, VB DotNet|Development::C \/ C\+\+ \/ C\#|Development::Compilers <span class="ni">&amp;amp;</span> Interpreters|Development::Components <span class="ni">&amp;amp;</span> Libraries|Development::Debugging|Development::Delphi|Development::Help Tools|Development::Install <span class="ni">&amp;amp;</span> Setup|Development::Management <span class="ni">&amp;amp;</span> Distribution|Development::Other|Development::Source Editors|Education::Computer|Education::Dictionaries|Education::Geography|Education::Kids|Education::Languages|Education::Mathematics|Education::Other|Education::Reference Tools|Education::Science|Education::Teaching <span class="ni">&amp;amp;</span> Training Tools|Games <span class="ni">&amp;amp;</span> Entertainment::Action|Games <span class="ni">&amp;amp;</span> Entertainment::Adventure <span class="ni">&amp;amp;</span> Roleplay|Games <span class="ni">&amp;amp;</span> Entertainment::Arcade|Games <span class="ni">&amp;amp;</span> Entertainment::Board|Games <span class="ni">&amp;amp;</span> Entertainment::Card|Games <span class="ni">&amp;amp;</span> Entertainment::Casino <span class="ni">&amp;amp;</span> Gambling|Games <span class="ni">&amp;amp;</span> Entertainment::Kids|Games <span class="ni">&amp;amp;</span> Entertainment::Online Gaming|Games <span class="ni">&amp;amp;</span> Entertainment::Other|Games <span class="ni">&amp;amp;</span> Entertainment::Puzzle <span class="ni">&amp;amp;</span> Word Games|Games <span class="ni">&amp;amp;</span> Entertainment::Simulation|Games <span class="ni">&amp;amp;</span> Entertainment::Sports|Games <span class="ni">&amp;amp;</span> Entertainment::Strategy <span class="ni">&amp;amp;</span> War Games|Games <span class="ni">&amp;amp;</span> Entertainment::Tools <span class="ni">&amp;amp;</span> Editors|Graphic Apps::Animation Tools|Graphic Apps::CAD|Graphic Apps::Converters <span class="ni">&amp;amp;</span> Optimizers|Graphic Apps::Editors|Graphic Apps::Font Tools|Graphic Apps::Gallery <span class="ni">&amp;amp;</span> Cataloging Tools|Graphic Apps::Icon Tools|Graphic Apps::Other|Graphic Apps::Screen Capture|Graphic Apps::Viewers|Home <span class="ni">&amp;amp;</span> Hobby::Astrology\/Biorhythms\/Mystic|Home <span class="ni">&amp;amp;</span> Hobby::Astronomy|Home <span class="ni">&amp;amp;</span> Hobby::Cataloging|Home <span class="ni">&amp;amp;</span> Hobby::Food <span class="ni">&amp;amp;</span> Drink|Home <span class="ni">&amp;amp;</span> Hobby::Genealogy|Home <span class="ni">&amp;amp;</span> Hobby::Health <span class="ni">&amp;amp;</span> Nutrition|Home <span class="ni">&amp;amp;</span> Hobby::Other|Home <span class="ni">&amp;amp;</span> Hobby::Personal Finance|Home <span class="ni">&amp;amp;</span> Hobby::Personal Interest|Home <span class="ni">&amp;amp;</span> Hobby::Recreation|Home <span class="ni">&amp;amp;</span> Hobby::Religion|Network <span class="ni">&amp;amp;</span> Internet::Ad Blockers|Network <span class="ni">&amp;amp;</span> Internet::Browser Tools|Network <span class="ni">&amp;amp;</span> Internet::Browsers|Network <span class="ni">&amp;amp;</span> Internet::Download Managers|Network <span class="ni">&amp;amp;</span> Internet::File Sharing\/Peer to Peer|Network <span class="ni">&amp;amp;</span> Internet::FTP Clients|Network <span class="ni">&amp;amp;</span> Internet::Network Monitoring|Network <span class="ni">&amp;amp;</span> Internet::Other|Network <span class="ni">&amp;amp;</span> Internet::Remote Computing|Network <span class="ni">&amp;amp;</span> Internet::Search\/Lookup Tools|Network <span class="ni">&amp;amp;</span> Internet::Terminal <span class="ni">&amp;amp;</span> Telnet Clients|Network <span class="ni">&amp;amp;</span> Internet::Timers <span class="ni">&amp;amp;</span> Time Synch|Network <span class="ni">&amp;amp;</span> Internet::Trace <span class="ni">&amp;amp;</span> Ping Tools|Security <span class="ni">&amp;amp;</span> Privacy::Access Control|Security <span class="ni">&amp;amp;</span> Privacy::Anti-Spam <span class="ni">&amp;amp;</span> Anti-Spy Tools|Security <span class="ni">&amp;amp;</span> Privacy::Anti-Virus Tools|Security <span class="ni">&amp;amp;</span> Privacy::Covert Surveillance|Security <span class="ni">&amp;amp;</span> Privacy::Encryption Tools|Security <span class="ni">&amp;amp;</span> Privacy::Other|Security <span class="ni">&amp;amp;</span> Privacy::Password Managers|Servers::Firewall <span class="ni">&amp;amp;</span> Proxy Servers|Servers::FTP Servers|Servers::Mail Servers|Servers::News Servers|Servers::Other Server Applications|Servers::Telnet Servers|Servers::Web Servers|System Utilities::Automation Tools|System Utilities::Backup <span class="ni">&amp;amp;</span> Restore|System Utilities::Benchmarking|System Utilities::Clipboard Tools|System Utilities::File <span class="ni">&amp;amp;</span> Disk Management|System Utilities::File Compression|System Utilities::Launchers <span class="ni">&amp;amp;</span> Task Managers|System Utilities::Other|System Utilities::Printer|System Utilities::Registry Tools|System Utilities::Shell Tools|System Utilities::System Maintenance|System Utilities::Text\/Document Editors|Web Development::ASP <span class="ni">&amp;amp;</span> PHP|Web Development::E-Commerce|Web Development::Flash Tools|Web Development::HTML Tools|Web Development::Java <span class="ni">&amp;amp;</span> JavaScript|Web Development::Log Analysers|Web Development::Other|Web Development::Site Administration|Web Development::Wizards <span class="ni">&amp;amp;</span> Components|Web Development::XML\/CSS Tools)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_Specific_Category<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_Specific_Category<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Specific Category<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Overall category that best fits the application, DEPRECATED<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Category identifier, must be selected from list<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(Audio|Business|Development Tools|Education|Games|Graphics|Home\/Hobby|Internet|Miscellaneous|Screen Savers|Utilities)?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Program_System_Requirements<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/Program_System_Requirements<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Requirements<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Minimum system requirements<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-100 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{0,100}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>FacebookProductPage<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/FacebookProductPage<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Facebook Product Page<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Facebook Product Page URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 4-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{4,120}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>GooglePlusProductPage<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Info/GooglePlusProductPage<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Google Plus Product Page<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Google Plus Product Page URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 4-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{4,120}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Keywords<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Descriptions/English/Keywords<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Keywords<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Keywords to be used to describe the program, comma delimited<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-250 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{0,250}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Char_Desc_45<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Descriptions/English/Char_Desc_45<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>45 character description<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>45 character description of the program (no HTML)<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Single line (no breaks, no HTML) text string 0-45 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{0,45}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Char_Desc_80<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Descriptions/English/Char_Desc_80<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>80 character description<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>80 character description of the program (no HTML)<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Single line (no breaks, no HTML) text string 0-80 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{0,80}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Char_Desc_250<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Descriptions/English/Char_Desc_250<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>250 character description<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>250 character description of the program (no HTML)<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Single line (no breaks, no HTML) text string 0-250 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{0,250}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Char_Desc_450<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Descriptions/English/Char_Desc_450<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>450 character description<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>450 character description of the program (no HTML)<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Single line (no breaks, no HTML) text string 0-450 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{0,450}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Char_Desc_2000<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Program_Descriptions/English/Char_Desc_2000<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>2000 character description<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>2000 character description of the program (no HTML)<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Multiple lines (no HTML) text string 0-2000 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>]{0,2000}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Application_Info_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Application_URLs/Application_Info_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Application info URL<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>URL used to point people to get more information about the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 2-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(http|https):\/\/.{2,120}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Application_Order_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Application_URLs/Application_Order_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Ordering URL<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>URL used to point people to order the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 2-120 characters (https:// ok too)<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{2,120})?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Application_Screenshot_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Application_URLs/Application_Screenshot_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Screenshot URL<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>URL used to access a screenshot of the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 2-120 characters with extension gif, jpg, or png<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(http|https):\/\/.{2,120}\.(gif|jpg|png)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Application_Icon_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Application_URLs/Application_Icon_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Icon URL<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>URL used to access the icon image (32x32 pixels) used for the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 2-120 characters with extension gif, jpg, or png<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(http|https):\/\/.{2,120}\.(gif|jpg|png)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Application_XML_File_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Application_URLs/Application_XML_File_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>PAD file URL<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>URL used to access the PAD file in the future<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 2-120 characters with extension xml<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(http|https):\/\/.{2,120}\.(xml|cgi|php|asp)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Primary_Download_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Download_URLs/Primary_Download_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Download primary URL<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Primary download URL where customers can download the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL ftp or http or https:// + 2-120 characters with extension exe, zip, or other<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(http|https|ftp):\/\/.{2,120}\.(air|apk|app|bin|com|exe|dmg|hqx|gz|gzip|jar|msi|rar|sea|sh|sis|sit|sitx|tar|taz|tgx|tgz|uu|z|zip)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Secondary_Download_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Download_URLs/Secondary_Download_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Download secondary URL<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Secondary download URL where customers can download the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL ftp or http or https:// + 2-120 characters type=exe, zip, or other<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https|ftp):\/\/.{2,120}\.(air|apk|app|bin|com|exe|dmg|hqx|gz|gzip|jar|msi|rar|sea|sh|sis|sit|sitx|tar|taz|tgx|tgz|uu|z|zip))?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Additional_Download_URL_1<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Download_URLs/Additional_Download_URL_1<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Download other URL 1<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>An additional download URL where customers can download the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL ftp or http or https:// + 2-120 characters with extension exe, zip, or other<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https|ftp):\/\/.{2,120}\.(air|apk|app|bin|com|exe|dmg|hqx|gz|gzip|jar|msi|rar|sea|sh|sis|sit|sitx|tar|taz|tgx|tgz|uu|z|zip))?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Additional_Download_URL_2<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Download_URLs/Additional_Download_URL_2<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Download other URL 2<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Another download URL where customers can download the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL ftp or http or https:// + 2-120 characters with extension exe, zip, or other<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https|ftp):\/\/.{2,120}\.(air|apk|app|bin|com|exe|dmg|hqx|gz|gzip|jar|msi|rar|sea|sh|sis|sit|sitx|tar|taz|tgx|tgz|uu|z|zip))?\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Video_Link_1_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Application_URLs/Video_Link_1_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Video Link 1<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Video Link 1 URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 4-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{4,120}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Video_Link_2_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Web_Info/Application_URLs/Video_Link_2_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Video Link 2<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Video Link 2 URL<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>URL http or https:// + 4-120 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{4,120}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Distribution_Permissions<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Permissions/Distribution_Permissions<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Distribution permissions<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>Distribution permissions given by the author to vendors and other distributors<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Multiple lines (no HTML) text string 0-2000 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>]{0,2000}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>EULA<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Permissions/EULA<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>EULA<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;</span>End User License Agreement for the program<span class="nt">&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Multiple lines (no HTML) text string 0-20000 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>]{0,20000}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Keywords<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Press_Release/Keywords<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Press Release Keywords<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>0-250 letters/numbers/spaces<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{0,250}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Headline<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Press_Release/Headline<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Press Release Headline<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>20-100 letters/numbers/spaces<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^([^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{20,100}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Summary<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Press_Release/Summary<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Press Release Summary<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>20-250 letters/numbers/spaces<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^([^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{20,250}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Press_Release<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Press_Release/Press_Release<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Press Release Text<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>0-3000 letters/numbers/spaces<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{0,3000}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Press_Release_Plain<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Press_Release/Press_Release_Plain<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Press Release Plain Text<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>0-3000 letters/numbers/spaces<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{0,3000}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Related_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Press_Release/Related_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Press Release Related URL<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>http or https:// + 0-100 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{0,100}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>NewsFeed_Feed_URL<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/NewsFeed/NewsFeed_Feed_URL<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>NewsFeed Feed URL<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>http or https:// + 0-100 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^((http|https):\/\/.{0,100}|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>NewsFeed_Type<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/NewsFeed/NewsFeed_Type<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>NewsFeed Type<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>NewsFeed Type identifier, must be selected from list<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^(RSS 0\.90|RSS 0\.91|RSS 0\.92|RSS 0\.93|RSS 0\.94|RSS 1\.0|RSS 2\.0|Atom 0\.3|Atom 1\.0|)\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>NewsFeed_Title<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/NewsFeed/NewsFeed_Title<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>NewsFeed Title<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{0,60}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>NewsFeed_Keywords<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/NewsFeed/NewsFeed_Keywords<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Keywords<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Text string 0-250 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09]{0,250}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>NewsFeed_Description_70<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/NewsFeed/NewsFeed_Description_70<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>NewsFeed Description 70<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Single line (no breaks, no HTML) text string 0-70 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{0,70}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>NewsFeed_Description_250<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/NewsFeed/NewsFeed_Description_250<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>NewsFeed Description 250<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Single line (no breaks, no HTML) text string 0-250 characters<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[^<span class="ni">&amp;lt;</span>\x09\x0a\x0d]{0,250}\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_ShareIt_Order_Page<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_ShareIt_Order_Page<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates ShareIt Order Page<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_ShareIt_Vendor_ID<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_ShareIt_Vendor_ID<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates ShareIt Vendor ID<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_ShareIt_Product_ID<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_ShareIt_Product_ID<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates ShareIt Product ID<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_ShareIt_Maximum_Commission_Rate<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_ShareIt_Maximum_Commission_Rate<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates ShareIt Maximum Commission Rate<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_PayPro_Order_Page<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_PayPro_Order_Page<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates PayPro Order Page<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_PayPro_Vendor_ID<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_PayPro_Vendor_ID<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates PayPro Vendor ID<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_PayPro_Product_ID<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_PayPro_Product_ID<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates PayPro Product ID<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_PayPro_Maximum_Commission_Rate<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_PayPro_Maximum_Commission_Rate<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates PayPro Maximum Commission Rate<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_Avangate_Order_Page<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_Avangate_Order_Page<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates Avangate Order Page<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_Avangate_Vendor_ID<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_Avangate_Vendor_ID<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates Avangate Vendor ID<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_Avangate_Product_ID<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_Avangate_Product_ID<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates Avangate Product ID<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>Affiliates_Avangate_Maximum_Commission_Rate<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/Affiliates/Affiliates_Avangate_Maximum_Commission_Rate<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>Affiliates Avangate Maximum Commission Rate<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>ASP_Member<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/ASP/ASP_Member<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>ASP Member<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;</span>Y, y, N, or n<span class="nt">&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;</span>^[YyNn]\Z<span class="nt">&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+        <span class="nt">&lt;Field&gt;</span>
+            <span class="nt">&lt;Name&gt;</span>ASP_Member_Number<span class="nt">&lt;/Name&gt;</span>
+            <span class="nt">&lt;Path&gt;</span>XML_DIZ_INFO/ASP/ASP_Member_Number<span class="nt">&lt;/Path&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>ASP Member Number<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;ShortDescription&gt;&lt;/ShortDescription&gt;</span>
+            <span class="nt">&lt;RegExDocumentation&gt;&lt;/RegExDocumentation&gt;</span>
+            <span class="nt">&lt;RegEx&gt;&lt;/RegEx&gt;</span>
+        <span class="nt">&lt;/Field&gt;</span>
+    <span class="nt">&lt;/Fields&gt;</span>
+<span class="nt">&lt;/PAD_Spec&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

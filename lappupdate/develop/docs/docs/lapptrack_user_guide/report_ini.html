@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>report.ini &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="Configuration Files" href="configuration_files.html" />
+    <link rel="next" title="Report Template" href="report_template.html" />
+    <link rel="prev" title="logger.ini Content" href="logger_ini.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">lAppTrack User Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usages.html">Usages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="configuration_files.html">Configuration Files</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="lapptrack_ini.html">lapptrack.ini Content</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logger_ini.html">logger.ini Content</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">report.ini</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#core-section">Core Section</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#attributes-section">Attributes Section</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mail-handler-section">Mail Handler Section</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#file-handler-section">File Handler Section</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#stream-handler-section">Stream Handler Section</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="report_template.html">Report Template</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../contents.html">Table Of Contents</a><ul>
+  <li><a href="index.html">lAppTrack User Guide</a><ul>
+  <li><a href="configuration_files.html">Configuration Files</a><ul>
+      <li>Previous: <a href="logger_ini.html" title="previous chapter">logger.ini Content</a></li>
+      <li>Next: <a href="report_template.html" title="next chapter">Report Template</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="report-ini">
+<span id="lapptrack-userguide-report-ini-content"></span><h1>report.ini<a class="headerlink" href="#report-ini" title="Permalink to this headline">¶</a></h1>
+<p>This file contains the configuration of report generated by the <a class="reference internal" href="lapptrack.html"><span class="doc">lapptrack</span></a>
+script. It use a structure similar to what’s found in Microsoft Windows INI
+files, and parse with the <a class="reference external" href="https://docs.python.org/3/library/configparser.html#module-configparser" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">configparser</span></code></a> module of the Python standard library.
+See the &#8216;Supported INI File Structure&#8217; section to have details about the file
+format.</p>
+<p>The configuration consists of two main sections and one section per
+handler (send a mail, write in a file, write in a stream) such as below.</p>
+<ul class="simple">
+<li><a class="reference internal" href="#lapptrack-userguide-report-ini-core-section"><span class="std std-ref">Core Section</span></a> contains configuration
+items for the report processor</li>
+<li><a class="reference internal" href="#lapptrack-userguide-report-ini-attributes-section"><span class="std std-ref">Attributes Section</span></a> contains contains
+named keyword used in the template report</li>
+<li><a class="reference internal" href="#lapptrack-userguide-report-ini-mailhandler-section"><span class="std std-ref">Mail Handler Section</span></a> contains
+configuration items to send the activity report in a mail</li>
+<li><a class="reference internal" href="#lapptrack-userguide-report-ini-filehandler-section"><span class="std std-ref">File Handler Section</span></a> contains
+configuration items to write the activity report in a file</li>
+<li><a class="reference internal" href="#lapptrack-userguide-report-ini-streamhandler-section"><span class="std std-ref">Stream Handler Section</span></a> contains
+configuration items to write the activity report in a stream</li>
+</ul>
+<p>The following items details each sections and the associated options, and give
+an example.</p>
+<div class="topic">
+<p class="topic-title first">Example of report.ini</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1"># This ini file contains the configuration details of the report module.</span>
+<span class="c1"># Only one report and its ways of publication have to define in this file. If</span>
+<span class="c1"># you need of several report, you must define several configurations file and</span>
+<span class="c1"># call `Report.load_config()` method for each of them.</span>
+<span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Core section contains configuration items for the report processor.</span>
+<span class="c1"># handlers (mandatory): is the list of handlers to publish the report. Each</span>
+<span class="c1"># handler has to have a corresponding section for its own configuration.</span>
+<span class="c1"># template (optional): is the full path name of the template file. The Report</span>
+<span class="c1"># class introduction described the format of the template file. The default</span>
+<span class="c1"># value is &#39;summary_tmpl.html&#39;.</span>
+<span class="k">[core]</span>
+<span class="na">handlers</span> <span class="o">=</span> <span class="s">mailhandler,filehandler</span>
+<span class="c1">;template = summary_tmpl.html</span>
+
+<span class="c1"># Attributes section contains named keyword used in the template report (see</span>
+<span class="c1"># `template` item in the above section. Theses attributes are used in the header</span>
+<span class="c1"># and tail sections of the report (see `Title`, `BodyStart`, `BodyEnd`, `Tail`</span>
+<span class="c1"># sections in the template). The &#39;summary_tmpl.html&#39; doesn&#39;t use any additional</span>
+<span class="c1"># attribute, so this section is empty if you use the default template.</span>
+<span class="c1">;[attributes]</span>
+<span class="c1">;about = &quot;Short text to summarize the report content&quot;</span>
+
+<span class="c1"># Handlers section contains configuration details for handlers declared in the</span>
+<span class="c1"># `core`section (see `handlers`item).</span>
+<span class="c1"># The following sections give an example for each handler supported by the</span>
+<span class="c1"># `report` module (send a mail, write in a file, write in a stream). Each</span>
+<span class="c1"># handler section has to define a `class` item.</span>
+<span class="c1"># Warning: name section must be lowercase, since the section name is a key in</span>
+<span class="c1"># core section.</span>
+<span class="c1">#</span>
+<span class="c1"># Mail handler.</span>
+<span class="c1"># class: indicates the handler’s class (as determined in the report module).</span>
+<span class="c1"># By default, the name of the section is used as the class name.</span>
+<span class="c1"># host (mandatory): is a string containing the full qualified name of the SMTP</span>
+<span class="c1"># server host, or a 2-tuple containing the full qualified name of the SMTP</span>
+<span class="c1"># server and the port number to use.</span>
+<span class="c1"># credentials (optional): is a 2-tuple containing the username and the password</span>
+<span class="c1"># to connect to the SMTP server.</span>
+<span class="c1"># from_address(optional): is a string containing the mail addresses of the</span>
+<span class="c1"># sender. If not specified, the address is set to the local hostname. (see</span>
+<span class="c1"># smtplib.SMTP())</span>
+<span class="c1"># mail_sent (optional): is the full path name of the folder where a copy of the</span>
+<span class="c1"># mail will be written. An empty string does nothing.</span>
+<span class="c1"># pending_mail (optional): is the full path name of the folder where a copy of</span>
+<span class="c1"># the mail will be written until it is sent. It avoid to lost mail if the mail</span>
+<span class="c1"># server configuration is erroneous or if the mail server doesn&#39;t answer. An</span>
+<span class="c1"># empty string does nothing.</span>
+<span class="c1"># to_addresses (mandatory): is a string or a list containing the mail addresses</span>
+<span class="c1"># of the recipient.</span>
+<span class="c1"># subject (optional): is a string containing the mail subject. An empty string</span>
+<span class="c1"># does nothing.</span>
+<span class="k">[mailhandler]</span>
+<span class="na">class</span> <span class="o">=</span> <span class="s">MailHandler</span>
+<span class="na">host</span> <span class="o">=</span> <span class="s">smtp.example.com</span>
+<span class="c1">;host = smtp.example.com, 25</span>
+<span class="c1">;credentials= username, password</span>
+<span class="c1">;from_address = lappupdate@example.com</span>
+<span class="c1">;mail_sent = ./mailstore/sent</span>
+<span class="c1">;pending_mail = ./mailstore/pending</span>
+<span class="na">to_addresses</span> <span class="o">=</span> <span class="s">sysadmin@example.com</span>
+<span class="c1">;to_addresses = sysadmin@example.com, helpdesk@example.com</span>
+<span class="c1">;subject = lAppUpdate: New Update(s) Alert</span>
+
+<span class="c1"># File handler.</span>
+<span class="c1"># class: indicates the handler’s class (as determined in the report module).</span>
+<span class="c1"># By default, the name of the section is used as the class name.</span>
+<span class="c1"># filename (mandatory): is a string containing the full path name of the</span>
+<span class="c1"># destination file.</span>
+<span class="c1"># mode (optional): is a string specifying the mode in which the file is opened.</span>
+<span class="c1"># (see [`open()`](https://docs.python.org/3/library/functions.html#open)</span>
+<span class="k">[filehandler]</span>
+<span class="na">class</span> <span class="o">=</span> <span class="s">FileHandler</span>
+<span class="na">filename</span> <span class="o">=</span> <span class="s">./tempstore/report.html</span>
+<span class="c1">;mode = w</span>
+
+<span class="c1"># Stream handler.</span>
+<span class="c1"># class: indicates the handler’s class (as determined in the report module).</span>
+<span class="c1"># By default, the name of the section is used as the class name.</span>
+<span class="c1"># stream (optional): is a string specifying the [standard stream](https://docs.</span>
+<span class="c1"># python.org/3/library/sys.html#sys.stdout) on which report will be written. By </span>
+<span class="c1"># default, sys.stdout will be used.</span>
+<span class="k">[streamhandler]</span>
+<span class="na">class</span> <span class="o">=</span> <span class="s">StreamHandler</span>
+<span class="c1">;stream = sys.stderr</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="core-section">
+<span id="lapptrack-userguide-report-ini-core-section"></span><h2>Core Section<a class="headerlink" href="#core-section" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">[core]</span></code> section contains configuration items for the report processor.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">handlers</span></code></td>
+<td>(mandatory) is the list of handlers to publish the report.
+Each handler has to have a corresponding section for its
+own configuration.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">template</span></code></td>
+<td>(optional) is the full path name of the template file. The
+<a class="reference internal" href="report_template.html#lapptrack-userguide-report-template"><span class="std std-ref">Report Template</span></a> describes the format
+of the template file. The default value is
+<code class="docutils literal"><span class="pre">report_template.html</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<div class="topic">
+<p class="topic-title first">Example of a <code class="docutils literal"><span class="pre">[core]</span></code> section</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[core]</span>
+<span class="na">handlers</span> <span class="o">=</span> <span class="s">mailhandler,filehandler</span>
+<span class="c1">;template = summary_tmpl.html</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="attributes-section">
+<span id="lapptrack-userguide-report-ini-attributes-section"></span><h2>Attributes Section<a class="headerlink" href="#attributes-section" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">[attributes]</span></code> section contains named keyword used in the template report
+(see <code class="docutils literal"><span class="pre">template</span></code> item in the <a class="reference internal" href="#lapptrack-userguide-report-ini-core-section"><span class="std std-ref">Core Section</span></a>.</p>
+<p>Theses attributes are used in the header and tail sections of the report (see
+<code class="docutils literal"><span class="pre">Title</span></code>, <code class="docutils literal"><span class="pre">BodyStart</span></code>, <code class="docutils literal"><span class="pre">BodyEnd</span></code>, <code class="docutils literal"><span class="pre">Tail</span></code> sections in the
+<a class="reference internal" href="report_template.html#lapptrack-userguide-report-template"><span class="std std-ref">Report Template</span></a>). The <code class="file docutils literal"><span class="pre">report_template.html</span></code> doesn&#8217;t
+use any additional attribute, so this section is empty if you use the default
+templates.</p>
+<div class="topic">
+<p class="topic-title first">Example of a <code class="docutils literal"><span class="pre">[attributes]</span></code> section</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="c1">;[attributes]</span>
+<span class="c1">;about = &quot;Short text to summarize the report content&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mail-handler-section">
+<span id="lapptrack-userguide-report-ini-mailhandler-section"></span><h2>Mail Handler Section<a class="headerlink" href="#mail-handler-section" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">[mailhandler]</span></code> section contains configuration items to send the activity
+report in a mail.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">class</span></code></td>
+<td>(optional) indicates the handler’s class (as determined in
+the report module). By default, the name of the section is
+used as the class name.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">host</span></code></td>
+<td>(mandatory) is a string containing the full qualified name
+of the SMTP server host, or a 2-tuple containing the full
+qualified name of the SMTP server and the port number to
+use.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">credentials</span></code></td>
+<td>(optional) is a 2-tuple containing the username and the
+password to connect to the SMTP server.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">from_address</span></code></td>
+<td>(optional) is a string containing the mail addresses of
+the sender. If not specified, the address is set to the
+local host name. (see <a class="reference external" href="https://docs.python.org/3/library/smtplib.html#smtplib.SMTP" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">smtplib.SMTP</span></code></a>)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">mail_sent</span></code></td>
+<td>(optional) is the full path name of the folder where a
+copy of the mail will be written. An empty string does
+nothing.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">pending_mail</span></code></td>
+<td>(optional) is the full path name of the folder where a
+copy of the mail will be written until it is sent. It
+avoid to lost mail if the mail server configuration is
+erroneous or if the mail server doesn&#8217;t answer. An empty
+string does nothing.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">to_addresses</span></code></td>
+<td>(mandatory) is a string or a list containing the mail
+addresses of the recipient.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">subject</span></code></td>
+<td>(optional) is a string containing the mail subject. An
+empty string does nothing.</td>
+</tr>
+</tbody>
+</table>
+<div class="topic">
+<p class="topic-title first">Example of a <code class="docutils literal"><span class="pre">[mailhandler]</span></code> section</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[mailhandler]</span>
+<span class="na">class</span> <span class="o">=</span> <span class="s">MailHandler</span>
+<span class="na">host</span> <span class="o">=</span> <span class="s">smtp.example.com</span>
+<span class="c1">;host = smtp.example.com, 25</span>
+<span class="c1">;credentials= username, password</span>
+<span class="c1">;from_address = lappupdate@example.com</span>
+<span class="c1">;mail_sent = ./mailstore/sent</span>
+<span class="c1">;pending_mail = ./mailstore/pending</span>
+<span class="na">to_addresses</span> <span class="o">=</span> <span class="s">sysadmin@example.com</span>
+<span class="c1">;to_addresses = sysadmin@example.com, helpdesk@example.com</span>
+<span class="c1">;subject = lAppUpdate: New Update(s) Alert</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="file-handler-section">
+<span id="lapptrack-userguide-report-ini-filehandler-section"></span><h2>File Handler Section<a class="headerlink" href="#file-handler-section" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">[filehandler]</span></code> section contains configuration items to write the activity
+report in a file</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">class</span></code></td>
+<td>(optional) indicates the handler’s class (as determined in
+the report module). By default, the name of the section is
+used as the class name.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">filename</span></code></td>
+<td>(mandatory) is a string containing the full path name of
+the destination file.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">mode</span></code></td>
+<td>(optional) is a string specifying the mode in which the
+file is opened. (see <a class="reference external" href="https://docs.python.org/3/library/functions.html#open" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">open</span></code></a>)</td>
+</tr>
+</tbody>
+</table>
+<div class="topic">
+<p class="topic-title first">Example of a <code class="docutils literal"><span class="pre">[filehandler]</span></code> section</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[filehandler]</span>
+<span class="na">class</span> <span class="o">=</span> <span class="s">FileHandler</span>
+<span class="na">filename</span> <span class="o">=</span> <span class="s">./tempstore/report.html</span>
+<span class="c1">;mode = w</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="stream-handler-section">
+<span id="lapptrack-userguide-report-ini-streamhandler-section"></span><h2>Stream Handler Section<a class="headerlink" href="#stream-handler-section" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">[streamhandler]</span></code> section contains configuration items to write the
+activity report in a stream.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">class</span></code></td>
+<td>(optional) indicates the handler’s class (as determined in
+the report module). By default, the name of the section is
+used as the class name.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">stream</span></code></td>
+<td>(optional) is a string specifying the <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.stdout" title="(in Python v3.5)"><code class="xref py py-data docutils literal"><span class="pre">standard</span>
+<span class="pre">stream</span></code></a> on which report will be written.
+By default, <code class="docutils literal"><span class="pre">sys.stdout</span></code> will be used.</td>
+</tr>
+</tbody>
+</table>
+<div class="topic">
+<p class="topic-title first">Example of a <code class="docutils literal"><span class="pre">[streamhandler]</span></code> section</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[streamhandler]</span>
+<span class="na">class</span> <span class="o">=</span> <span class="s">StreamHandler</span>
+<span class="c1">;stream = sys.stderr</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

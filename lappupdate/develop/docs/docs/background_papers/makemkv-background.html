@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MakeMKV Background &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
+    <link rel="up" title="Supported Products" href="supported-products.html" />
+    <link rel="next" title="How-to" href="../howto/index.html" />
+    <link rel="prev" title="Supported Products" href="supported-products.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Background Papers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data-structures.html">Data Structures</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="supported-products.html">Supported Products</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">MakeMKV Background</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#makemkv-installation">MakeMKV Installation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#installer-common-option">Installer common option</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#silent-installation">Silent Installation</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#deployment-tips">Deployment Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#makemkv-update-mechanism">MakeMKV Update Mechanism</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../contents.html">Table Of Contents</a><ul>
+  <li><a href="index.html">Background Papers</a><ul>
+  <li><a href="supported-products.html">Supported Products</a><ul>
+      <li>Previous: <a href="supported-products.html" title="previous chapter">Supported Products</a></li>
+      <li>Next: <a href="../howto/index.html" title="next chapter">How-to</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="makemkv-background">
+<span id="background-makemkv"></span><h1>MakeMKV Background<a class="headerlink" href="#makemkv-background" title="Permalink to this headline">¶</a></h1>
+<p>Published by GuinpinSoft inc, MakeMKV is your one-click solution to convert
+video that you own into free and patents-unencumbered format that can be played
+everywhere. MakeMKV is a format converter, otherwise called &#8220;transcoder&#8221;.</p>
+<p>Product web site: <a class="reference external" href="http://www.makemkv.com/">http://www.makemkv.com/</a></p>
+<p>The following topics give more information about the installation process and
+the update mechanism.</p>
+<div class="section" id="makemkv-installation">
+<h2>MakeMKV Installation<a class="headerlink" href="#makemkv-installation" title="Permalink to this headline">¶</a></h2>
+<p>The installer is based on the <a class="reference external" href="https://sourceforge.net/projects/nsis/">NSIS</a>
+(Nullsoft Scriptable Install System) framework and delivered as a single
+executable.</p>
+<div class="section" id="installer-common-option">
+<h3>Installer common option<a class="headerlink" href="#installer-common-option" title="Permalink to this headline">¶</a></h3>
+<p>Installers accept a few options on the command line. These options give the user
+a bit more control over the installation process (see <a class="reference external" href="http://nsis.sourceforge.net/Docs/Chapter3.html#installerusagecommon">Installer Usage</a> for more
+details).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">/NCRC</span></code></td>
+<td>disables the CRC check, unless CRCCheck force was used in the
+script.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">/S</span></code></td>
+<td>runs the installer silently.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">/D</span></code></td>
+<td>sets the default installation directory. It must be the last
+parameter used in the command line and must not contain any quotes,
+even if the path contains spaces. Only absolute paths are supported.</td>
+</tr>
+</tbody>
+</table>
+<div class="topic">
+<p class="topic-title first">Example</p>
+<div class="highlight-winbatch"><div class="highlight"><pre><span></span>installer.exe /S
+installer.exe /NCRC /S /D=C:\Program Files\NSIS
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="silent-installation">
+<h3>Silent Installation<a class="headerlink" href="#silent-installation" title="Permalink to this headline">¶</a></h3>
+<p>Silent installers are installers which <strong>require no user intervention</strong> and
+<strong>have no user interface</strong>. The user doesn&#8217;t see any dialog and isn&#8217;t asked any
+questions. (see <a class="reference external" href="http://nsis.sourceforge.net/Docs/Chapter4.html#silent">Silent Installers/Uninstallers</a> for more details).</p>
+<p>NSIS installers can be both silent and not silent. The more useful method to
+make an installer silent is passing <code class="docutils literal"><span class="pre">/S</span></code> on the installers command line
+(case sensitive)</p>
+<div class="topic">
+<p class="topic-title first">Example</p>
+<div class="highlight-winbatch"><div class="highlight"><pre><span></span>installer.exe /S
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deployment-tips">
+<h3>Deployment Tips<a class="headerlink" href="#deployment-tips" title="Permalink to this headline">¶</a></h3>
+<p>MakeMKV are free while program is in beta, so you may use the <a class="reference external" href="http://www.makemkv.com/forum2/viewtopic.php?f=5&amp;t=1053&amp;sid=9bdbec1cd06e7a61150dcf4e65bbc592">temporary beta
+key</a>.</p>
+<p>The user preferences include the license key, so a schedule task (i.e. when user
+log on) or an user action with the following script.</p>
+<div class="topic">
+<p class="topic-title first">Example</p>
+<div class="highlight-winbatch"><div class="highlight"><pre><span></span>reg add HKCU\Software\MakeMKV /v app_Key /t REG_SZ /d <span class="s2">&quot;&lt;license key&gt;&quot;</span> /f
+reg add HKCU\Software\MakeMKV /v app_ExpertMode /t REG_DWORD /d 00000001 /f
+reg add HKCU\Software\MakeMKV /v app_DestinationDir /t REG_SZ /d <span class="s2">&quot;U:\\Users\\Public\\Videos\\RIP&quot;</span> /f
+reg add HKCU\Software\MakeMKV /v app_PreferredLanguage /t REG_SZ /d <span class="s2">&quot;fre&quot;</span> /f
+<span class="k">exit</span> /b 0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="makemkv-update-mechanism">
+<h2>MakeMKV Update Mechanism<a class="headerlink" href="#makemkv-update-mechanism" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference external" href="http://www.makemkv.com/forum2/viewtopic.php?f=1&amp;t=4363">this post</a>, the
+MakeMKV author give a method to detect the up-to-date version. It based on a XML
+file matching the <a class="reference external" href="http://pad.asp-software.org/spec/spec_310.php">PAD 3.10 Specification</a> at <a class="reference external" href="http://www.makemkv.com/makemkv.xml">http://www.makemkv.com/makemkv.xml</a>.
+Consequently, the update checking mechanism of <a class="reference internal" href="../../lapptrack/lapptrack.html#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref any py py-mod docutils literal"><span class="pre">lapptrack</span></code></a> use this method.</p>
+<div class="topic">
+<p class="topic-title first">Example</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;XML_DIZ_INFO&gt;</span>
+<span class="nt">&lt;MASTER_PAD_VERSION_INFO&gt;</span>
+<span class="nt">&lt;MASTER_PAD_VERSION&gt;</span>3.10<span class="nt">&lt;/MASTER_PAD_VERSION&gt;</span>
+<span class="nt">&lt;/MASTER_PAD_VERSION_INFO&gt;</span>
+<span class="nt">&lt;Company_Info&gt;</span>
+<span class="nt">&lt;Company_Name&gt;</span>GuinpinSoft inc<span class="nt">&lt;/Company_Name&gt;</span>
+<span class="nt">&lt;Company_WebSite_URL&gt;</span>http://www.makemkv.com<span class="nt">&lt;/Company_WebSite_URL&gt;</span>
+...
+<span class="nt">&lt;File_Size_Bytes&gt;</span>6291456<span class="nt">&lt;/File_Size_Bytes&gt;</span>
+<span class="nt">&lt;File_Size_K&gt;</span>6144<span class="nt">&lt;/File_Size_K&gt;</span>
+<span class="nt">&lt;File_Size_MB&gt;</span>6<span class="nt">&lt;/File_Size_MB&gt;</span>
+...
+<span class="nt">&lt;Program_Name&gt;</span>MakeMKV<span class="nt">&lt;/Program_Name&gt;</span>
+<span class="nt">&lt;Program_Version&gt;</span>1.9.8<span class="nt">&lt;/Program_Version&gt;</span>
+<span class="nt">&lt;Program_Release_Year&gt;</span>2015<span class="nt">&lt;/Program_Release_Year&gt;</span>
+<span class="nt">&lt;Program_Release_Month&gt;</span>12<span class="nt">&lt;/Program_Release_Month&gt;</span>
+<span class="nt">&lt;Program_Release_Day&gt;</span>20<span class="nt">&lt;/Program_Release_Day&gt;</span>
+...
+<span class="nt">&lt;Web_Info&gt;</span>
+<span class="nt">&lt;Application_URLs&gt;</span>
+<span class="nt">&lt;Application_Info_URL&gt;</span>http://www.makemkv.com<span class="nt">&lt;/Application_Info_URL&gt;</span>
+<span class="nt">&lt;Application_Order_URL&gt;</span>http://www.makemkv.com/buy<span class="nt">&lt;/Application_Order_URL&gt;</span>
+...
+<span class="nt">&lt;Application_Icon_URL&gt;</span>
+    http://www.makemkv.com/images/mkv_icon.png
+<span class="nt">&lt;/Application_Icon_URL&gt;</span>
+<span class="nt">&lt;Download_URLs&gt;</span>
+    <span class="nt">&lt;Primary_Download_URL&gt;</span>
+        http://www.makemkv.com/download/Setup_MakeMKV_v1.9.8.exe
+    <span class="nt">&lt;/Primary_Download_URL&gt;</span>
+    <span class="nt">&lt;Secondary_Download_URL&gt;</span>
+        http://www.makemkv.com/download/makemkv_v1.9.8_osx.dmg
+    <span class="nt">&lt;/Secondary_Download_URL&gt;</span>
+    <span class="nt">&lt;Additional_Download_URL_1&gt;</span>
+        http://www.makemkv.com/download/makemkv-bin-1.9.8.tar.gz
+    <span class="nt">&lt;/Additional_Download_URL_1&gt;</span>
+    <span class="nt">&lt;Additional_Download_URL_2&gt;</span>
+        http://www.makemkv.com/download/makemkv-oss-1.9.8.tar.gz
+    <span class="nt">&lt;/Additional_Download_URL_2&gt;</span>
+<span class="nt">&lt;/Download_URLs&gt;</span>
+...
+<span class="nt">&lt;/XML_DIZ_INFO&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>For information at startup, MakeMKV download a GZIP compressed file named
+<code class="docutils literal"><span class="pre">makemkv.pad.gz</span></code> at <a class="reference external" href="http://www.makemkv.com/makemkv.pad.gz?a=7">http://www.makemkv.com/makemkv.pad.gz?a=7</a>. This archive
+contains only one file (makemkv.pad), which is a PAD too but poorest than the
+file above.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
