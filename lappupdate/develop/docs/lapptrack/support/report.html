@@ -17,7 +17,8 @@
         VERSION:     '0.3.0-dev.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -25,8 +26,6 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
-    <link rel="up" title="support – Supporting Modules Package" href="index.html" />
     <link rel="next" title="support.pad – Lightweight Portable Application Description Support" href="pad.html" />
     <link rel="prev" title="support – Supporting Modules Package" href="index.html" />
    
@@ -64,9 +63,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../docs/contents.html">Table Of Contents</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../docs/about/index.html">About...</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/releases/index.html">Releases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">LAppTrack User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../scripts.html">Main Script</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cots/index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul class="current">
@@ -115,7 +114,7 @@
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../../docs/contents.html">Table Of Contents</a><ul>
-  <li><a href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul>
+  <li><a href="../../docs/lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a><ul>
   <li><a href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a></li>
       <li>Next: <a href="pad.html" title="next chapter"><code class="docutils literal"><span class="pre">support.pad</span></code> &#8211; Lightweight Portable Application Description Support</a></li>
@@ -766,7 +765,7 @@ create. An empty string does nothing.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>addresses</strong> (<em>str or list</em>) &#8211; The mail addresses of the recipient. An
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>addresses</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a>) &#8211; The mail addresses of the recipient. An
 empty item of the list, an empty list or an empty string (or
 only composed of space) raised a ValueError exception.</td>
 </tr>
@@ -1032,7 +1031,7 @@ used according to the <span class="target" id="index-3"></span><a class="rfc ref
 
 <dl class="method">
 <dt id="support.report.StreamHandler.set_stream">
-<code class="descname">set_stream</code><span class="sig-paren">(</span><em>stream=&lt;colorama.ansitowin32.StreamWrapper object at 0x0000029114D0B588&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.StreamHandler.set_stream" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_stream</code><span class="sig-paren">(</span><em>stream=&lt;colorama.ansitowin32.StreamWrapper object at 0x0000021E2FD3A2B0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#support.report.StreamHandler.set_stream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the stream in which the report will be written.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1051,7 +1050,7 @@ used.</td>
 </div>
 <div class="section" id="configuration-file">
 <h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper container" id="report-example-ini">
+<div class="literal-block-wrapper docutils container" id="report-example-ini">
 <div class="code-block-caption"><span class="caption-text">Example of configuration file</span><a class="headerlink" href="#report-example-ini" title="Permalink to this code">¶</a></div>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="c1"># -----------------------------------------------------------------------------</span>
 <span class="c1"># This ini file contains the configuration details of the report module.</span>
@@ -1146,7 +1145,7 @@ used.</td>
 </div>
 <div class="section" id="report-templates">
 <h2>Report Templates<a class="headerlink" href="#report-templates" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper container" id="report-template-html">
+<div class="literal-block-wrapper docutils container" id="report-template-html">
 <div class="code-block-caption"><span class="caption-text">HTML Default template</span><a class="headerlink" href="#report-template-html" title="Permalink to this code">¶</a></div>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">en-GB</span><span class="p">&gt;</span>
 <span class="c">&lt;!-- $lau:HeaderStart$ --&gt;</span>
@@ -1294,7 +1293,7 @@ used.</td>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper container" id="report-template-txt">
+<div class="literal-block-wrapper docutils container" id="report-template-txt">
 <div class="code-block-caption"><span class="caption-text">Example of a text template</span><a class="headerlink" href="#report-template-txt" title="Permalink to this code">¶</a></div>
 <div class="highlight-text"><div class="highlight"><pre><span></span>&lt;!-- $lau:BodyStart$ --&gt;
 On {date}, products below have available updates.
@@ -1334,7 +1333,7 @@ Published by {editor}, {description}
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

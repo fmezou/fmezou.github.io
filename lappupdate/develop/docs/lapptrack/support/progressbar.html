@@ -17,7 +17,8 @@
         VERSION:     '0.3.0-dev.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -25,8 +26,6 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
-    <link rel="up" title="support – Supporting Modules Package" href="index.html" />
     <link rel="next" title="support.semver – Semantic Versioning Support" href="semver.html" />
     <link rel="prev" title="support.pad – Lightweight Portable Application Description Support" href="pad.html" />
    
@@ -64,9 +63,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../docs/contents.html">Table Of Contents</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../docs/about/index.html">About...</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/releases/index.html">Releases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">LAppTrack User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../scripts.html">Main Script</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cots/index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul class="current">
@@ -110,7 +109,7 @@
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../../docs/contents.html">Table Of Contents</a><ul>
-  <li><a href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul>
+  <li><a href="../../docs/lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a><ul>
   <li><a href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul>
       <li>Previous: <a href="pad.html" title="previous chapter"><code class="docutils literal"><span class="pre">support.pad</span></code> &#8211; Lightweight Portable Application Description Support</a></li>
       <li>Next: <a href="semver.html" title="next chapter"><code class="docutils literal"><span class="pre">support.semver</span></code> &#8211; Semantic Versioning Support</a></li>
@@ -329,7 +328,7 @@ System of Units</a> format, which means with a prefix for unit.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>value</strong> (<em>int or float</em>) &#8211; The value to format.</li>
+<li><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><em>float</em></a>) &#8211; The value to format.</li>
 <li><strong>unit</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; The unit of the value.</li>
 </ul>
 </td>
@@ -357,7 +356,7 @@ System of Units</a> format, which means with a space for thousand separator.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int or float</em>) &#8211; The value to format.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><em>float</em></a>) &#8211; The value to format.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a string representing value (&#8220;5 000&#8221; for example).</td>
 </tr>
@@ -382,7 +381,7 @@ System of Units</a> format, which means with a space for thousand separator.</p>
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

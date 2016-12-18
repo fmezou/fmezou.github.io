@@ -17,7 +17,8 @@
         VERSION:     '0.3.0-dev.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -25,8 +26,6 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../../index.html" />
-    <link rel="up" title="support – Supporting Modules Package" href="index.html" />
     <link rel="next" title="support.progressbar – Progress Bar Widgets" href="progressbar.html" />
     <link rel="prev" title="support.report – Reporting Manager" href="report.html" />
    
@@ -64,9 +63,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../docs/contents.html">Table Of Contents</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../docs/about/index.html">About...</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/releases/index.html">Releases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">LAppTrack User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../scripts.html">Main Script</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cots/index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul class="current">
@@ -111,7 +110,7 @@
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../../docs/contents.html">Table Of Contents</a><ul>
-  <li><a href="../../docs/lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul>
+  <li><a href="../../docs/lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a><ul>
   <li><a href="index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a><ul>
       <li>Previous: <a href="report.html" title="previous chapter"><code class="docutils literal"><span class="pre">support.report</span></code> &#8211; Reporting Manager</a></li>
       <li>Next: <a href="progressbar.html" title="next chapter"><code class="docutils literal"><span class="pre">support.progressbar</span></code> &#8211; Progress Bar Widgets</a></li>
@@ -191,7 +190,7 @@ loading a file). When building or modifying a PAD File, no control is done.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>element</strong> (<em>xml.etree.ElementTree.ElementTree, optional</em>) &#8211; Root element node</li>
+<li><strong>element</strong> (<a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html#xml.etree.ElementTree.ElementTree" title="(in Python v3.5)"><em>xml.etree.ElementTree.ElementTree</em></a><em>, </em><em>optional</em>) &#8211; Root element node</li>
 <li><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) A file handle or file name of an XML file whose
 contents will be used to initialize the tree with.</li>
 </ul>
@@ -232,7 +231,7 @@ the PAD specification.</dd>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><em>object</em></a>) &#8211; A file name or file object.</li>
-<li><strong>parser</strong> (<em>object, optional</em>) &#8211; An optional parser instance that defaults
+<li><strong>parser</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><em>object</em></a><em>, </em><em>optional</em>) &#8211; An optional parser instance that defaults
 to XMLParser.</li>
 </ul>
 </td>
@@ -273,7 +272,8 @@ to XMLParser.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) Human readable string describing the exception.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; (optional) Human readable string describing the
+exception.</td>
 </tr>
 </tbody>
 </table>
@@ -340,7 +340,7 @@ to XMLParser.</li>
 </div>
 <div class="section" id="definitions-files">
 <h2>Definitions files<a class="headerlink" href="#definitions-files" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper container" id="padspec40-xml">
+<div class="literal-block-wrapper docutils container" id="padspec40-xml">
 <div class="code-block-caption"><span class="caption-text">PAD specification version 4.0</span><a class="headerlink" href="#padspec40-xml" title="Permalink to this code">¶</a></div>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;PAD_Spec&gt;</span>
     <span class="nt">&lt;PAD_Spec_Version&gt;</span>4.0<span class="nt">&lt;/PAD_Spec_Version&gt;</span>
@@ -1236,7 +1236,7 @@ to XMLParser.</li>
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

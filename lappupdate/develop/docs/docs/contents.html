@@ -17,7 +17,8 @@
         VERSION:     '0.3.0-dev.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
@@ -25,7 +26,6 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="lAppUpdate 0.3.0-dev.0 documentation" href="../index.html" />
     <link rel="next" title="About..." href="about/index.html" />
     <link rel="prev" title="Welcome to lAppUpdate’s documentation!" href="../index.html" />
    
@@ -63,9 +63,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Table Of Contents</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="about/index.html">About...</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/index.html">Releases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lapptrack_user_guide/index.html">LAppTrack User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="background_papers/index.html">Background Papers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="howto/index.html">How-to</a></li>
@@ -137,7 +137,7 @@
 <li class="toctree-l2"><a class="reference internal" href="releases/v0.1.html">Release 0.1 (May 2nd 2015)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="lapptrack_user_guide/index.html">lAppTrack User Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="lapptrack_user_guide/index.html">LAppTrack User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lapptrack_user_guide/usages.html">Usages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="lapptrack_user_guide/lapptrack.html">lapptrack</a></li>
 </ul>
@@ -231,7 +231,7 @@
 <li class="toctree-l2"><a class="reference internal" href="lappdeploy_user_guide/environment_variables.html">Environment Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lapptrack/scripts.html">Main Script</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../lapptrack/lapptrack.html"><code class="docutils literal"><span class="pre">lapptrack</span></code> &#8211; Products Tracking Manager</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../lapptrack/lapptrack.html#synopsis">Synopsis</a></li>
@@ -244,6 +244,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../lapptrack/lapptrack.html#public-data">Public data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../lapptrack/lapptrack.html#public-exceptions">Public Exceptions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../lapptrack/lapptrack.html#objects-reference">Objects reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lapptrack/lapptrack.html#functions-reference">Functions reference</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../lapptrack/lapptrack.html#data-reference">Data reference</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../lapptrack/lapptrack.html#exceptions-reference">Exceptions reference</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../lapptrack/lapptrack.html#configuration-file">Configuration file</a></li>
@@ -260,6 +261,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../lapptrack/cots/dummy.html"><code class="docutils literal"><span class="pre">cots.dummy</span></code> &#8211; Dummy Product Handler</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../lapptrack/cots/dummy.html#public-classes">Public Classes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../lapptrack/cots/dummy.html#objects-reference">Objects reference</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lapptrack/cots/mock.html"><code class="docutils literal"><span class="pre">cots.mock</span></code> &#8211; Mocking Product Handlers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lapptrack/cots/mock.html#public-classes">Public Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lapptrack/cots/mock.html#objects-reference">Objects reference</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../lapptrack/cots/core.html"><code class="docutils literal"><span class="pre">cots.core</span></code> &#8211; Product Handler Core Module</a><ul>
@@ -372,7 +378,7 @@
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>
