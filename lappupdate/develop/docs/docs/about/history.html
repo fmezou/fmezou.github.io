@@ -36,8 +36,41 @@
 
   </head>
   <body role="document">
-  <div class="document">
-    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="history-of-lappupdate">
+<span id="about-history"></span><h1>History of lAppUpdate<a class="headerlink" href="#history-of-lappupdate" title="Permalink to this headline">¶</a></h1>
+<p>At the beginning, I searched a way to deploy application for my two personal pc
+from a home server (based on <a class="reference external" href="&lt;http://www.freenas.org/&gt;">freenas</a>). My searches led me to the following
+products:</p>
+<ul class="simple">
+<li><a class="reference external" href="&lt;http://www.ocsinventory-ng.org/en/&gt;">OCS Inventory NG</a>: it&#8217;s a good choice for IT professional who manages
+thousands of PC, and an agent must be deployed on every PC.</li>
+<li>Active Directory GPO: you can do this with a Windows Server or a server with
+<a class="reference external" href="&lt;https://wiki.samba.org/index.php/Samba_AD_DC_HOWTO">Samba configured in domain controller mode</a>. The main constraint is that GPO
+only accepts MSI package.</li>
+<li>updaters family (<a class="reference external" href="&lt;https://www.avast.com/f-software-updater&gt;">Avast Software Updater</a>, <a class="reference external" href="&lt;http://filehippo.com/download_app_manager&gt;">FileHippo App Manager</a> (formerly
+FileHippo Update Checker)...): theses tools are well designed for home PC
+connected to internet, but they mix the two  following functions (checking the
+availability of updates from the editor web site, checking installed local
+applications). In my point of view, theses function must be separated to
+consider the case where target PC are not connected or the need to centralise
+custom software updates.</li>
+</ul>
+<p>So I choose to develop my own deployment system built around two main module:
+the first one deploys application; the second one checks and downloads
+applications updates if any (or the full installation package).</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
@@ -69,9 +102,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lapptrack_user_guide/index.html">lAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_user_guide/index.html">LAppTrack User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../background_papers/index.html">Background Papers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
@@ -117,45 +150,13 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="history-of-lappupdate">
-<span id="about-history"></span><h1>History of lAppUpdate<a class="headerlink" href="#history-of-lappupdate" title="Permalink to this headline">¶</a></h1>
-<p>At the beginning, I searched a way to deploy application for my two personal pc
-from a home server (based on <a class="reference external" href="&lt;http://www.freenas.org/&gt;">freenas</a>). My searches led me to the following
-products:</p>
-<ul class="simple">
-<li><a class="reference external" href="&lt;http://www.ocsinventory-ng.org/en/&gt;">OCS Inventory NG</a>: it&#8217;s a good choice for IT professional who manages
-thousands of PC, and an agent must be deployed on every PC.</li>
-<li>Active Directory GPO: you can do this with a Windows Server or a server with
-<a class="reference external" href="&lt;https://wiki.samba.org/index.php/Samba_AD_DC_HOWTO">Samba configured in domain controller mode</a>. The main constraint is that GPO
-only accepts MSI package.</li>
-<li>updaters family (<a class="reference external" href="&lt;https://www.avast.com/f-software-updater&gt;">Avast Software Updater</a>, <a class="reference external" href="&lt;http://filehippo.com/download_app_manager&gt;">FileHippo App Manager</a> (formerly
-FileHippo Update Checker)...): theses tools are well designed for home PC
-connected to internet, but they mix the two  following functions (checking the
-availability of updates from the editor web site, checking installed local
-applications). In my point of view, theses function must be separated to
-consider the case where target PC are not connected or the need to centralise
-custom software updates.</li>
-</ul>
-<p>So I choose to develop my own deployment system built around two main module:
-the first one deploys application; the second one checks and downloads
-applications updates if any (or the full installation package).</p>
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <div class="clearer"></div>
-  </div>
+      <div class="clearer"></div>
+    </div>
     <div class="footer">
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

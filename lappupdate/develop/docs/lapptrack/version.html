@@ -36,8 +36,35 @@
 
   </head>
   <body role="document">
-  <div class="document">
-    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-version">
+<span id="version-project-metadata"></span><h1><a class="reference internal" href="#module-version" title="version: Project Metadata (all)"><code class="xref py py-mod docutils literal"><span class="pre">version</span></code></a> &#8211; Project Metadata<a class="headerlink" href="#module-version" title="Permalink to this headline">¶</a></h1>
+<p>This module specifies the metadata of the project to avoid duplicating theses
+values across sources files. It’s one of the technique proposed in the
+<a class="reference external" href="https://packaging.python.org/single_source_version/#single-sourcing-the-project-version">Single-sourcing the Project Version</a>  of the <a class="reference external" href="https://packaging.python.org/">Python Packaging User Guide</a>.</p>
+<p>The easiest way to use is to import the module as below.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">version</span> <span class="k">import</span> <span class="n">__version__</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">__version__</span>
+<span class="go">&#39;0.1.0-dev.0&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">version</span> <span class="k">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">__license__</span>
+<span class="go">&#39;GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007&#39;</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../index.html">lAppUpdate</a></h1>
@@ -122,39 +149,13 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="module-version">
-<span id="version-project-metadata"></span><h1><a class="reference internal" href="#module-version" title="version: Project Metadata (all)"><code class="xref py py-mod docutils literal"><span class="pre">version</span></code></a> &#8211; Project Metadata<a class="headerlink" href="#module-version" title="Permalink to this headline">¶</a></h1>
-<p>This module specifies the metadata of the project to avoid duplicating theses
-values across sources files. It’s one of the technique proposed in the
-<a class="reference external" href="https://packaging.python.org/single_source_version/#single-sourcing-the-project-version">Single-sourcing the Project Version</a>  of the <a class="reference external" href="https://packaging.python.org/">Python Packaging User Guide</a>.</p>
-<p>The easiest way to use is to import the module as below.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">version</span> <span class="k">import</span> <span class="n">__version__</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">__version__</span>
-<span class="go">&#39;0.1.0-dev.0&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">version</span> <span class="k">import</span> <span class="o">*</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">__license__</span>
-<span class="go">&#39;GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007&#39;</span>
-</pre></div>
-</div>
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <div class="clearer"></div>
-  </div>
+      <div class="clearer"></div>
+    </div>
     <div class="footer">
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

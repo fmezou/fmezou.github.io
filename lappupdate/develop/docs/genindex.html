@@ -35,64 +35,9 @@
 
   </head>
   <body role="document">
-  <div class="document">
-    
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">lAppUpdate</a></h1>
+  
 
-
-
-<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
-
-
-
-
-<p>
-<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
-  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
-</p>
-
-
-
-
-
-<h3>Navigation</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="docs/contents.html">Table Of Contents</a></li>
-</ul>
-
-
-<hr />
-<ul>
-    
-    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
-    
-</ul>
-<h3>Indices and tables</h3>
-<ul>
-    <li class="toctree-l1"><a href="#">Index</a></li>
-    <li class="toctree-l1"><a href="py-modindex.html">Module Index</a></li>
-    <li class="toctree-l1"><a href="docs/glossary.html">Glossary</a></li>
-</ul><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
+    <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
@@ -313,15 +258,11 @@
 </li>
       <li><a href="lapptrack/cots/mock.html#cots.mock.BaseMockHandler">BaseMockHandler (class in cots.mock)</a>
 </li>
-      <li><a href="lapptrack/cots/core.html#cots.core.BaseProduct">BaseProduct (class in cots.core)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="tests/test_core.html#tests.test_core.BaseProductFetchTestCase">BaseProductFetchTestCase (class in tests.test_core)</a>
+      <li><a href="lapptrack/cots/core.html#cots.core.BaseProduct">BaseProduct (class in cots.core)</a>
 </li>
-      <li><a href="tests/test_core.html#tests.test_core.BaseProductLoadTestCase">BaseProductLoadTestCase (class in tests.test_core)</a>
-</li>
-      <li><a href="tests/test_core.html#tests.test_core.BaseProductNotImplementedTestCase">BaseProductNotImplementedTestCase (class in tests.test_core)</a>
+      <li><a href="lapptrack/cots/mock.html#cots.mock.BrotherMockHandler">BrotherMockHandler (class in cots.mock)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -347,7 +288,11 @@
 </li>
       <li><a href="docs/glossary.html#term-catalog"><strong>Catalog</strong></a>
 </li>
+      <li><a href="lapptrack/lapptrack.html#lapptrack.LAppTrack.catalog">catalog (lapptrack.LAppTrack attribute)</a>
+</li>
       <li><a href="lapptrack/lapptrack.html#lapptrack.CATALOG_FNAME">CATALOG_FNAME (in module lapptrack)</a>
+</li>
+      <li><a href="lapptrack/lapptrack.html#lapptrack.LAppTrack.catalog_path">catalog_path (lapptrack.LAppTrack attribute)</a>
 </li>
       <li><a href="lapptrack/cots/core.html#cots.core.BaseProduct.change_summary">change_summary (cots.core.BaseProduct attribute)</a>
 </li>
@@ -389,6 +334,10 @@
       <li><a href="lapptrack/support/progressbar.html#support.progressbar.TextProgressBar.compute">compute() (support.progressbar.TextProgressBar method)</a>
 </li>
       <li><a href="lapptrack/cots/core.html#cots.core.ContentError.computed">computed (cots.core.ContentError attribute)</a>
+</li>
+      <li><a href="lapptrack/lapptrack.html#lapptrack.LAppTrack.config">config (lapptrack.LAppTrack attribute)</a>
+</li>
+      <li><a href="lapptrack/lapptrack.html#lapptrack.LAppTrack.config_checked">config_checked (lapptrack.LAppTrack attribute)</a>
 </li>
       <li><a href="lapptrack/lapptrack.html#lapptrack.ConfigurationError">ConfigurationError</a>
 </li>
@@ -542,15 +491,13 @@
 </li>
         <li><a href="lapptrack/cots/mock.html#cots.mock.BaseMockHandler.get_origin">(cots.mock.BaseMockHandler method)</a>
 </li>
+        <li><a href="lapptrack/cots/mock.html#cots.mock.BrotherMockHandler.get_origin">(cots.mock.BrotherMockHandler method)</a>
+</li>
         <li><a href="lapptrack/cots/mock.html#cots.mock.ErrorMockHandler.get_origin">(cots.mock.ErrorMockHandler method)</a>
 </li>
         <li><a href="lapptrack/cots/mock.html#cots.mock.FailureMockHandler.get_origin">(cots.mock.FailureMockHandler method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="tests/test_core.html#tests.test_core.GetHandlerTestCase">GetHandlerTestCase (class in tests.test_core)</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -671,11 +618,21 @@
         <li><a href="lapptrack/support/pad.html#support.pad.SpecSyntaxError.name">(support.pad.SpecSyntaxError attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lapptrack/support/report.html#support.report.Report.names">names (support.report.Report attribute)</a>
 </li>
       <li><a href="docs/glossary.html#term-non-public-script"><strong>Non-public script</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="lapptrack/lapptrack.html#lapptrack.notify_end">notify_end() (in module lapptrack)</a>
+</li>
+      <li><a href="lapptrack/lapptrack.html#lapptrack.notify_error">notify_error() (in module lapptrack)</a>
+</li>
+      <li><a href="lapptrack/lapptrack.html#lapptrack.notify_info">notify_info() (in module lapptrack)</a>
+</li>
+      <li><a href="lapptrack/lapptrack.html#lapptrack.notify_start">notify_start() (in module lapptrack)</a>
+</li>
+      <li><a href="lapptrack/lapptrack.html#lapptrack.notify_warning">notify_warning() (in module lapptrack)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -740,11 +697,9 @@
 </li>
       <li><a href="lapptrack/support/report.html#support.report.Report">Report (class in support.report)</a>
 </li>
-      <li><a href="lapptrack/cots/core.html#cots.core.retrieve_file">retrieve_file() (in module cots.core)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="tests/test_core.html#tests.test_core.RetrieveFileTestCase">RetrieveFileTestCase (class in tests.test_core)</a>
+      <li><a href="lapptrack/cots/core.html#cots.core.retrieve_file">retrieve_file() (in module cots.core)</a>
 </li>
       <li>
     RFC
@@ -798,10 +753,10 @@
 </li>
       <li><a href="lapptrack/support/report.html#support.report.Report.set_template">set_template() (support.report.Report method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lapptrack/support/report.html#support.report.MailHandler.set_to_addresses">set_to_addresses() (support.report.MailHandler method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="docs/howto/howto_deploy_applications.html#index-8">SILENT</a>, <a href="docs/lappdeploy_user_guide/lappdeploy.html#index-7">[1]</a>
 </li>
       <li><a href="lapptrack/cots/core.html#cots.core.BaseProduct.silent_inst_args">silent_inst_args (cots.core.BaseProduct attribute)</a>
@@ -815,6 +770,8 @@
       <li><a href="lapptrack/support/pad.html#support.pad.SpecSyntaxError">SpecSyntaxError</a>
 </li>
       <li><a href="lapptrack/cots/core.html#cots.core.BaseProduct.std_inst_args">std_inst_args (cots.core.BaseProduct attribute)</a>
+</li>
+      <li><a href="lapptrack/lapptrack.html#lapptrack.LAppTrack.store_path">store_path (lapptrack.LAppTrack attribute)</a>
 </li>
       <li><a href="lapptrack/support/report.html#support.report.StreamHandler">StreamHandler (class in support.report)</a>
 </li>
@@ -844,15 +801,11 @@
 </li>
       <li><a href="lapptrack/cots/core.html#cots.core.TARGET_X64">TARGET_X64 (in module cots.core)</a>
 </li>
-      <li><a href="lapptrack/cots/core.html#cots.core.TARGET_X86">TARGET_X86 (in module cots.core)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="tests/index.html#module-test">test (module)</a>
+      <li><a href="lapptrack/cots/core.html#cots.core.TARGET_X86">TARGET_X86 (in module cots.core)</a>
 </li>
       <li><a href="lapptrack/lapptrack.html#lapptrack.LAppTrack.test_config">test_config() (lapptrack.LAppTrack method)</a>
-</li>
-      <li><a href="tests/test_core.html#module-tests.test_core">tests.test_core (module)</a>
 </li>
       <li><a href="lapptrack/support/progressbar.html#support.progressbar.TextProgressBar">TextProgressBar (class in support.progressbar)</a>
 </li>
@@ -938,13 +891,69 @@
           </div>
         </div>
       </div>
-    <div class="clearer"></div>
-  </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/contents.html">Table Of Contents</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="#">Index</a></li>
+    <li class="toctree-l1"><a href="py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="docs/glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
     <div class="footer">
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

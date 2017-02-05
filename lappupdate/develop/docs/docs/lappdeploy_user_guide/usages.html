@@ -36,8 +36,48 @@
 
   </head>
   <body role="document">
-  <div class="document">
-    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="usages">
+<span id="lappdeploy-userguide-usages"></span><h1>Usages<a class="headerlink" href="#usages" title="Permalink to this headline">¶</a></h1>
+<p>The following topics details the usage of lAppUpdate scripts. Complying with the
+<a class="reference internal" href="../about/conventions.html#about-scripts-naming"><span class="std std-ref">Scripts naming</span></a> convention.</p>
+<p><strong>Public scripts</strong> are those that you can use.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lappdeploy.html">lappdeploy</a></li>
+</ul>
+</div>
+<p><strong>Hook scripts</strong> are only call from lAppUpdate scripts and have a public
+interface. These scripts are designed for doing third parties tasks at specific
+time.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="exit.html">__exit__</a></li>
+<li class="toctree-l1"><a class="reference internal" href="init.html">__init__</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postinstall.html">__postinstall__</a></li>
+</ul>
+</div>
+<p><strong>Non-public scripts</strong> are those that are not intended to be used by third
+parties, so these scripts may change or even removed. <strong>Their presence here is
+only in a purpose of information.</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appfilter.html">_appfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log2mail.html">_log2mail</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
@@ -123,52 +163,13 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="usages">
-<span id="lappdeploy-userguide-usages"></span><h1>Usages<a class="headerlink" href="#usages" title="Permalink to this headline">¶</a></h1>
-<p>The following topics details the usage of lAppUpdate scripts. Complying with the
-<a class="reference internal" href="../about/conventions.html#about-scripts-naming"><span class="std std-ref">Scripts naming</span></a> convention.</p>
-<p><strong>Public scripts</strong> are those that you can use.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="lappdeploy.html">lappdeploy</a></li>
-</ul>
-</div>
-<p><strong>Hook scripts</strong> are only call from lAppUpdate scripts and have a public
-interface. These scripts are designed for doing third parties tasks at specific
-time.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="exit.html">__exit__</a></li>
-<li class="toctree-l1"><a class="reference internal" href="init.html">__init__</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postinstall.html">__postinstall__</a></li>
-</ul>
-</div>
-<p><strong>Non-public scripts</strong> are those that are not intended to be used by third
-parties, so these scripts may change or even removed. <strong>Their presence here is
-only in a purpose of information.</strong></p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="appfilter.html">_appfilter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="log2mail.html">_log2mail</a></li>
-</ul>
-</div>
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <div class="clearer"></div>
-  </div>
+      <div class="clearer"></div>
+    </div>
     <div class="footer">
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

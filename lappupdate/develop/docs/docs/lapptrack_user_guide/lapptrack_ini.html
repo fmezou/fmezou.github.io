@@ -36,99 +36,9 @@
 
   </head>
   <body role="document">
-  <div class="document">
-    
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+  
 
-
-
-<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
-
-
-
-
-<p>
-<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
-  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
-</p>
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">lAppTrack User Guide</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="usages.html">Usages</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="configuration_files.html">Configuration Files</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">lapptrack.ini Content</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#core-section">Core Section</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#sets-section">Sets Section</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#applications-section">Applications Section</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#application-section">Application Section</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="logger_ini.html">logger.ini Content</a></li>
-<li class="toctree-l4"><a class="reference internal" href="report_ini.html">report.ini</a></li>
-<li class="toctree-l4"><a class="reference internal" href="report_template.html">Report Template</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">lAppTrack Developer Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../background_papers/index.html">Background Papers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-</ul>
-</li>
-</ul>
-
-
-<hr />
-<ul>
-    
-    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
-    
-</ul>
-<h3>Indices and tables</h3>
-<ul>
-    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
-    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
-    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
-</ul><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../contents.html">Table Of Contents</a><ul>
-  <li><a href="index.html">lAppTrack User Guide</a><ul>
-  <li><a href="configuration_files.html">Configuration Files</a><ul>
-      <li>Previous: <a href="configuration_files.html" title="previous chapter">Configuration Files</a></li>
-      <li>Next: <a href="logger_ini.html" title="next chapter">logger.ini Content</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
+    <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
@@ -137,7 +47,7 @@
 <span id="lapptrack-userguide-lapptrack-ini-content"></span><h1>lapptrack.ini Content<a class="headerlink" href="#lapptrack-ini-content" title="Permalink to this headline">¶</a></h1>
 <p>This file contains the configuration of <a class="reference internal" href="lapptrack.html"><span class="doc">lapptrack</span></a> script. It use a
 structure similar to what’s found in Microsoft Windows INI files, and parse with
-the <a class="reference external" href="https://docs.python.org/3/library/configparser.html#module-configparser" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">configparser</span></code></a> module of the Python standard library. See the &#8216;Supported INI
+the <a class="reference external" href="https://docs.python.org/3/library/configparser.html#module-configparser" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">configparser</span></code></a> module of the Python standard library. See the &#8216;Supported INI
 File Structure&#8217; section to have details about the file format.</p>
 <p>The configuration consists of three main sections and one section per
 applications such as below.</p>
@@ -234,7 +144,7 @@ and <a class="reference internal" href="../glossary.html#term-applist"><code cla
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">logger</span></code></td>
 <td>(optional) contains the path name of the configuration
-file of the logging system based on <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.5)"><code class="xref any docutils literal"><span class="pre">logging</span></code></a> module.</td>
+file of the logging system based on <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">logging</span></code></a> module.</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">pulling_report</span></code></td>
 <td>(optional) contains the path name of the configuration
@@ -253,9 +163,9 @@ file of the approving activity report (see
 </tr>
 </tbody>
 </table>
-<p>..topic:  Example of a <code class="docutils literal"><span class="pre">[core]</span></code> section</p>
-<blockquote>
-<div><div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[core]</span>
+<div class="topic">
+<p class="topic-title first">Example of a <code class="docutils literal"><span class="pre">[core]</span></code> section</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[core]</span>
 <span class="na">store</span> <span class="o">=</span> <span class="s">..\appstore</span>
 <span class="c1">;logger = .\logger.ini</span>
 <span class="c1">;pulling_report = .\pulling_report.ini</span>
@@ -263,7 +173,7 @@ file of the approving activity report (see
 <span class="c1">;approving_report = .\approving_report.ini</span>
 </pre></div>
 </div>
-</div></blockquote>
+</div>
 </div>
 <div class="section" id="sets-section">
 <span id="lapptrack-userguide-lapptrack-ini-sets-section"></span><h2>Sets Section<a class="headerlink" href="#sets-section" title="Permalink to this headline">¶</a></h2>
@@ -383,13 +293,104 @@ default value is <code class="docutils literal"><span class="pre">__all__</span>
           </div>
         </div>
       </div>
-    <div class="clearer"></div>
-  </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">LAppTrack User Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usages.html">Usages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="configuration_files.html">Configuration Files</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">lapptrack.ini Content</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#core-section">Core Section</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#sets-section">Sets Section</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#applications-section">Applications Section</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#application-section">Application Section</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="logger_ini.html">logger.ini Content</a></li>
+<li class="toctree-l4"><a class="reference internal" href="report_ini.html">report.ini</a></li>
+<li class="toctree-l4"><a class="reference internal" href="report_template.html">Report Template</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../contents.html">Table Of Contents</a><ul>
+  <li><a href="index.html">LAppTrack User Guide</a><ul>
+  <li><a href="configuration_files.html">Configuration Files</a><ul>
+      <li>Previous: <a href="configuration_files.html" title="previous chapter">Configuration Files</a></li>
+      <li>Next: <a href="logger_ini.html" title="next chapter">logger.ini Content</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
     <div class="footer">
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

@@ -36,8 +36,32 @@
 
   </head>
   <body role="document">
-  <div class="document">
-    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="main-script">
+<h1>Main Script<a class="headerlink" href="#main-script" title="Permalink to this headline">¶</a></h1>
+<p>The main component is the <a class="reference internal" href="lapptrack.html#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref py py-mod docutils literal"><span class="pre">lapptrack</span></code></a> module which offers a command line
+interface and is in charge of plug-in handling and operations scheduling.</p>
+<p>To sum up, this module call a product handler from the <a class="reference internal" href="cots/index.html#module-cots" title="cots: Product Handlers Package (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots</span></code></a> package to
+retrieve product information and the updated installer from the web site&#8217;s
+editor, store theses information in a <a class="reference internal" href="../docs/glossary.html#term-catalog"><span class="xref std std-term">catalog</span></a> and makes the input files
+used by the <code class="docutils literal"><span class="pre">lappdeploy</span></code> script.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lapptrack.html"><code class="docutils literal"><span class="pre">lapptrack</span></code> &#8211; Products Tracking Manager</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../index.html">lAppUpdate</a></h1>
@@ -120,36 +144,13 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="main-script">
-<h1>Main Script<a class="headerlink" href="#main-script" title="Permalink to this headline">¶</a></h1>
-<p>The main component is the <a class="reference internal" href="lapptrack.html#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref py py-mod docutils literal"><span class="pre">lapptrack</span></code></a> module which offers a command line
-interface and is in charge of plug-in handling and operations scheduling.</p>
-<p>To sum up, this module call a product handler from the <a class="reference internal" href="cots/index.html#module-cots" title="cots: Product Handlers Package (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots</span></code></a> package to
-retrieve product information and the updated installer from the web site&#8217;s
-editor, store theses information in a <a class="reference internal" href="../docs/glossary.html#term-catalog"><span class="xref std std-term">catalog</span></a> and makes the input files
-used by the <code class="docutils literal"><span class="pre">lappdeploy</span></code> script.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="lapptrack.html"><code class="docutils literal"><span class="pre">lapptrack</span></code> &#8211; Products Tracking Manager</a></li>
-</ul>
-</div>
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <div class="clearer"></div>
-  </div>
+      <div class="clearer"></div>
+    </div>
     <div class="footer">
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

@@ -36,8 +36,35 @@
 
   </head>
   <body role="document">
-  <div class="document">
-    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="requirements">
+<span id="about-requirements"></span><h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<p>The requirements for this project were:</p>
+<ul class="simple">
+<li><strong class="command">lappdeploy</strong> must run on Microsoft Windows (7 minimum) without
+prerequisites (i.e. no agent must be prior installed). Theses implies that
+theses modules must be written in <a class="reference external" href="https://technet.microsoft.com/en-us/library/cc754340.aspx#BKMK_OVR">Command shell</a> or <a class="reference external" href="https://msdn.microsoft.com/library/d1wf56tt.aspx">Windows Script Host</a>.</li>
+<li><strong class="command">lappdeploy</strong> must run from a network share (aka from a
+UNC path) or a removable disk (CD or DVD, USB stick...).</li>
+<li><strong class="command">lappdeploy</strong> must work with any type of installation
+package (MSI package, EXE package or a classic distribution with files and a
+setup.exe).</li>
+<li><strong class="command">lappdeploy</strong> must have pre install and post installation
+hook to customize the start menu or install additional packs (e.g. Firefox
+extension, VirtualBox Extension Pack, Tortoise Language Pack...)</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
@@ -117,39 +144,13 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="requirements">
-<span id="about-requirements"></span><h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
-<p>The requirements for this project were:</p>
-<ul class="simple">
-<li><strong class="command">lappdeploy</strong> must run on Microsoft Windows (7 minimum) without
-prerequisites (i.e. no agent must be prior installed). Theses implies that
-theses modules must be written in <a class="reference external" href="https://technet.microsoft.com/en-us/library/cc754340.aspx#BKMK_OVR">Command shell</a> or <a class="reference external" href="https://msdn.microsoft.com/library/d1wf56tt.aspx">Windows Script Host</a>.</li>
-<li><strong class="command">lappdeploy</strong> must run from a network share (aka from a
-UNC path) or a removable disk (CD or DVD, USB stick...).</li>
-<li><strong class="command">lappdeploy</strong> must work with any type of installation
-package (MSI package, EXE package or a classic distribution with files and a
-setup.exe).</li>
-<li><strong class="command">lappdeploy</strong> must have pre install and post installation
-hook to customize the start menu or install additional packs (e.g. Firefox
-extension, VirtualBox Extension Pack, Tortoise Language Pack...)</li>
-</ul>
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <div class="clearer"></div>
-  </div>
+      <div class="clearer"></div>
+    </div>
     <div class="footer">
       &copy;2016, Frederic MEZOU.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

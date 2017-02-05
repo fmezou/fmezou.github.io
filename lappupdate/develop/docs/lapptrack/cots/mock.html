@@ -1,0 +1,539 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cots.mock – Mocking Product Handlers &#8212; lAppUpdate 0.3.0-dev.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.0-dev.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="cots.core – Product Handler Core Module" href="core.html" />
+    <link rel="prev" title="cots.dummy – Dummy Product Handler" href="dummy.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cots.mock">
+<span id="cots-mock-mocking-product-handlers"></span><h1><a class="reference internal" href="#module-cots.mock" title="cots.mock: Mocking Product Handlers (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots.mock</span></code></a> &#8211; Mocking Product Handlers<a class="headerlink" href="#module-cots.mock" title="Permalink to this headline">¶</a></h1>
+<p>This module is a mocking product handler to test the <a class="reference internal" href="../lapptrack.html#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref any py py-mod docutils literal"><span class="pre">lapptrack</span></code></a> module or any
+python module using the <a class="reference internal" href="index.html#module-cots" title="cots: Product Handlers Package (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots</span></code></a> package.</p>
+<p>This module differs from the dummy module, because the latter exists as an
+example (more precisely as a skeleton) to implement a product handler.</p>
+<div class="section" id="public-classes">
+<h2>Public Classes<a class="headerlink" href="#public-classes" title="Permalink to this headline">¶</a></h2>
+<p>This module includes a number of <em>handlers</em> listed below in alphabetical order.
+A mocking handler is a derived class from the <a class="reference internal" href="#cots.mock.BaseMockHandler" title="cots.mock.BaseMockHandler"><code class="xref any py py-class docutils literal"><span class="pre">BaseMockHandler</span></code></a> class.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.mock.BaseMockHandler" title="cots.mock.BaseMockHandler"><code class="xref py py-class docutils literal"><span class="pre">BaseMockHandler</span></code></a></td>
+<td><a class="reference internal" href="#cots.mock.FailureMockHandler" title="cots.mock.FailureMockHandler"><code class="xref py py-class docutils literal"><span class="pre">FailureMockHandler</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#cots.mock.ErrorMockHandler" title="cots.mock.ErrorMockHandler"><code class="xref py py-class docutils literal"><span class="pre">ErrorMockHandler</span></code></a></td>
+<td><a class="reference internal" href="#cots.mock.MockHandler" title="cots.mock.MockHandler"><code class="xref py py-class docutils literal"><span class="pre">MockHandler</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="objects-reference">
+<h2>Objects reference<a class="headerlink" href="#objects-reference" title="Permalink to this headline">¶</a></h2>
+<p>This section details the objects defined in this module.</p>
+<dl class="class">
+<dt id="cots.mock.BaseMockHandler">
+<em class="property">class </em><code class="descclassname">cots.mock.</code><code class="descname">BaseMockHandler</code><a class="headerlink" href="#cots.mock.BaseMockHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="core.html#cots.core.BaseProduct" title="cots.core.BaseProduct"><code class="xref py py-class docutils literal"><span class="pre">cots.core.BaseProduct</span></code></a></p>
+<p>Common base class for mocking handler.</p>
+<p>This class is a base class for mocking handler used to test the <a class="reference internal" href="../lapptrack.html#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref any py py-mod docutils literal"><span class="pre">lapptrack</span></code></a>
+module or any python module using the <a class="reference internal" href="index.html#module-cots" title="cots: Product Handlers Package (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots</span></code></a> package. Most of information
+about handler mechanism are in the <a class="reference internal" href="core.html#module-cots.core" title="cots.core: Product Handlers Core Module (all)"><code class="xref py py-mod docutils literal"><span class="pre">cots.core</span></code></a> module and more
+particularly in the <a class="reference internal" href="core.html#cots.core.BaseProduct" title="cots.core.BaseProduct"><code class="xref any py py-class docutils literal"><span class="pre">BaseProduct</span></code></a> class documentation.</p>
+<dl class="docutils">
+<dt><strong>Overridden Methods</strong></dt>
+<dd><p class="first">This class is a concrete class, so the overridden methods are listed
+below in alphabetical order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.mock.BaseMockHandler.dump" title="cots.mock.BaseMockHandler.dump"><code class="xref any py py-meth docutils literal"><span class="pre">dump</span></code></a></td>
+<td><a class="reference internal" href="#cots.mock.BaseMockHandler.is_update" title="cots.mock.BaseMockHandler.is_update"><code class="xref any py py-meth docutils literal"><span class="pre">is_update</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#cots.mock.BaseMockHandler.fetch" title="cots.mock.BaseMockHandler.fetch"><code class="xref any py py-meth docutils literal"><span class="pre">fetch</span></code></a></td>
+<td><a class="reference internal" href="#cots.mock.BaseMockHandler.load" title="cots.mock.BaseMockHandler.load"><code class="xref any py py-meth docutils literal"><span class="pre">load</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#cots.mock.BaseMockHandler.get_origin" title="cots.mock.BaseMockHandler.get_origin"><code class="xref any py py-meth docutils literal"><span class="pre">get_origin</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="method">
+<dt id="cots.mock.BaseMockHandler.dump">
+<code class="descname">dump</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.BaseMockHandler.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump the handler class attributes.</p>
+<p>The method use a variable named <code class="docutils literal"><span class="pre">attributes</span></code> to store a copy of
+public attributes. The <code class="docutils literal"><span class="pre">attributes</span></code> content may be altered by the
+script.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Contain a copy of the instance variables values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.mock.BaseMockHandler.fetch">
+<code class="descname">fetch</code><span class="sig-paren">(</span><em>dirpath</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.BaseMockHandler.fetch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download the mocking installer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dirpath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The directory path name where to store the installer
+package.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the fake installer creation went well. In case of
+failure, the members are not modified and an error log is written.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.mock.BaseMockHandler.get_origin">
+<code class="descname">get_origin</code><span class="sig-paren">(</span><em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.BaseMockHandler.get_origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the mocking information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The version of the reference product.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">always True.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.mock.BaseMockHandler.is_update">
+<code class="descname">is_update</code><span class="sig-paren">(</span><em>product</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.BaseMockHandler.is_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return if this instance is an update.</p>
+<p>This method compare the version of the two product, and return the
+comparison result. The version numbers used by the editor are compliant
+with the semantic versioning specification 2.0.0 (see <a class="reference internal" href="../support/semver.html#module-support.semver" title="support.semver: Semantic Versioning Support (all)"><code class="xref any py py-mod docutils literal"><span class="pre">support.semver</span></code></a>
+module)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>product</strong> (<a class="reference internal" href="core.html#cots.core.BaseProduct" title="cots.core.BaseProduct"><em>BaseProduct</em></a>) &#8211; The reference product (i.e. the deployed one)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if this instance is an update of the product specified
+by the <a class="reference internal" href="../../docs/glossary.html#term-product"><code class="xref any std std-term docutils literal"><span class="pre">product</span></code></a> parameter.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.mock.BaseMockHandler.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.BaseMockHandler.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the saved handler class attributes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attributes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) &#8211; The instance variables values to set. Previous
+value of the instance variables kept if this argument value is
+None. The key value pairs which don&#8217;t exist in the
+instance variables dictionary are ignored.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.6)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> &#8211; Parameters type mismatch.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cots.mock.MockHandler">
+<em class="property">class </em><code class="descclassname">cots.mock.</code><code class="descname">MockHandler</code><a class="headerlink" href="#cots.mock.MockHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cots.mock.BaseMockHandler" title="cots.mock.BaseMockHandler"><code class="xref py py-class docutils literal"><span class="pre">cots.mock.BaseMockHandler</span></code></a></p>
+<p>Mocking handler.</p>
+<p>This concrete class implements a mocking handler used to test the
+<a class="reference internal" href="../lapptrack.html#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref any py py-mod docutils literal"><span class="pre">lapptrack</span></code></a> module or any python module using the <a class="reference internal" href="index.html#module-cots" title="cots: Product Handlers Package (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots</span></code></a> package. Most of
+information about handler mechanism are in the <a class="reference internal" href="core.html#module-cots.core" title="cots.core: Product Handlers Core Module (all)"><code class="xref py py-mod docutils literal"><span class="pre">cots.core</span></code></a> and more
+particularly in the <a class="reference internal" href="core.html#cots.core.BaseProduct" title="cots.core.BaseProduct"><code class="xref any py py-class docutils literal"><span class="pre">BaseProduct</span></code></a> class documentation.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cots.mock.BrotherMockHandler">
+<em class="property">class </em><code class="descclassname">cots.mock.</code><code class="descname">BrotherMockHandler</code><a class="headerlink" href="#cots.mock.BrotherMockHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cots.mock.BaseMockHandler" title="cots.mock.BaseMockHandler"><code class="xref py py-class docutils literal"><span class="pre">cots.mock.BaseMockHandler</span></code></a></p>
+<p>Mocking handler.</p>
+<p>This concrete class implements a mocking handler (similar to <a class="reference internal" href="#cots.mock.MockHandler" title="cots.mock.MockHandler"><code class="xref any py py-class docutils literal"><span class="pre">MockHandler</span></code></a>)
+used to test the <a class="reference internal" href="../lapptrack.html#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref any py py-mod docutils literal"><span class="pre">lapptrack</span></code></a> module or any python module using the <a class="reference internal" href="index.html#module-cots" title="cots: Product Handlers Package (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots</span></code></a>
+package.</p>
+<dl class="method">
+<dt id="cots.mock.BrotherMockHandler.get_origin">
+<code class="descname">get_origin</code><span class="sig-paren">(</span><em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.BrotherMockHandler.get_origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the mocking information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The version of the reference product.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">always True.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cots.mock.FailureMockHandler">
+<em class="property">class </em><code class="descclassname">cots.mock.</code><code class="descname">FailureMockHandler</code><a class="headerlink" href="#cots.mock.FailureMockHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cots.mock.BaseMockHandler" title="cots.mock.BaseMockHandler"><code class="xref py py-class docutils literal"><span class="pre">cots.mock.BaseMockHandler</span></code></a></p>
+<p>Failure mocking handler.</p>
+<p>This concrete class implements a mocking handler used to test the
+<a class="reference internal" href="../lapptrack.html#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref any py py-mod docutils literal"><span class="pre">lapptrack</span></code></a> module or any python module using the <a class="reference internal" href="index.html#module-cots" title="cots: Product Handlers Package (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots</span></code></a> package. This
+handler always return an error on the <a class="reference internal" href="#cots.mock.FailureMockHandler.fetch" title="cots.mock.FailureMockHandler.fetch"><code class="xref any py py-meth docutils literal"><span class="pre">fetch</span></code></a> or <a class="reference internal" href="#cots.mock.FailureMockHandler.get_origin" title="cots.mock.FailureMockHandler.get_origin"><code class="xref any py py-meth docutils literal"><span class="pre">get_origin</span></code></a> method call.
+In this context, <a class="reference internal" href="#cots.mock.FailureMockHandler.is_update" title="cots.mock.FailureMockHandler.is_update"><code class="xref any py py-meth docutils literal"><span class="pre">is_update</span></code></a> method should not be called so his call raise
+an <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">RuntimeError</span></code></a> exception.</p>
+<dl class="docutils">
+<dt><strong>Overridden Methods</strong></dt>
+<dd><p class="first">This class is a concrete class, so the overridden methods are listed
+below in alphabetical order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.mock.FailureMockHandler.fetch" title="cots.mock.FailureMockHandler.fetch"><code class="xref any py py-meth docutils literal"><span class="pre">fetch</span></code></a></td>
+<td><a class="reference internal" href="#cots.mock.FailureMockHandler.is_update" title="cots.mock.FailureMockHandler.is_update"><code class="xref any py py-meth docutils literal"><span class="pre">is_update</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#cots.mock.FailureMockHandler.get_origin" title="cots.mock.FailureMockHandler.get_origin"><code class="xref any py py-meth docutils literal"><span class="pre">get_origin</span></code></a></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="method">
+<dt id="cots.mock.FailureMockHandler.fetch">
+<code class="descname">fetch</code><span class="sig-paren">(</span><em>dirpath</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.FailureMockHandler.fetch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download the mocking installer.</p>
+<p>This method always return false to indicate that an error has occurred
+while the product installer fetching.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dirpath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The directory path name where to store the installer
+package.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the download of the file went well. In case of
+failure, the members are not modified and an error log is written.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">always False.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.mock.FailureMockHandler.get_origin">
+<code class="descname">get_origin</code><span class="sig-paren">(</span><em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.FailureMockHandler.get_origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the mocking information.</p>
+<p>This method always return false to indicate that an error has occurred
+while the fetching of the product information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The version of the reference product.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">always False.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.mock.FailureMockHandler.is_update">
+<code class="descname">is_update</code><span class="sig-paren">(</span><em>product</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.FailureMockHandler.is_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return if this instance is an update.</p>
+<p>In this context, this method should not be called.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>product</strong> (<a class="reference internal" href="core.html#cots.core.BaseProduct" title="cots.core.BaseProduct"><em>BaseProduct</em></a>) &#8211; The reference product (i.e. the deployed one)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">RuntimeError</span></code></a> &#8211; see above.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cots.mock.ErrorMockHandler">
+<em class="property">class </em><code class="descclassname">cots.mock.</code><code class="descname">ErrorMockHandler</code><a class="headerlink" href="#cots.mock.ErrorMockHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cots.mock.BaseMockHandler" title="cots.mock.BaseMockHandler"><code class="xref py py-class docutils literal"><span class="pre">cots.mock.BaseMockHandler</span></code></a></p>
+<p>Error mocking handler.</p>
+<p>This concrete class implements a mocking handler used to test the
+<a class="reference internal" href="../lapptrack.html#module-lapptrack" title="lapptrack: Products Tracking Manager (all)"><code class="xref any py py-mod docutils literal"><span class="pre">lapptrack</span></code></a> module or any python module using the <a class="reference internal" href="index.html#module-cots" title="cots: Product Handlers Package (all)"><code class="xref any py py-mod docutils literal"><span class="pre">cots</span></code></a> package. This
+handler raises an <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">TypeError</span></code></a> exception on the <a class="reference internal" href="#cots.mock.ErrorMockHandler.fetch" title="cots.mock.ErrorMockHandler.fetch"><code class="xref any py py-meth docutils literal"><span class="pre">fetch</span></code></a> or <a class="reference internal" href="#cots.mock.ErrorMockHandler.get_origin" title="cots.mock.ErrorMockHandler.get_origin"><code class="xref any py py-meth docutils literal"><span class="pre">get_origin</span></code></a>
+method call. In this context, <a class="reference internal" href="#cots.mock.ErrorMockHandler.is_update" title="cots.mock.ErrorMockHandler.is_update"><code class="xref any py py-meth docutils literal"><span class="pre">is_update</span></code></a> method should not be called so
+his call raise an <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">RuntimeError</span></code></a> exception.</p>
+<dl class="docutils">
+<dt><strong>Overridden Methods</strong></dt>
+<dd><p class="first">This class is a concrete class, so the overridden methods are listed
+below in alphabetical order.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#cots.mock.ErrorMockHandler.fetch" title="cots.mock.ErrorMockHandler.fetch"><code class="xref any py py-meth docutils literal"><span class="pre">fetch</span></code></a></td>
+<td><a class="reference internal" href="#cots.mock.ErrorMockHandler.is_update" title="cots.mock.ErrorMockHandler.is_update"><code class="xref any py py-meth docutils literal"><span class="pre">is_update</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#cots.mock.ErrorMockHandler.get_origin" title="cots.mock.ErrorMockHandler.get_origin"><code class="xref any py py-meth docutils literal"><span class="pre">get_origin</span></code></a></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="method">
+<dt id="cots.mock.ErrorMockHandler.fetch">
+<code class="descname">fetch</code><span class="sig-paren">(</span><em>dirpath</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.ErrorMockHandler.fetch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download the mocking installer.</p>
+<p>This method always raises an <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">TypeError</span></code></a> exception.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dirpath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The path name where to store the installer package.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">TypeError</span></code></a> &#8211; see above.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.mock.ErrorMockHandler.get_origin">
+<code class="descname">get_origin</code><span class="sig-paren">(</span><em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.ErrorMockHandler.get_origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the mocking information.</p>
+<p>This method always raises an <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">TypeError</span></code></a> exception.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The version of the reference product.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">TypeError</span></code></a> &#8211; see above.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cots.mock.ErrorMockHandler.is_update">
+<code class="descname">is_update</code><span class="sig-paren">(</span><em>product</em><span class="sig-paren">)</span><a class="headerlink" href="#cots.mock.ErrorMockHandler.is_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return if this instance is an update.</p>
+<p>In this context, this method should not be called.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>product</strong> (<a class="reference internal" href="core.html#cots.core.BaseProduct" title="cots.core.BaseProduct"><em>BaseProduct</em></a>) &#8211; The reference product (i.e. the deployed one)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.6)"><code class="xref any docutils literal"><span class="pre">RuntimeError</span></code></a> &#8211; see above.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">lAppUpdate</a></h1>
+
+
+
+<p class="blurb">Lightweight application update<br>0.3.0-dev.0</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=fmezou&repo=lappupdate&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../docs/contents.html">Table Of Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../docs/about/index.html">About...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/releases/index.html">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lapptrack_user_guide/index.html">LAppTrack User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_user_guide/index.html">lAppDeploy User Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../docs/lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../scripts.html">Main Script</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="makemkv.html"><code class="docutils literal"><span class="pre">cots.makemkv</span></code> &#8211; MakeMKV&#8217;s Product Handler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dummy.html"><code class="docutils literal"><span class="pre">cots.dummy</span></code> &#8211; Dummy Product Handler</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">cots.mock</span></code> &#8211; Mocking Product Handlers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#public-classes">Public Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#objects-reference">Objects reference</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="core.html"><code class="docutils literal"><span class="pre">cots.core</span></code> &#8211; Product Handler Core Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../support/index.html"><code class="docutils literal"><span class="pre">support</span></code> &#8211; Supporting Modules Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../further-modules.html">Further Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/lappdeploy_dev_guide/index.html">lAppDeploy Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/background_papers/index.html">Background Papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/howto/index.html">How-to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://fmezou.github.io/">Get it...</a></li>
+    
+</ul>
+<h3>Indices and tables</h3>
+<ul>
+    <li class="toctree-l1"><a href="../../genindex.html">Index</a></li>
+    <li class="toctree-l1"><a href="../../py-modindex.html">Module Index</a></li>
+    <li class="toctree-l1"><a href="../../docs/glossary.html">Glossary</a></li>
+</ul><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../docs/contents.html">Table Of Contents</a><ul>
+  <li><a href="../../docs/lapptrack_dev_guide/index.html">LAppTrack Developer Guide</a><ul>
+  <li><a href="index.html"><code class="docutils literal"><span class="pre">cots</span></code> &#8211; Product Handlers Package</a><ul>
+      <li>Previous: <a href="dummy.html" title="previous chapter"><code class="docutils literal"><span class="pre">cots.dummy</span></code> &#8211; Dummy Product Handler</a></li>
+      <li>Next: <a href="core.html" title="next chapter"><code class="docutils literal"><span class="pre">cots.core</span></code> &#8211; Product Handler Core Module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Frederic MEZOU.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
